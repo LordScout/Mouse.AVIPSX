@@ -23,7 +23,7 @@
 #include "object/splash.h"
 
 //Stage constants
-#//define STAGE_PERFECT //Play all notes perfectly
+//#define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
 //#define STAGE_FREECAM //Freecam
@@ -51,6 +51,7 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 #include "character/pico.h"
 #include "character/mom.h"
 #include "character/xmasp.h"
+#include "character/happym.h"
 #include "character/senpai.h"
 #include "character/senpaim.h"
 #include "character/tank.h"

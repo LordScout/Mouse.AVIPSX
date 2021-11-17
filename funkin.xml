@@ -230,8 +230,9 @@
 				<file name = "mom.arc" type = "data" source = "iso/mom/main.arc"/>
 				<file name = "momhair.tim" type = "data" source = "iso/mom/hair.tim"/>
 				
-				<!-- Christmas assets -->
+				<!-- Mouse assets -->
 				<file name = "xmasp.arc" type = "data" source = "iso/xmasp/main.arc"/>
+				<file name = "happym.arc" type = "data" source = "iso/happym/main.arc"/>
 				
 				<!-- Senpai assets -->
 				<file name = "senpai.arc" type = "data" source = "iso/senpai/main.arc"/>
