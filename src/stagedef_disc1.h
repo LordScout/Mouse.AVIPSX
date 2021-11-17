@@ -18,7 +18,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
 		{Char_happym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,     FIXED_DEC(1000,1),    FIXED_DEC(1000,1)},
+		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
 		//Stage background
 		Back_Week2_New,
@@ -34,7 +34,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
 		{Char_Mom_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,     FIXED_DEC(1000,1),    FIXED_DEC(1000,1)},
+		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
 		//Stage background
 		Back_Week7_New,
@@ -50,7 +50,7 @@
 		//Characters
 		{Char_BF_New, FIXED_DEC(60, 1), FIXED_DEC(100,1)},
 		{Char_XmasP_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1)},
+		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 		
 		//Stage background
 		Back_Week1_New,
