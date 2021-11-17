@@ -28,6 +28,8 @@ struct Section
 #define NOTE_FLAG_ALT_ANIM    (1 << 5) //Note plays alt animation
 #define NOTE_FLAG_MINE        (1 << 6) //Note is a mine
 #define NOTE_FLAG_HIT         (1 << 7) //Note has been hit
+#define NOTE_FLAG_NOTHING      (1 << 8) //Note has been hit
+
 
 struct Note
 {
@@ -118,6 +120,8 @@ int main(int argc, char *argv[])
 			new_note.type = (uint8_t)j[1] & (3 | NOTE_FLAG_OPPONENT);
 			if (is_opponent)
 				new_note.type ^= NOTE_FLAG_OPPONENT;
+			if (j[3] == 3)
+				new_note.type |= NOTE_FLAG_MINE;
 			if (j[3] == true)
 				new_note.type |= NOTE_FLAG_ALT_ANIM;
 			else if ((new_note.type & NOTE_FLAG_OPPONENT) && is_alt)
@@ -125,7 +129,7 @@ int main(int argc, char *argv[])
 			if (sustain >= 0)
 				new_note.type |= NOTE_FLAG_SUSTAIN_END;
 			if (((uint8_t)j[1]) & 8)
-				new_note.type |= NOTE_FLAG_MINE;
+				new_note.type |= NOTE_FLAG_NOTHING;
 			
 			if (note_fudge.count(*((uint32_t*)&new_note)))
 			{

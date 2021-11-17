@@ -120,7 +120,7 @@ void Char_XmasP_Tick(Character *character)
 	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-		Character_PerformIdle(character);
+		Character_PerformIdleM(character);
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_XmasP_SetFrame);

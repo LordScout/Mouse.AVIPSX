@@ -46,17 +46,17 @@
 				<file name = "back.arc" type = "data" source = "iso/week1/back.arc"/>
 				
 				<!-- Bopeebo charts -->
-				<file name = "1.1e.cht" type = "data" source = "iso/chart/bopeebo-easy.json.cht"/>
-				<file name = "1.1n.cht" type = "data" source = "iso/chart/bopeebo.json.cht"/>
-				<file name = "1.1h.cht" type = "data" source = "iso/chart/bopeebo-hard.json.cht"/>
+				<file name = "1.1e.cht" type = "data" source = "iso/chart/unhappy-easy.json.cht"/>
+				<file name = "1.1n.cht" type = "data" source = "iso/chart/unhappy.json.cht"/>
+				<file name = "1.1h.cht" type = "data" source = "iso/chart/unhappy-hard.json.cht"/>
 				<!-- Fresh charts -->
 				<file name = "1.2e.cht" type = "data" source = "iso/chart/happy-easy.json.cht"/>
-				<file name = "1.2n.cht" type = "data" source = "iso/chart/happy-easy.json.cht"/>
-				<file name = "1.2h.cht" type = "data" source = "iso/chart/happy-easy.json.cht"/>
+				<file name = "1.2n.cht" type = "data" source = "iso/chart/happy.json.cht"/>
+				<file name = "1.2h.cht" type = "data" source = "iso/chart/happy-hard.json.cht"/>
 				<!-- Dadbattle charts -->
-				<file name = "1.3e.cht" type = "data" source = "iso/chart/dadbattle-easy.json.cht"/>
-				<file name = "1.3n.cht" type = "data" source = "iso/chart/dadbattle.json.cht"/>
-				<file name = "1.3h.cht" type = "data" source = "iso/chart/dadbattle-hard.json.cht"/>
+				<file name = "1.3e.cht" type = "data" source = "iso/chart/really-happy-easy.json.cht"/>
+				<file name = "1.3n.cht" type = "data" source = "iso/chart/really-happy.json.cht"/>
+				<file name = "1.3h.cht" type = "data" source = "iso/chart/really-happy-hard.json.cht"/>
 				<!-- Tutorial charts -->
 				<file name = "1.4e.cht" type = "data" source = "iso/chart/tutorial-easy.json.cht"/>
 				<file name = "1.4n.cht" type = "data" source = "iso/chart/tutorial.json.cht"/>
