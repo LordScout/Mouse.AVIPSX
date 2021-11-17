@@ -158,6 +158,7 @@ typedef struct
 #define NOTE_FLAG_ALT_ANIM    (1 << 5) //Note plays alt animation
 #define NOTE_FLAG_MINE        (1 << 6) //Note is a mine
 #define NOTE_FLAG_HIT         (1 << 7) //Note has been hit
+#define NOTE_FLAG_NOTHING     (1 << 8) //Note has been hit
 
 typedef struct
 {

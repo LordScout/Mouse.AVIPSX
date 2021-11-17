@@ -23,7 +23,7 @@
 #include "object/splash.h"
 
 //Stage constants
-#//define STAGE_PERFECT //Play all notes perfectly
+//define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
 //#define STAGE_FREECAM //Freecam
@@ -297,7 +297,7 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 	//Perform note check
 	for (Note *note = stage.cur_note;; note++)
 	{
-		if (!(note->type & NOTE_FLAG_MINE))
+		if (!(note->type & ( NOTE_FLAG_NOTHING | NOTE_FLAG_MINE)))
 		{
 			//Check if note can be hit
 			fixed_t note_fp = (fixed_t)note->pos << FIXED_SHIFT;
@@ -766,7 +766,7 @@ static void Stage_DrawNotes(void)
 				continue;
 			
 			//Miss note if player's note
-			if (!(note->type & (bot | NOTE_FLAG_HIT | NOTE_FLAG_MINE)))
+			if (!(note->type & (bot | NOTE_FLAG_HIT | NOTE_FLAG_NOTHING | NOTE_FLAG_MINE)))
 			{
 				if (stage.mode < StageMode_Net1 || i == ((stage.mode == StageMode_Net1) ? 0 : 1))
 				{
@@ -920,6 +920,28 @@ static void Stage_DrawNotes(void)
 					Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 			}
+			else if (note->type & NOTE_FLAG_NOTHING)
+			{
+				//Don't draw if already hit
+				if (note->type & NOTE_FLAG_HIT)
+					continue;
+				
+				//Draw note body
+				note_src.x = 400 + ((note->type & 0x1) << 5);
+				note_src.y = (note->type & 0x2) << 4;
+				note_src.w = 32;
+				note_src.h = 32;
+				
+				note_dst.x = note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
+				note_dst.y = y - FIXED_DEC(16,1);
+				note_dst.w = note_src.w << FIXED_SHIFT;
+				note_dst.h = note_src.h << FIXED_SHIFT;
+				
+				if (stage.downscroll)
+					note_dst.y = -note_dst.y - note_dst.h;
+				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+			}
+
 			else
 			{
 				//Don't draw if already hit
@@ -1089,7 +1111,7 @@ static void Stage_LoadChart(void)
 	stage.player_state[1].max_score = 0;
 	for (Note *note = stage.notes; note->pos != 0xFFFF; note++)
 	{
-		if (note->type & (NOTE_FLAG_SUSTAIN | NOTE_FLAG_MINE))
+		if (note->type & (NOTE_FLAG_SUSTAIN | NOTE_FLAG_MINE | NOTE_FLAG_NOTHING))
 			continue;
 		if (note->type & NOTE_FLAG_OPPONENT)
 			stage.player_state[1].max_score += 35;
@@ -1961,7 +1983,7 @@ void Stage_NetHit(Packet *packet)
 		this->arrow_hitan[type] = stage.step_time;
 		this->character->set_anim(this->character, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0]);
 	}
-	else if (!(note->type & NOTE_FLAG_MINE))
+	else if (!(note->type &(NOTE_FLAG_NOTHING | NOTE_FLAG_MINE)))
 	{
 		//Hit a note
 		Stage_StartVocal();
