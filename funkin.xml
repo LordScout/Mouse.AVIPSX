@@ -50,9 +50,9 @@
 				<file name = "1.1n.cht" type = "data" source = "iso/chart/bopeebo.json.cht"/>
 				<file name = "1.1h.cht" type = "data" source = "iso/chart/bopeebo-hard.json.cht"/>
 				<!-- Fresh charts -->
-				<file name = "1.2e.cht" type = "data" source = "iso/chart/fresh-easy.json.cht"/>
-				<file name = "1.2n.cht" type = "data" source = "iso/chart/fresh.json.cht"/>
-				<file name = "1.2h.cht" type = "data" source = "iso/chart/fresh-hard.json.cht"/>
+				<file name = "1.2e.cht" type = "data" source = "iso/chart/happy-easy.json.cht"/>
+				<file name = "1.2n.cht" type = "data" source = "iso/chart/happy-easy.json.cht"/>
+				<file name = "1.2h.cht" type = "data" source = "iso/chart/happy-easy.json.cht"/>
 				<!-- Dadbattle charts -->
 				<file name = "1.3e.cht" type = "data" source = "iso/chart/dadbattle-easy.json.cht"/>
 				<file name = "1.3n.cht" type = "data" source = "iso/chart/dadbattle.json.cht"/>
@@ -259,16 +259,6 @@
 				<file name = "week1b.xa" type = "xa" source = "iso/music/week1b.xa"/>
 				<dummy sectors="128"/>
 				<file name = "week2a.xa" type = "xa" source = "iso/music/week2a.xa"/>
-				<dummy sectors="128"/>
-				<file name = "week2b.xa" type = "xa" source = "iso/music/week2b.xa"/>
-				<dummy sectors="128"/>
-				<file name = "week3a.xa" type = "xa" source = "iso/music/week3a.xa"/>
-				<dummy sectors="128"/>
-				<file name = "week3b.xa" type = "xa" source = "iso/music/week3b.xa"/>
-				<dummy sectors="128"/>
-				<file name = "week4a.xa" type = "xa" source = "iso/music/week4a.xa"/>
-				<dummy sectors="128"/>
-				<file name = "week4b.xa" type = "xa" source = "iso/music/week4b.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			

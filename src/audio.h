@@ -16,21 +16,6 @@ typedef enum
 	XA_Week1A, //WEEK1A.XA
 	XA_Week1B, //WEEK1B.XA
 	XA_Week2A, //WEEK2A.XA
-	XA_Week2B, //WEEK2B.XA
-	XA_Week3A, //WEEK3A.XA
-	XA_Week3B, //WEEK3B.XA
-	XA_Week4A, //WEEK4A.XA
-	XA_Week4B, //WEEK4B.XA
-	XA_Week5A, //WEEK5A.XA
-	XA_Week5B, //WEEK5B.XA
-	XA_Week6A, //WEEK6A.XA
-	XA_Week6B, //WEEK6B.XA
-	XA_Week7A, //WEEK7A.XA
-	XA_Week7B, //WEEK7B.XA
-	XA_KapiA,  //KAPIA.XA
-	XA_KapiB,  //KAPIB.XA
-	XA_ClwnA,  //CLWNA.XA
-	XA_ClwnB,  //CLWNB.XA
 	
 	XA_Max,
 } XA_File;
