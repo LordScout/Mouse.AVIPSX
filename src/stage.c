@@ -23,11 +23,7 @@
 #include "object/splash.h"
 
 //Stage constants
-<<<<<<< HEAD
-//#define STAGE_PERFECT //Play all notes perfectly
-=======
 //define STAGE_PERFECT //Play all notes perfectly
->>>>>>> 7c92f245fd40bd8ceb81f7373fa90b55f820346c
 //#define STAGE_NOHUD //Disable the HUD
 
 //#define STAGE_FREECAM //Freecam
