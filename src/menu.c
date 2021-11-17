@@ -281,7 +281,7 @@ void Menu_Load(MenuPage page)
 	FontData_Load(&menu.font_bold, Font_Bold);
 	FontData_Load(&menu.font_arial, Font_Arial);
 	
-	menu.gf = Char_GF_New(FIXED_DEC(500,1), FIXED_DEC(-12,1));
+	menu.gf = Char_GF_New(FIXED_DEC(62,1), FIXED_DEC(-12,1));
 	stage.camera.x = stage.camera.y = FIXED_DEC(0,1);
 	stage.camera.bzoom = FIXED_UNIT;
 	stage.gf_speed = 4;
@@ -476,8 +476,8 @@ void Menu_Tick(void)
 			
 			RECT logo_src = {0, 0, 176, 112};
 			RECT logo_dst = {
-				158 - x_rad + (SCREEN_WIDEADD2 >> 1),
-				110 - y_rad,
+				100 - x_rad + (SCREEN_WIDEADD2 >> 1),
+				68 - y_rad,
 				x_rad << 1,
 				y_rad << 1
 			};
@@ -655,8 +655,7 @@ void Menu_Tick(void)
 				const char *name;
 				const char *tracks[3];
 			} menu_options[] = {
-				{"1", StageId_1_1, "SONIC.EXE", {"TOO SLOW", "ENDLESS", "EXECUTION"}},
-				{"2", StageId_2_1, "SUNKY DOT MPEG", {"MILK", NULL, NULL}},
+				{"1", StageId_1_1, "MOUSE DOT AVI", {"UNHAPPY", "HAPPY", "REALLY HAPPY"}},
 			};
 			
 			//Initialize page
@@ -779,11 +778,10 @@ void Menu_Tick(void)
 				const char *text;
 			} menu_options[] = {
 				//{StageId_4_4, "TEST"},
-				{StageId_1_1, "TOO SLOW"},
-				{StageId_1_2, "ENDLESS"},
-				{StageId_1_3, "EXECUTION"},
-				{StageId_2_1, "MILK"},
-				{StageId_1_4, "YOU CANT RUN"},
+				{StageId_1_1, "UNHAPPY"},
+				{StageId_1_2, "HAPPY"},
+				{StageId_1_3, "REALLY HAPPY"},
+				{StageId_1_4, "SMILE"},
 			};
 			
 			//Initialize page

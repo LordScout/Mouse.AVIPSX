@@ -1,11 +1,11 @@
 	{ //StageId_1_1 (Too Slow)
 		//Characters
 		{Char_BF_New, FIXED_DEC(60, 1), FIXED_DEC(100, 1)},
-		{ Char_happym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1) },
+		{ Char_XmasP_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1) },
 		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
 			//Stage background
-			Back_Week1_New,
+			Back_Week2_New,
 
 			//Song info
 	 	{FIXED_DEC(1,1),FIXED_DEC(16,10),FIXED_DEC(13,10)},
@@ -17,11 +17,11 @@
 	{ //StageId_1_2 (Endless)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_happym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,     FIXED_DEC(1000,1),    FIXED_DEC(1000,1)},
 
 		//Stage background
-		Back_Week5_New,
+		Back_Week2_New,
 
 		//Song info
 		{FIXED_DEC(2,1),FIXED_DEC(23,10),FIXED_DEC(25,10)},
