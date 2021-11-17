@@ -161,47 +161,6 @@ void Char_BF_SetFrame(void *user, u8 frame)
 void Char_BF_Tick(Character* character)
 {
 	Char_BF* this = (Char_BF*)character;
-
-	if ((stage.stage_id == StageId_1_2) && stage.song_step >= 908)
-	{
-		this->character.focus_x = FIXED_DEC(-40, 1);
-		this->character.focus_y = FIXED_DEC(-60, 1);
-		this->character.focus_zoom = FIXED_DEC(13, 10);
-	}
-
-	if ((stage.stage_id == StageId_1_2) && stage.song_step >= 912)
-	{
-		this->character.focus_x = FIXED_DEC(-40, 1);
-		this->character.focus_y = FIXED_DEC(-40, 1);
-		this->character.focus_zoom = FIXED_DEC(16, 10);
-	}
-
-	if ((stage.stage_id == StageId_1_2) && stage.song_step >= 916)
-	{
-		this->character.focus_x = FIXED_DEC(-75, 1);
-		this->character.focus_y = FIXED_DEC(-85, 1);
-		this->character.focus_zoom = FIXED_DEC(19, 10);
-	}
-
-	if ((stage.stage_id == StageId_1_2) && stage.song_step >= 920)
-	{
-		this->character.focus_x = FIXED_DEC(-50, 1);
-		this->character.focus_y = FIXED_DEC(-65, 1);
-		this->character.focus_zoom = FIXED_DEC(1, 1);
-	}
-
-	if ((stage.stage_id == StageId_1_4))
-	{
-		this->character.focus_x = FIXED_DEC(-50, 1);
-		this->character.focus_y = FIXED_DEC(-90, 1);
-		this->character.focus_zoom = FIXED_DEC(1, 1);
-	}
-	if ((stage.stage_id == StageId_1_1))
-	{
-		this->character.focus_x = FIXED_DEC(-50, 1);
-		this->character.focus_y = FIXED_DEC(-90, 1);
-		this->character.focus_zoom = FIXED_DEC(1, 1);
-	}
 	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
@@ -414,9 +373,9 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	
 	this->character.health_i = 0;
 	
-	this->character.focus_x = FIXED_DEC(-50,1);
-	this->character.focus_y = FIXED_DEC(-65,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-50, 1);
+	this->character.focus_y = FIXED_DEC(-90, 1);
+	this->character.focus_zoom = FIXED_DEC(1, 1);
 
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\BF.ARC;1");

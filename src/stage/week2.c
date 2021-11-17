@@ -26,8 +26,8 @@ void Back_Week2_DrawBG(StageBack *back)
 	//Draw window
 	RECT window_src = {0, 0, 256, 140};
 	RECT_FIXED window_dst = {
-		FIXED_DEC(-240,1) - fx,
-		FIXED_DEC(-155,1) - fy,
+		FIXED_DEC(-260,1) - fx,
+		FIXED_DEC(-145,1) - fy,
 		FIXED_DEC(512,1),
 		FIXED_DEC(300,1)
 	};

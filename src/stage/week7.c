@@ -38,12 +38,12 @@ void Back_Week7_DrawBG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
-	RECT fg_src = {0, 0, 256, 241};
+	RECT fg_src = {0, 0, 256, 140};
 	RECT_FIXED fg_dst = {
-		FIXED_DEC(-225,1) - fx,
-		FIXED_DEC(-225,1) - fy,
-		FIXED_DEC(430,1),
-		FIXED_DEC(400,1)
+		FIXED_DEC(-260,1) - fx,
+		FIXED_DEC(-145,1) - fy,
+		FIXED_DEC(512,1),
+		FIXED_DEC(300,1)
 	};
 	
 	Stage_DrawTex(&this->tex_back0, &fg_src, &fg_dst, stage.camera.bzoom);
