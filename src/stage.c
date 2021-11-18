@@ -204,11 +204,11 @@ static void Stage_GetSectionScroll(SectionScroll *scroll, Section *section)
 }
 
 //Note hit detection
-static const CharAnim note_anims[4][2] = {
-	{CharAnim_Left,  CharAnim_LeftAlt},
-	{CharAnim_Down,  CharAnim_DownAlt},
-	{CharAnim_Up,    CharAnim_UpAlt},
-	{CharAnim_Right, CharAnim_RightAlt},
+static const CharAnim note_anims[4][3] = {
+	{CharAnim_Left,  CharAnim_LeftAlt,  CharAnim_Left2},
+	{CharAnim_Down,  CharAnim_DownAlt,  CharAnim_Down2},
+	{CharAnim_Up,    CharAnim_UpAlt,    CharAnim_Up2},
+	{CharAnim_Right, CharAnim_RightAlt, CharAnim_Right2},
 };
 
 static u8 Stage_HitNote(PlayerState *this, u8 type, fixed_t offset)
@@ -311,10 +311,20 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			
 			//Hit the note
 			note->type |= NOTE_FLAG_HIT;
-			
-			this->character->set_anim(this->character, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0]);
+
+			// Swap Hit the note for swap and multiplayer mode
+		    if (this->character->spec & CHAR_SPEC_SWAPANIM && stage.song_step >= 447)
+		  {
+			this->character->set_anim(this->character, note_anims[type & 0x3][2]);
 			u8 hit_type = Stage_HitNote(this, type, stage.note_scroll - note_fp);
 			this->arrow_hitan[type & 0x3] = stage.step_time;
+		  }
+           else
+		   {
+			this->character->set_anim(this->character, note_anims[type & 0x3][0]);
+			u8 hit_type = Stage_HitNote(this, type, stage.note_scroll - note_fp);
+			this->arrow_hitan[type & 0x3] = stage.step_time;
+		   }
 			
 			#ifdef PSXF_NETWORK
 				if (stage.mode >= StageMode_Net1)
@@ -342,9 +352,10 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			#endif
 			return;
 		}
-		else
+
+		else if(note->type & NOTE_FLAG_NOTHING)
 		{
-			//Check if mine can be hit
+		//Check if nothing can be hit
 			fixed_t note_fp = (fixed_t)note->pos << FIXED_SHIFT;
 			if (note_fp - (stage.late_safe * 3 / 5) > stage.note_scroll)
 				break;
@@ -394,6 +405,53 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			#endif
 			return;
 		}
+		else
+		{
+			//Check if mine can be hit
+			fixed_t note_fp = (fixed_t)note->pos << FIXED_SHIFT;
+			if (note_fp - (stage.late_safe * 3 / 5) > stage.note_scroll)
+				break;
+			if (note_fp + (stage.late_safe * 2 / 5) < stage.note_scroll)
+				continue;
+			if ((note->type & NOTE_FLAG_HIT) || (note->type & (NOTE_FLAG_OPPONENT | 0x3)) != type || (note->type & NOTE_FLAG_SUSTAIN))
+				continue;
+			
+			//Hit the mine
+			note->type |= NOTE_FLAG_HIT;
+			
+				this->health -= 425;
+			
+				this->character->set_anim(this->character, note_anims[type & 0x3][0]);
+			this->arrow_hitan[type & 0x3] = -1;
+			
+			#ifdef PSXF_NETWORK
+				if (stage.mode >= StageMode_Net1)
+				{
+					//Send note hit packet
+					Packet note_hit;
+					note_hit[0] = PacketType_NoteHit;
+					
+					u16 note_i = note - stage.notes;
+					note_hit[1] = note_i >> 0;
+					note_hit[2] = note_i >> 8;
+					
+					note_hit[3] = this->score >> 0;
+					note_hit[4] = this->score >> 8;
+					note_hit[5] = this->score >> 16;
+					note_hit[6] = this->score >> 24;
+					
+					/*
+					note_hit[7] = 0xFF;
+					
+					note_hit[8] = this->combo >> 0;
+					note_hit[9] = this->combo >> 8;
+					*/
+					
+					Network_Send(&note_hit);
+				}
+			#endif
+			return;
+		}
 	}
 	
 	//Missed a note
@@ -403,6 +461,11 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 	{
 		if (this->character->spec & CHAR_SPEC_MISSANIM)
 			this->character->set_anim(this->character, note_anims[type & 0x3][1]);
+
+       //Swap Missed a note
+		else if (this->character->spec & CHAR_SPEC_SWAPANIM && stage.song_step >= 447)
+			this->character->set_anim(this->character, note_anims[type & 0x3][2]);
+
 		else
 			this->character->set_anim(this->character, note_anims[type & 0x3][0]);
 		Stage_MissNote(this);
@@ -446,8 +509,12 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 		
 		//Hit the note
 		note->type |= NOTE_FLAG_HIT;
-		
-		this->character->set_anim(this->character, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0]);
+
+        //Swap sustain note animation for swap and multiplayer mode
+		if (this->character->spec & CHAR_SPEC_SWAPANIM && stage.song_step >= 447)
+			this->character->set_anim(this->character, note_anims[type & 0x3][2]);
+		else
+		this->character->set_anim(this->character, note_anims[type & 0x3][0]);
 		
 		Stage_StartVocal();
 		this->health += 230;
@@ -928,10 +995,10 @@ static void Stage_DrawNotes(void)
 					continue;
 				
 				//Draw note body
-				note_src.x = 400 + ((note->type & 0x1) << 5);
-				note_src.y = (note->type & 0x2) << 4;
-				note_src.w = 32;
-				note_src.h = 32;
+				note_src.x =  0;
+				note_src.y =  0;
+				note_src.w =  0;
+				note_src.h =  0;
 				
 				note_dst.x = note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
 				note_dst.y = y - FIXED_DEC(16,1);
@@ -1658,14 +1725,23 @@ void Stage_Tick(void)
 							break;
 						
 						//Opponent note hits
-						if (playing && (note->type & NOTE_FLAG_OPPONENT) && !(note->type & NOTE_FLAG_HIT))
+						if (playing && (note->type & NOTE_FLAG_OPPONENT) && !(note->type & NOTE_FLAG_HIT) && !(note->type & NOTE_FLAG_MINE))
 						{
 							//Opponent hits note
 							Stage_StartVocal();
-							if (note->type & NOTE_FLAG_SUSTAIN)
-								opponent_snote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];
+                              
+							  //Opponent swap animation in the normal mode
+							if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 447 && note->type & NOTE_FLAG_SUSTAIN)
+								opponent_snote = note_anims[note->type & 0x3][2];
+
+							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 447)
+								opponent_snote = note_anims[note->type & 0x3][2];
+
+							else if (note->type & NOTE_FLAG_SUSTAIN)
+							     opponent_anote = note_anims[note->type & 0x3][0];
+
 							else
-								opponent_anote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];
+								opponent_anote = note_anims[note->type & 0x3][0];
 							note->type |= NOTE_FLAG_HIT;
 						}
 					}
@@ -1799,30 +1875,6 @@ void Stage_Tick(void)
 				Stage_DrawTex(&stage.tex_hud1, &health_fill, &health_dst, stage.bump);
 				health_dst.w = health_back.w << FIXED_SHIFT;
 				Stage_DrawTex(&stage.tex_hud1, &health_back, &health_dst, stage.bump);
-			}
-			
-			//Hardcoded stage stuff
-			switch (stage.stage_id)
-			{
-				case StageId_1_2: //Fresh GF bop
-					switch (stage.song_step)
-					{
-						case 16 << 2:
-							stage.gf_speed = 2 << 2;
-							break;
-						case 48 << 2:
-							stage.gf_speed = 1 << 2;
-							break;
-						case 80 << 2:
-							stage.gf_speed = 2 << 2;
-							break;
-						case 112 << 2:
-							stage.gf_speed = 1 << 2;
-							break;
-					}
-					break;
-				default:
-					break;
 			}
 			
 			//Draw stage foreground

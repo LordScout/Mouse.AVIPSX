@@ -27,16 +27,16 @@
 //Menu messages
 static const char *funny_messages[][2] = {
 	{"PSX PORT BY CUCKYDEV", "YOU KNOW IT"},
-	{"PORTED BY LORD SCOUT", "THANKS FOR PLAYING"},
+	{"PORTED BY ", "THREE PEOPLE LOL"},
 	{"IM GONNA GETCHA", "START RUNNING"},
 	{"NO JUMPSCARES", "SORRY"},
-	{"NO MODCHARTS", "SORRY"},
+	{"THIS TIME", "HAVE MODCHARTS"},
 	{"SONIC FORCES BLOWS", "FUCK THAT GAME"},
 	{"PSXDEV", "HOMEBREW"},
 	{"SO MANY SOULS", "SO LITTLE TIME"},
 	{"fun is infinite", "sega enterprises"},
 	{"FUN IS INFINITE", "SEGA ENTERPRISES"},
-	{"SONIC DOT EXE", "HE KILLED MY DAD"},
+	{"SUICIDE DOT AVI", "HE KILLED MY DAD"},
 	{"USE A CONTROLLER", "LOL"},
 	{"PLAY SONIC EXE ON GAMEBANANA", "OGS FOREVER"},
 	{"PLAYING ON EPSXE HUH", "YOURE THE PROBLEM"},
@@ -384,10 +384,11 @@ void Menu_Tick(void)
 				{
 				case 7:
 				case 6:
-					menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
+					menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 64, FontAlign_Center);
 				case 5:
 					menu.font_bold.draw(&menu.font_bold, "WITH HELP FROM", SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
-					menu.font_bold.draw(&menu.font_bold, "CUCKYDEV", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
+					menu.font_bold.draw(&menu.font_bold, "IGORSOU", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
+					menu.font_bold.draw(&menu.font_bold, "UNSTOPABLE", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
 					//Fallthrough
 				case 4:
 				case 3:
@@ -410,7 +411,7 @@ void Menu_Tick(void)
 				case 24:
 				case 23:
 				case 22:
-					menu.font_bold.draw(&menu.font_bold, "EXE", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
+					menu.font_bold.draw(&menu.font_bold, "AVI", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
 				case 21:
 					//Fallthrough
 				case 20:
@@ -418,7 +419,7 @@ void Menu_Tick(void)
 				case 19:
 					//Fallthrough
 				case 18:
-					menu.font_bold.draw(&menu.font_bold, "SONIC", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
+					menu.font_bold.draw(&menu.font_bold, "MOUSE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
 					break;
 				}
 				break;

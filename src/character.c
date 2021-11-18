@@ -4,7 +4,7 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-#include "character.h"
+#include "swapm.h"
 
 #include "mem.h"
 #include "stage.h"
@@ -56,6 +56,16 @@ void Character_CheckStartSing(Character *this)
 		this->sing_end = stage.note_scroll + (FIXED_DEC(12,1) << 2); //1 beat
 }
 
+void Character_CheckStartSing2(Character *this)
+{
+	//Update sing end if singing animation
+	if (this->animatable.anim == CharAnim_Left2 ||
+	    this->animatable.anim == CharAnim_Down2 ||
+	    this->animatable.anim == CharAnim_Up2 ||
+	    this->animatable.anim == CharAnim_Right2)
+		this->sing_end = stage.note_scroll + (FIXED_DEC(12,1) << 2); //1 beat
+}
+
 void Character_CheckEndSing(Character *this)
 {
 	if ((this->animatable.anim == CharAnim_Left ||
@@ -68,6 +78,16 @@ void Character_CheckEndSing(Character *this)
 	     this->animatable.anim == CharAnim_RightAlt) &&
 	    stage.note_scroll >= this->sing_end)
 		this->set_anim(this, CharAnim_Idle);
+}
+
+void Character_CheckEndSing2(Character *this)
+{
+	if ((this->animatable.anim == CharAnim_Left2 ||
+	     this->animatable.anim == CharAnim_Down2 ||
+	     this->animatable.anim == CharAnim_Up2 ||
+	     this->animatable.anim == CharAnim_Right2) &&
+	    stage.note_scroll >= this->sing_end)
+		this->set_anim(this, CharAnim_IdleAlt);
 }
 
 void Character_PerformIdle(Character *this)
@@ -107,3 +127,19 @@ void Character_PerformIdleM(Character *this)
 			this->set_anim(this, CharAnim_Idle);
 	}
 }
+
+void Character_PerformIdleM2(Character *this)
+{
+	Character_CheckEndSing2(this);
+	if (stage.flag & STAGE_FLAG_JUST_STEP)
+	{
+		if (Animatable_Ended(&this->animatable) &&
+		    (this->animatable.anim != CharAnim_Left2 &&
+		     this->animatable.anim != CharAnim_Down2 &&
+		     this->animatable.anim != CharAnim_Up2 &&
+		     this->animatable.anim != CharAnim_Right2) &&
+		    (stage.song_step & 0x3) == 0)
+			this->set_anim(this, CharAnim_IdleAlt);
+	}
+}
+

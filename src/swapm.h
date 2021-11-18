@@ -16,6 +16,7 @@
 //Character specs
 typedef u8 CharSpec;
 #define CHAR_SPEC_MISSANIM (1 << 0) //Has miss animations
+#define CHAR_SPEC_SWAPANIM (2 << 0) //Has swap animations
 
 //Character enums
 typedef enum
@@ -25,6 +26,11 @@ typedef enum
 	CharAnim_Down,  CharAnim_DownAlt,
 	CharAnim_Up,    CharAnim_UpAlt,
 	CharAnim_Right, CharAnim_RightAlt,
+	CharAnim_IdleAlt,
+	CharAnim_Left2,
+	CharAnim_Down2, 
+	CharAnim_Up2, 
+	CharAnim_Right2, 
 	
 	CharAnim_Max //Max standard/shared animation
 } CharAnim;
@@ -64,8 +70,11 @@ void Character_Init(Character *this, fixed_t x, fixed_t y);
 void Character_Draw(Character *this, Gfx_Tex *tex, const CharFrame *cframe);
 
 void Character_CheckStartSing(Character *this);
+void Character_CheckStartSing2(Character *this);
 void Character_CheckEndSing(Character *this);
+void Character_CheckEndSing2(Character *this);
 void Character_PerformIdle(Character *this);
 void Character_PerformIdleM(Character *this);
+void Character_PerformIdleM2(Character *this);
 
 #endif
