@@ -7,7 +7,7 @@
 #ifndef _PLAYER_H
 #define _PLAYER_H
 
-#include "character.h"
+#include "swapm.h"
 
 //Player enums
 typedef enum

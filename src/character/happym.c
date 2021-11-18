@@ -144,16 +144,21 @@ static const CharFrame char_happym_frame[] = {
 
 static const Animation char_happym_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 0, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 1}},         //CharAnim_Left
-	{2, (const u8[]){ 24, 25, 26, 27, ASCR_BACK, CharAnim_Idleb}}, 
+	{2, (const u8[]){ 8, 9,10,11, ASCR_BACK,1}},         //CharAnim_Left
+	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},   
 	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
-	{2, (const u8[]){ 28, 29, 30, 31, ASCR_BACK, CharAnim_Idleb}}, 
+	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},   
 	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Up
-	{2, (const u8[]){ 32, 33, 34, 35, ASCR_BACK, CharAnim_Idleb}}, 
+	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},   
 	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 1}},         //CharAnim_Right
-	{2, (const u8[]){ 36, 37, 38, 39, ASCR_BACK, CharAnim_Idleb}}, 
+	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},  
 
-	{2, (const u8[]){ 40, 41, 42, 43, 44, 45, 46, 47, ASCR_CHGANI,}}, //CharAnim_Idleb
+	{2, (const u8[]){ 40, 41, 42, 43, 44, 45, 46, 47, ASCR_BACK, 1}}, //CharAnim_Idleb
+	{2, (const u8[]){ 24, 25, 26, 27, ASCR_BACK, 1}}, 
+	{2, (const u8[]){ 30, 31, ASCR_BACK, 1}}, 
+	{2, (const u8[]){ 32, 33, 34, 35, ASCR_BACK, 1}}, 
+	{2, (const u8[]){ 36, 37, 38, 39, ASCR_BACK, 1}}, 
+
 };
 
 //Christmas Parents functions
@@ -174,22 +179,15 @@ void Char_happym_SetFrame(void *user, u8 frame)
 void Char_happym_Tick(Character *character)
 {
 	Char_happym *this = (Char_happym*)character;
-	
-if (stage.note_scroll >= 0)
-    {
-        switch (stage.stage_id)
-        {
-        case StageId_1_1: //sconc alt idlethingy
-                if ((stage.song_step) == 0)
-                        character->set_anim(character, CharAnim_Idleb);
-                break;
-            }
-        }
-
 
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-		Character_PerformIdle(character);
+
+	if (stage.song_step >= 447)
+		Character_PerformIdleM2(character);
+
+	else
+	   Character_PerformIdleM(character);
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_happym_SetFrame);
@@ -200,6 +198,11 @@ void Char_happym_SetAnim(Character *character, u8 anim)
 {
 	//Set animation
 	Animatable_SetAnim(&character->animatable, anim);
+
+   if (stage.song_step >= 447)
+	Character_CheckStartSing2(character);
+
+   else 
 	Character_CheckStartSing(character);
 }
 
@@ -231,7 +234,7 @@ Character *Char_happym_New(fixed_t x, fixed_t y)
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information
-	this->character.spec = 0;
+	this->character.spec = CHAR_SPEC_SWAPANIM;
 	
 	this->character.health_i = 5;
 	
