@@ -19,9 +19,7 @@ all: \
 	iso/happym/main.arc \
 	iso/senpai/main.arc \
 	iso/senpaim/main.arc \
-	iso/tank/main.arc \
-	iso/tank/ugh.arc \
-	iso/tank/good.arc \
+	iso/smilem/main.arc \
 	iso/gf/main.arc \
 	iso/gf/speaker.tim \
 	iso/mouset/main.arc \
@@ -59,20 +57,17 @@ iso/pico/main.arc: iso/pico/idle.tim iso/pico/hit0.tim iso/pico/hit1.tim
 # Mom
 iso/mom/main.arc: iso/mom/idle0.tim iso/mom/idle1.tim iso/mom/idle2.tim iso/mom/idle3.tim iso/mom/left.tim iso/mom/left1.tim iso/mom/left2.tim iso/mom/down.tim iso/mom/down1.tim iso/mom/down2.tim iso/mom/up.tim iso/mom/up1.tim iso/mom/up2.tim iso/mom/right.tim iso/mom/right1.tim iso/mom/right2.tim
 
-# XMas Parents
+# mouse
 iso/xmasp/main.arc: iso/xmasp/idle0.tim iso/xmasp/idle1.tim iso/xmasp/idle2.tim iso/xmasp/idle3.tim iso/xmasp/idle4.tim iso/xmasp/idle5.tim iso/xmasp/idle6.tim iso/xmasp/idle7.tim iso/xmasp/lefta0.tim iso/xmasp/lefta1.tim iso/xmasp/lefta2.tim iso/xmasp/lefta3.tim iso/xmasp/downa0.tim iso/xmasp/downa1.tim iso/xmasp/downa2.tim iso/xmasp/downa3.tim iso/xmasp/upa0.tim iso/xmasp/upa1.tim iso/xmasp/upa2.tim iso/xmasp/upa3.tim iso/xmasp/righta0.tim iso/xmasp/righta1.tim iso/xmasp/righta2.tim iso/xmasp/righta3.tim
 
 iso/happym/main.arc: iso/happym/idle0.tim iso/happym/idle1.tim iso/happym/idle2.tim iso/happym/idle3.tim iso/happym/idle4.tim iso/happym/idle5.tim iso/happym/idle6.tim iso/happym/idle7.tim iso/happym/lefta0.tim iso/happym/lefta1.tim iso/happym/lefta2.tim iso/happym/lefta3.tim iso/happym/downa0.tim iso/happym/downa1.tim iso/happym/downa2.tim iso/happym/downa3.tim iso/happym/upa0.tim iso/happym/upa1.tim iso/happym/upa2.tim iso/happym/upa3.tim iso/happym/righta0.tim iso/happym/righta1.tim iso/happym/righta2.tim iso/happym/righta3.tim iso/happym/leftb0.tim iso/happym/leftb1.tim iso/happym/leftb2.tim iso/happym/leftb3.tim iso/happym/downb0.tim iso/happym/downb1.tim iso/happym/downb2.tim iso/happym/downb3.tim iso/happym/upb0.tim iso/happym/upb1.tim iso/happym/upb2.tim iso/happym/upb3.tim iso/happym/rightb0.tim iso/happym/rightb1.tim iso/happym/rightb2.tim iso/happym/rightb3.tim iso/happym/idleb0.tim iso/happym/idleb1.tim iso/happym/idleb2.tim iso/happym/idleb3.tim iso/happym/idleb4.tim iso/happym/idleb5.tim iso/happym/idleb6.tim iso/happym/idleb7.tim iso/happym/laugh0.tim iso/happym/laugh1.tim iso/happym/laugh2.tim iso/happym/laugh3.tim
 
 iso/crazym/main.arc: iso/crazym/idle0.tim iso/crazym/idle1.tim iso/crazym/idle2.tim iso/crazym/idle3.tim iso/crazym/idle4.tim iso/crazym/idle5.tim iso/crazym/idle6.tim iso/crazym/idle7.tim iso/crazym/lefta0.tim iso/crazym/lefta1.tim iso/crazym/lefta2.tim iso/crazym/lefta3.tim iso/crazym/downa0.tim iso/crazym/downa1.tim iso/crazym/downa2.tim iso/crazym/downa3.tim iso/crazym/upa0.tim iso/crazym/upa1.tim iso/crazym/upa2.tim iso/crazym/upa3.tim iso/crazym/righta0.tim iso/crazym/righta1.tim iso/crazym/righta2.tim iso/crazym/righta3.tim iso/crazym/spook0.tim iso/crazym/spook1.tim iso/crazym/spook2.tim iso/crazym/spook3.tim iso/crazym/spook4.tim iso/crazym/spook5.tim
+
+iso/smilem/main.arc: iso/smilem/idle0.tim iso/smilem/idle1.tim iso/smilem/idle2.tim iso/smilem/idle3.tim iso/smilem/idle4.tim iso/smilem/idle5.tim iso/smilem/idle6.tim iso/smilem/idle7.tim iso/smilem/lefta0.tim iso/smilem/lefta1.tim iso/smilem/lefta2.tim iso/smilem/lefta3.tim iso/smilem/downa0.tim iso/smilem/downa1.tim iso/smilem/downa2.tim iso/smilem/downa3.tim iso/smilem/upa0.tim iso/smilem/upa1.tim iso/smilem/upa2.tim iso/smilem/upa3.tim iso/smilem/righta0.tim iso/smilem/righta1.tim iso/smilem/righta2.tim iso/smilem/righta3.tim
 # Senpai
 iso/senpai/main.arc: iso/senpai/senpai0.tim iso/senpai/senpai1.tim
 iso/senpaim/main.arc: iso/senpaim/senpai0.tim iso/senpaim/senpai1.tim
-
-# Tank
-iso/tank/main.arc: iso/tank/idle0.tim iso/tank/idle1.tim iso/tank/idle2.tim iso/tank/idle3.tim iso/tank/left.tim iso/tank/left1.tim iso/tank/down.tim iso/tank/down1.tim iso/tank/up.tim iso/tank/up1.tim iso/tank/right.tim iso/tank/right1.tim
-iso/tank/ugh.arc: iso/tank/ugh0.tim iso/tank/ugh1.tim
-iso/tank/good.arc: iso/tank/good0.tim iso/tank/good1.tim iso/tank/good2.tim iso/tank/good3.tim
 
 # GF
 iso/gf/main.arc: iso/gf/bopleft.tim iso/gf/bopright.tim iso/gf/cry.tim

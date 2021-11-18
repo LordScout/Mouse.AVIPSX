@@ -39,7 +39,7 @@ SRCS = src/main.c \
        src/character/happym.c \
        src/character/senpai.c \
        src/character/senpaim.c \
-       src/character/tank.c \
+       src/character/smilem.c \
        src/character/gf.c \
        src/character/mouset.c \
        src/object.c \

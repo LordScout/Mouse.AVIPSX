@@ -234,6 +234,7 @@
 				<file name = "xmasp.arc" type = "data" source = "iso/xmasp/main.arc"/>
 				<file name = "happym.arc" type = "data" source = "iso/happym/main.arc"/>
 				<file name = "crazym.arc" type = "data" source = "iso/crazym/main.arc"/>
+				<file name = "smilem.arc" type = "data" source = "iso/smilem/main.arc"/>
 			
 				<!-- title mouse assets -->
 				<file name = "mouset.arc" type = "data" source = "iso/mouset/main.arc"/>
@@ -241,11 +242,6 @@
 				<!-- Senpai assets -->
 				<file name = "senpai.arc" type = "data" source = "iso/senpai/main.arc"/>
 				<file name = "senpaim.arc" type = "data" source = "iso/senpaim/main.arc"/>
-				
-				<!-- Tankman Captain assets -->
-				<file name = "tank.arc" type = "data" source = "iso/tank/main.arc"/>
-				<file name = "tankugh.arc" type = "data" source = "iso/tank/ugh.arc"/>
-				<file name = "tankgood.arc" type = "data" source = "iso/tank/good.arc"/>
 				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/gf/main.arc"/>
