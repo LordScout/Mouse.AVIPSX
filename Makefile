@@ -40,7 +40,7 @@ SRCS = src/main.c \
        src/character/senpaim.c \
        src/character/tank.c \
        src/character/gf.c \
-       src/character/clucky.c \
+       src/character/mouset.c \
        src/object.c \
        src/object/combo.c \
        src/object/splash.c \

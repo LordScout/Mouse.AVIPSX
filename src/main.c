@@ -39,7 +39,7 @@ void ErrorLock(void)
 
 //Entry point
 #ifndef PSXF_STDMEM
-static u32 malloc_heap[0x1B0000 / sizeof(u32)];
+static u32 malloc_heap[0x1A0000 / sizeof(u32)];
 #endif
 
 int main(int argc, char **argv)

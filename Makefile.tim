@@ -23,7 +23,7 @@ all: \
 	iso/tank/good.arc \
 	iso/gf/main.arc \
 	iso/gf/speaker.tim \
-	iso/clucky/main.arc \
+	iso/mouset/main.arc \
 	iso/week1/back.arc \
 	iso/week2/back.arc \
 	iso/week3/back.arc \
@@ -74,9 +74,8 @@ iso/tank/good.arc: iso/tank/good0.tim iso/tank/good1.tim iso/tank/good2.tim iso/
 # GF
 iso/gf/main.arc: iso/gf/bopleft.tim iso/gf/bopright.tim iso/gf/cry.tim
 
-# Clucky
-iso/clucky/main.arc: iso/clucky/idle0.tim iso/clucky/idle1.tim iso/clucky/left.tim iso/clucky/down.tim iso/clucky/up.tim iso/clucky/right.tim
-
+# mouse title
+iso/mouset/main.arc: iso/mouset/idle0.tim iso/mouset/idle1.tim iso/mouset/idle2.tim iso/mouset/idle3.tim iso/mouset/idle4.tim iso/mouset/idle5.tim iso/mouset/idle6.tim iso/mouset/idle7.tim iso/mouset/idle8.tim iso/mouset/idle9.tim iso/mouset/idle10.tim iso/mouset/idle11.tim iso/mouset/idle12.tim
 # Week 1
 iso/week1/back.arc: iso/week1/back0.tim iso/week1/back1.tim iso/week1/back2.tim
 

@@ -22,7 +22,7 @@
 #include "loadscr.h"
 
 #include "stage.h"
-#include "character/gf.h"
+#include "character/mouset.h"
 
 //Menu messages
 static const char *funny_messages[][2] = {
@@ -118,7 +118,7 @@ static struct
 	Gfx_Tex tex_back, tex_ng, tex_story, tex_title;
 	FontData font_bold, font_arial;
 	
-	Character *gf; //Title Girlfriend
+	Character *mouset; //Title Girlfriend
 } menu;
 
 #ifdef PSXF_NETWORK
@@ -281,7 +281,7 @@ void Menu_Load(MenuPage page)
 	FontData_Load(&menu.font_bold, Font_Bold);
 	FontData_Load(&menu.font_arial, Font_Arial);
 	
-	menu.gf = Char_GF_New(FIXED_DEC(62,1), FIXED_DEC(-12,1));
+	menu.mouset = Char_mouset_New(FIXED_DEC(69,1), FIXED_DEC(90,1));
 	stage.camera.x = stage.camera.y = FIXED_DEC(0,1);
 	stage.camera.bzoom = FIXED_UNIT;
 	stage.gf_speed = 4;
@@ -321,7 +321,7 @@ void Menu_Load(MenuPage page)
 void Menu_Unload(void)
 {
 	//Free title Girlfriend
-	Character_Free(menu.gf);
+	Character_Free(menu.mouset);
 }
 
 void Menu_ToStage(StageId id, StageDiff diff, boolean story)
@@ -472,8 +472,8 @@ void Menu_Tick(void)
 				FIXED_DEC(97,100),
 			};
 			fixed_t logo_scale = logo_scales[(menu.page_state.title.logo_bump * 24) >> FIXED_SHIFT];
-			u32 x_rad = (logo_scale * (300 >> 1)) >> FIXED_SHIFT;
-			u32 y_rad = (logo_scale * (175 >> 1)) >> FIXED_SHIFT;
+			u32 x_rad = (logo_scale * (230 >> 1)) >> FIXED_SHIFT;
+			u32 y_rad = (logo_scale * (105 >> 1)) >> FIXED_SHIFT;
 			
 			RECT logo_src = {0, 0, 176, 112};
 			RECT logo_dst = {
@@ -508,7 +508,7 @@ void Menu_Tick(void)
 			}
 
 			//Draw Girlfriend
-			menu.gf->tick(menu.gf);
+			menu.mouset->tick(menu.mouset);
 			break;
 		}
 		case MenuPage_Main:
