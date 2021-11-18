@@ -33,7 +33,7 @@
 	{ //StageId_1_3 (Execution)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Mom_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_crazym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
 		//Stage background

@@ -233,6 +233,7 @@
 				<!-- Mouse assets -->
 				<file name = "xmasp.arc" type = "data" source = "iso/xmasp/main.arc"/>
 				<file name = "happym.arc" type = "data" source = "iso/happym/main.arc"/>
+				<file name = "crazym.arc" type = "data" source = "iso/crazym/main.arc"/>
 			
 				<!-- title mouse assets -->
 				<file name = "mouset.arc" type = "data" source = "iso/mouset/main.arc"/>
