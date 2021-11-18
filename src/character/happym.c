@@ -190,6 +190,24 @@ void Char_happym_Tick(Character *character)
 {
 	Char_happym *this = (Char_happym*)character;
 
+	//Camera stuff
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 440 && stage.song_step)
+	{
+		this->character.focus_x = FIXED_DEC(25,1);
+	    this->character.focus_y = FIXED_DEC(-100,1);
+    	this->character.focus_zoom = FIXED_DEC(2,1);
+	}
+
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 447 && stage.song_step)
+	{
+		this->character.focus_x = FIXED_DEC(25,1);
+	    this->character.focus_y = FIXED_DEC(-100,1);
+    	this->character.focus_zoom = FIXED_DEC(1,1);
+	}
+
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 440)
+		this->character.health_i = 0;
+
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 
@@ -248,7 +266,7 @@ Character *Char_happym_New(fixed_t x, fixed_t y)
 	this->character.spec = CHAR_SPEC_SWAPANIM;
 	
 	this->character.health_i = 5;
-	
+
 	this->character.focus_x = FIXED_DEC(25,1);
 	this->character.focus_y = FIXED_DEC(-100,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
