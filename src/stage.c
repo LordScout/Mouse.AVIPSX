@@ -23,7 +23,7 @@
 #include "object/splash.h"
 
 //Stage constants
-//define STAGE_PERFECT //Play all notes perfectly
+//#define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
 //#define STAGE_FREECAM //Freecam
@@ -366,13 +366,11 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			
 			//Hit the mine
 			note->type |= NOTE_FLAG_HIT;
-			
-			if (stage.stage_id == StageId_Clwn_4)
-				this->health = -0x7000;
-			else
-				this->health -= 2000;
+		
+
+				this->health += 225;
 			if (this->character->spec & CHAR_SPEC_MISSANIM)
-				this->character->set_anim(this->character, note_anims[type & 0x3][1]);
+				this->character->set_anim(this->character, note_anims[type & 0x3][0]);
 			else
 				this->character->set_anim(this->character, note_anims[type & 0x3][0]);
 			this->arrow_hitan[type & 0x3] = -1;
@@ -419,7 +417,7 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			//Hit the mine
 			note->type |= NOTE_FLAG_HIT;
 			
-				this->health -= 425;
+				this->health -=2500;
 			
 				this->character->set_anim(this->character, note_anims[type & 0x3][0]);
 			this->arrow_hitan[type & 0x3] = -1;
@@ -1737,6 +1735,9 @@ void Stage_Tick(void)
 							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 447)
 								opponent_snote = note_anims[note->type & 0x3][2];
 
+							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 440 && stage.song_step <=447 )
+								opponent_snote = note_anims[note->type & 0x3][1];
+
 							else if (note->type & NOTE_FLAG_SUSTAIN)
 							     opponent_anote = note_anims[note->type & 0x3][0];
 
@@ -2029,14 +2030,14 @@ void Stage_NetHit(Packet *packet)
 	this->refresh_score = true;
 	this->combo = hit_combo;
 	
-	if (note->type & NOTE_FLAG_SUSTAIN)
+	if (note->type & (NOTE_FLAG_SUSTAIN | NOTE_FLAG_NOTHING |))
 	{
 		//Hit a sustain
 		Stage_StartVocal();
 		this->arrow_hitan[type] = stage.step_time;
 		this->character->set_anim(this->character, note_anims[type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0]);
 	}
-	else if (!(note->type &(NOTE_FLAG_NOTHING | NOTE_FLAG_MINE)))
+	else if (!(note->type &( NOTE_FLAG_MINE)))
 	{
 		//Hit a note
 		Stage_StartVocal();

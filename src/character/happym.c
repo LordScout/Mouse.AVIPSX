@@ -157,7 +157,7 @@ static const Animation char_happym_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 8, 9,10,11, ASCR_BACK,1}},         //CharAnim_Left
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},   
 	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
-	{2, (const u8[]){ 48, 49, 50, 51, CharAnim_IdleAlt}},   
+	{2, (const u8[]){ 48, 49, 50, 51,ASCR_BACK,1}},   
 	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Up
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},   
 	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 1}},         //CharAnim_Right
@@ -215,6 +215,7 @@ void Char_happym_SetAnim(Character *character, u8 anim)
    else 
 	Character_CheckStartSing(character);
 }
+
 
 void Char_happym_Free(Character *character)
 {
@@ -304,6 +305,10 @@ Character *Char_happym_New(fixed_t x, fixed_t y)
 		"idleb5.tim",   //happym_ArcMain_Idle1
 		"idleb6.tim",   //happym_ArcMain_Idle2
 		"idleb7.tim",   //happym_ArcMain_Idle3
+		"laugh0.tim",   //happym_ArcMain_Laught
+		"laugh1.tim",   //happym_ArcMain_Laught
+		"laugh2.tim",   //happym_ArcMain_Laught
+		"laugh3.tim",   //happym_ArcMain_Laught
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
