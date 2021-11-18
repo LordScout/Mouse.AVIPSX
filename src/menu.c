@@ -34,7 +34,7 @@ static const char *funny_messages[][2] = {
 	{"SONIC FORCES BLOWS", "FUCK THAT GAME"},
 	{"PSXDEV", "HOMEBREW"},
 	{"SO MANY SOULS", "SO LITTLE TIME"},
-	{"fun is infinite", "sega enterprises"},
+	{"MOUSE", "INSERT EXTENSION HERE"},
 	{"FUN IS INFINITE", "SEGA ENTERPRISES"},
 	{"SUICIDE DOT AVI", "HE KILLED MY DAD"},
 	{"USE A CONTROLLER", "LOL"},
