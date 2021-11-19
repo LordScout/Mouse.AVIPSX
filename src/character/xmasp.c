@@ -57,14 +57,14 @@ typedef struct
 
 //Christmas Parents definitions
 static const CharFrame char_xmasp_frame[] = {
-	{XmasP_ArcMain_Idle0, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_Idle1, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_Idle2, {0,   0, 212, 200}, {130, 182}},  
-	{XmasP_ArcMain_Idle3, {0,   0, 212, 200}, {130, 182}},  
-	{XmasP_ArcMain_Idle4, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_Idle5, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_Idle6, {0,   0, 212, 200}, {130, 182}},  
-	{XmasP_ArcMain_Idle7, {0,   0, 212, 200}, {130, 182}},  
+	{XmasP_ArcMain_Idle0, {0,   0, 102, 171}, {43, 167}}, 
+	{XmasP_ArcMain_Idle1, {0,   0, 103, 170}, {44, 166}}, 
+	{XmasP_ArcMain_Idle2, {0,   0, 112, 161}, {48, 157}},  
+	{XmasP_ArcMain_Idle3, {0,   0, 118, 151}, {50, 148}},  
+	{XmasP_ArcMain_Idle4, {0,   0, 120, 150}, {51, 148}}, 
+	{XmasP_ArcMain_Idle5, {0,   0, 120, 150}, {51, 148}}, 
+	{XmasP_ArcMain_Idle6, {0,   0, 115, 155}, {49, 153}},  
+	{XmasP_ArcMain_Idle7, {0,   0, 107, 166}, {45, 163}},  
 
 	{XmasP_ArcMain_LeftA0, {0,   0, 212, 200}, {130, 182}}, 
 	{XmasP_ArcMain_LeftA1, {0,   0, 212, 200}, {130, 182}}, 
@@ -88,7 +88,7 @@ static const CharFrame char_xmasp_frame[] = {
 };
 
 static const Animation char_xmasp_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 1}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
 	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
