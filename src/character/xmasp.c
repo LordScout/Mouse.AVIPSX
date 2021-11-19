@@ -89,13 +89,13 @@ static const CharFrame char_xmasp_frame[] = {
 
 static const Animation char_xmasp_anim[CharAnim_Max] = {
 	{1, (const u8[]){ 1, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 7, 0, 1, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 0, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 1}},         //CharAnim_Left
+	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 3}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
-	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
+	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 3}},         //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
-	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Up
+	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 3}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
-	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 1}},         //CharAnim_Right
+	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 3}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
 };
 
