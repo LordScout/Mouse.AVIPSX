@@ -1,0 +1,9 @@
+all: \
+<<<<<<< HEAD
+  $(addsuffix .cht, $(wildcard iso/chart/*.json)) \
+=======
+ $(addsuffix .cht, $(wildcard iso/chart/*.json)) \
+>>>>>>> bf4ac3dc14a7956d88a66c27f6e84a54ea00d00e
+
+iso/chart/%.json.cht: iso/chart/%.json
+	tools/funkinchartpak/funkinchartpak $<
