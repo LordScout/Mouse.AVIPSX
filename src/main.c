@@ -13,7 +13,6 @@
 #include "audio.h"
 #include "pad.h"
 #include "network.h"
-
 #include "menu.h"
 #include "stage.h"
 
@@ -60,6 +59,8 @@ int main(int argc, char **argv)
 	Network_Init();
 	
 	Timer_Init();
+
+	stage.shake = true;
 	
 	//Start game
 	gameloop = GameLoop_Menu;

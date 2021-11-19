@@ -115,7 +115,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_ng, tex_story, tex_title;
+	Gfx_Tex tex_back, tex_test, tex_story, tex_title;
 	FontData font_bold, font_arial;
 	
 	Character *mouset; //Title Girlfriend
@@ -273,7 +273,7 @@ void Menu_Load(MenuPage page)
 	//Load menu assets
 	IO_Data menu_arc = IO_Read("\\MENU\\MENU.ARC;1");
 	Gfx_LoadTex(&menu.tex_back,  Archive_Find(menu_arc, "back.tim"),  0);
-	Gfx_LoadTex(&menu.tex_ng,    Archive_Find(menu_arc, "ng.tim"),    0);
+	Gfx_LoadTex(&menu.tex_test,    Archive_Find(menu_arc, "test.tim"),    0);
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
 	Mem_Free(menu_arc);
@@ -339,7 +339,7 @@ void Menu_Tick(void)
 	stage.flag &= ~STAGE_FLAG_JUST_STEP;
 	
 	//Get song position
-	u16 next_step = Audio_TellXA_Milli() / 62; //100 BPM
+	u16 next_step = Audio_TellXA_Milli() / 147; //100 BPM
 	if (next_step != stage.song_step)
 	{
 		if (next_step >= stage.song_step)
@@ -365,7 +365,7 @@ void Menu_Tick(void)
 			u16 beat = stage.song_step >> 2;
 			
 			//Start title screen if opening ended
-			if (beat >= 24)
+			if (beat >= 16)
 			{
 				menu.page = menu.next_page = MenuPage_Title;
 				menu.page_swap = true;
@@ -382,45 +382,42 @@ void Menu_Tick(void)
 				
 				switch (beat)
 				{
-				case 7:
-				case 6:
-					menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 64, FontAlign_Center);
-				case 5:
-					menu.font_bold.draw(&menu.font_bold, "WITH HELP FROM", SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
-					menu.font_bold.draw(&menu.font_bold, "IGORSOU", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
-					menu.font_bold.draw(&menu.font_bold, "UNSTOPABLE", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
-					//Fallthrough
-				case 4:
 				case 3:
-				case 2:
-					menu.font_bold.draw(&menu.font_bold, "LORD SCOUT", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
-					break;
-
-				case 16:
-				case 15:
-				case 14:
-					menu.font_bold.draw(&menu.font_bold, funny_message[1], SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
-					//Fallthrough
-				case 13:
-				case 12:
-				case 11:
-				case 10:
-					menu.font_bold.draw(&menu.font_bold, funny_message[0], SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
-					break;
-
-				case 24:
-				case 23:
-				case 22:
-					menu.font_bold.draw(&menu.font_bold, "AVI", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
-				case 21:
-					//Fallthrough
-				case 20:
-					menu.font_bold.draw(&menu.font_bold, "dot", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
-				case 19:
-					//Fallthrough
-				case 18:
-					menu.font_bold.draw(&menu.font_bold, "MOUSE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
-					break;
+						menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
+				//Fallthrough
+					case 2:
+					case 1:
+						menu.font_bold.draw(&menu.font_bold, "LORD SCOUT",   SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "IGORSOU", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "UNSTOPABLE",   SCREEN_WIDTH2, SCREEN_HEIGHT2,      FontAlign_Center);
+						break;
+					
+					case 7:
+						menu.font_bold.draw(&menu.font_bold, "MOUSE",    SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+				//Fallthrough
+					case 6:
+					case 5:
+						menu.font_bold.draw(&menu.font_bold, "IN ASSOCIATION", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "WITH",           SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						break;
+					
+					case 11:
+						menu.font_bold.draw(&menu.font_bold, funny_message[1], SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
+				//Fallthrough
+					case 10:
+					case 9:
+						menu.font_bold.draw(&menu.font_bold, funny_message[0], SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
+						break;
+					
+					case 15:
+						menu.font_bold.draw(&menu.font_bold, "AVI", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
+				//Fallthrough
+					case 14:
+						menu.font_bold.draw(&menu.font_bold, "dot", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
+				//Fallthrough
+					case 13:
+						menu.font_bold.draw(&menu.font_bold, "MOUSE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
+						break;
 				}
 				break;
 			}
@@ -454,7 +451,7 @@ void Menu_Tick(void)
 				menu.trans_time = FIXED_UNIT;
 				menu.page_state.title.fade = FIXED_DEC(255,1);
 				menu.page_state.title.fadespd = FIXED_DEC(300,1);
-				menu.next_page = MenuPage_Main;
+				menu.next_page = MenuPage_Warning;
 				menu.next_select = 0;
 			}
 			
@@ -511,6 +508,37 @@ void Menu_Tick(void)
 			menu.mouset->tick(menu.mouset);
 			break;
 		}
+		case MenuPage_Warning:
+        //Draw different text depending on beat
+
+				if (pad_state.held & PAD_R2)
+				{   
+					menu.next_page = MenuPage_Main;
+					menu.next_select = 0; //Story Mode
+					stage.shake = true;
+					Trans_Start();
+				}
+
+				if (pad_state.held & PAD_L2)
+				{   
+					menu.next_page = MenuPage_Main;
+					menu.next_select = 0; //Story Mode
+					stage.shake = false;
+					Trans_Start();
+				}
+
+				if (pad_state.held & PAD_START)
+				{   
+					menu.next_page = MenuPage_Main;
+					menu.next_select = 0; //Story Mode
+					Trans_Start();
+				}
+
+				RECT warning_src = {0, 0, 256, 256,};
+				Gfx_BlitTex(&menu.tex_test, &warning_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 256);
+				break;
+
+
 		case MenuPage_Main:
 		{
 			static const char *menu_options[] = {
@@ -568,6 +596,7 @@ void Menu_Tick(void)
 				{
 					switch (menu.select)
 					{
+
 						case 0: //Story Mode
 							menu.next_page = MenuPage_Story;
 							break;
@@ -647,6 +676,8 @@ void Menu_Tick(void)
 			);
 			break;
 		}
+
+
 		case MenuPage_Story:
 		{
 			static const struct
@@ -783,6 +814,8 @@ void Menu_Tick(void)
 				{StageId_1_2, "HAPPY"},
 				{StageId_1_3, "REALLY HAPPY"},
 				{StageId_1_4, "SMILE"},
+				{StageId_2_1, "VERY UNHAPPY"},
+				{StageId_2_2, "REALLY HAPPY FANMADE"},
 			};
 			
 			//Initialize page
@@ -1010,6 +1043,7 @@ void Menu_Tick(void)
 				//{OptType_Boolean, "INTERPOLATION", &stage.expsync},
 				{OptType_Boolean, "GHOST TAP ", &stage.ghost, {.spec_boolean = {0}}},
 				{OptType_Boolean, "DOWNSCROLL", &stage.downscroll, {.spec_boolean = {0}}},
+				{OptType_Boolean, "SCREEN SHAKE", &stage.shake, {.spec_boolean = {0}}},
 			};
 			
 			//Initialize page

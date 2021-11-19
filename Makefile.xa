@@ -1,7 +1,8 @@
 all: \
   iso/music/menu.xa \
   iso/music/week1a.xa \
-  iso/music/week1b.xa 
+  iso/music/week1b.xa \
+  iso/music/weekm2.xa 
 
 # XA converts
 iso/music/%.xa: iso/music/%.mp3
@@ -13,3 +14,4 @@ iso/music/%.xa:
 iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa
 iso/music/week1a.xa: iso/music/unhappyi.xa iso/music/unhappyv.xa iso/music/happyi.xa iso/music/happyv.xa
 iso/music/week1b.xa: iso/music/reallyhappyi.xa iso/music/reallyhappyv.xa iso/music/smilei.xa iso/music/smilev.xa
+iso/music/weekm2.xa: iso/music/veryunhappy.xa iso/music/veryunhappy.xa iso/music/reallyhappyfi.xa iso/music/reallyhappyfv.xa

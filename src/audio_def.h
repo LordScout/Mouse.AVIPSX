@@ -16,12 +16,16 @@ static const XA_TrackDef xa_tracks[] = {
 	//WEEK1B.XA
 	{XA_Week1B, XA_LENGTH(10900)}, //XA_Really Happy
 	{XA_Week1B, XA_LENGTH(8100)}, //XA_Smile
+	//WEEKM2.XA
+	{XA_WeekM2, XA_LENGTH(8800)}, //XA_Very Unhappy
+	{XA_WeekM2, XA_LENGTH(8300)}, //XA_Really Happy F
 };
 
 static const char *xa_paths[] = {
 	"\\MUSIC\\MENU.XA;1",   //XA_Menu
 	"\\MUSIC\\WEEK1A.XA;1", //XA_Week1A
 	"\\MUSIC\\WEEK1B.XA;1", //XA_Week1B
+	"\\MUSIC\\WEEKM2.XA;1", //XA_WeekM2
 	NULL,
 };
 
@@ -40,7 +44,9 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"happy", true},   //XA_Happy
 	//WEEK1B.XA
 	{"reallyhappy", true}, //XA_Really Happy
-	{"smile", false}, //XA_Smile
-	
+	{"smile", true}, //XA_Smile
+	//WEEKM2.XA
+	{"veryunhappy", true}, //XA_Very Unhappy
+	{"reallyhappyf",true}, //XA_Really Happy Fan made
 	{NULL, false}
 };
