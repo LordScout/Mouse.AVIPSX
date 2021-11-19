@@ -11,21 +11,17 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_Menu, XA_LENGTH(4400)}, //XA_GettinFreaky
 	{XA_Menu, XA_LENGTH(3840)},  //XA_GameOver
 	//WEEK1A.XA
-	{XA_Week1A, XA_LENGTH(6900)}, //XA_Bopeebo
-	{XA_Week1A, XA_LENGTH(12200)}, //XA_Fresh
+	{XA_Week1A, XA_LENGTH(6900)}, //XA_Unhappy
+	{XA_Week1A, XA_LENGTH(12200)}, //XA_Happy
 	//WEEK1B.XA
-	{XA_Week1B, XA_LENGTH(10900)}, //XA_Dadbattle
-	{XA_Week1B, XA_LENGTH(15800)}, //XA_Tutorial
-	//WEEK2A.XA
-	{XA_Week2A, XA_LENGTH(19400)}, //XA_Spookeez
-	{XA_Week2A, XA_LENGTH(8880)}, //XA_South
+	{XA_Week1B, XA_LENGTH(10900)}, //XA_Really Happy
+	{XA_Week1B, XA_LENGTH(8100)}, //XA_Smile
 };
 
 static const char *xa_paths[] = {
 	"\\MUSIC\\MENU.XA;1",   //XA_Menu
 	"\\MUSIC\\WEEK1A.XA;1", //XA_Week1A
 	"\\MUSIC\\WEEK1B.XA;1", //XA_Week1B
-	"\\MUSIC\\WEEK2A.XA;1", //XA_Week2A
 	NULL,
 };
 
@@ -40,14 +36,11 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"freaky", false},   //XA_GettinFreaky
 	{"gameover", false}, //XA_GameOver
 	//WEEK1A.XA
-	{"bopeebo", true}, //XA_Bopeebo
-	{"fresh", true},   //XA_Fresh
+	{"unhappy", true}, //XA_Unhappy
+	{"happy", true},   //XA_Happy
 	//WEEK1B.XA
-	{"dadbattle", true}, //XA_Dadbattle
-	{"tutorial", false}, //XA_Tutorial
-	//WEEK2A.XA
-	{"spookeez", true}, //XA_Spookeez
-	{"south", true},    //XA_South
+	{"reallyhappy", true}, //XA_Really Happy
+	{"smile", false}, //XA_Smile
 	
 	{NULL, false}
 };
