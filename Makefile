@@ -27,6 +27,7 @@ SRCS = src/main.c \
        src/character/xmasp.c \
        src/character/crazym.c \
        src/character/happym.c \
+       src/character/happym2.c \
        src/character/smilem.c \
        src/character/gf.c \
        src/character/mouset.c \

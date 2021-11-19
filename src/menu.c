@@ -339,7 +339,7 @@ void Menu_Tick(void)
 	stage.flag &= ~STAGE_FLAG_JUST_STEP;
 	
 	//Get song position
-	u16 next_step = Audio_TellXA_Milli() / 62; //100 BPM
+	u16 next_step = Audio_TellXA_Milli() / 147; //100 BPM
 	if (next_step != stage.song_step)
 	{
 		if (next_step >= stage.song_step)
@@ -365,7 +365,7 @@ void Menu_Tick(void)
 			u16 beat = stage.song_step >> 2;
 			
 			//Start title screen if opening ended
-			if (beat >= 24)
+			if (beat >= 16)
 			{
 				menu.page = menu.next_page = MenuPage_Title;
 				menu.page_swap = true;
@@ -382,45 +382,42 @@ void Menu_Tick(void)
 				
 				switch (beat)
 				{
-				case 7:
-				case 6:
-					menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 64, FontAlign_Center);
-				case 5:
-					menu.font_bold.draw(&menu.font_bold, "WITH HELP FROM", SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
-					menu.font_bold.draw(&menu.font_bold, "IGORSOU", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
-					menu.font_bold.draw(&menu.font_bold, "UNSTOPABLE", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
-					//Fallthrough
-				case 4:
 				case 3:
-				case 2:
-					menu.font_bold.draw(&menu.font_bold, "LORD SCOUT", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
-					break;
-
-				case 16:
-				case 15:
-				case 14:
-					menu.font_bold.draw(&menu.font_bold, funny_message[1], SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
-					//Fallthrough
-				case 13:
-				case 12:
-				case 11:
-				case 10:
-					menu.font_bold.draw(&menu.font_bold, funny_message[0], SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
-					break;
-
-				case 24:
-				case 23:
-				case 22:
-					menu.font_bold.draw(&menu.font_bold, "AVI", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
-				case 21:
-					//Fallthrough
-				case 20:
-					menu.font_bold.draw(&menu.font_bold, "dot", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
-				case 19:
-					//Fallthrough
-				case 18:
-					menu.font_bold.draw(&menu.font_bold, "MOUSE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
-					break;
+						menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
+				//Fallthrough
+					case 2:
+					case 1:
+						menu.font_bold.draw(&menu.font_bold, "LORD SCOUT",   SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "IGORSOU", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "UNSTOPABLE",   SCREEN_WIDTH2, SCREEN_HEIGHT2,      FontAlign_Center);
+						break;
+					
+					case 7:
+						menu.font_bold.draw(&menu.font_bold, "MOUSE",    SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+				//Fallthrough
+					case 6:
+					case 5:
+						menu.font_bold.draw(&menu.font_bold, "IN ASSOCIATION", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "WITH",           SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						break;
+					
+					case 11:
+						menu.font_bold.draw(&menu.font_bold, funny_message[1], SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
+				//Fallthrough
+					case 10:
+					case 9:
+						menu.font_bold.draw(&menu.font_bold, funny_message[0], SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
+						break;
+					
+					case 15:
+						menu.font_bold.draw(&menu.font_bold, "AVI", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
+				//Fallthrough
+					case 14:
+						menu.font_bold.draw(&menu.font_bold, "dot", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
+				//Fallthrough
+					case 13:
+						menu.font_bold.draw(&menu.font_bold, "MOUSE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
+						break;
 				}
 				break;
 			}
@@ -783,6 +780,8 @@ void Menu_Tick(void)
 				{StageId_1_2, "HAPPY"},
 				{StageId_1_3, "REALLY HAPPY"},
 				{StageId_1_4, "SMILE"},
+				{StageId_2_1, "VERY UNHAPPY"},
+				{StageId_2_2, "REALLY HAPPY FANMADE"},
 			};
 			
 			//Initialize page
