@@ -1734,6 +1734,7 @@ void Stage_Tick(void)
 							else
 								opponent_anote = note_anims[note->type & 0x3][0];
 							note->type |= NOTE_FLAG_HIT;
+
 						}
 					}
 					

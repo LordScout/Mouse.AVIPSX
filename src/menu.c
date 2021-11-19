@@ -115,7 +115,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_ng, tex_story, tex_title;
+	Gfx_Tex tex_back, tex_test, tex_story, tex_title;
 	FontData font_bold, font_arial;
 	
 	Character *mouset; //Title Girlfriend
@@ -273,7 +273,7 @@ void Menu_Load(MenuPage page)
 	//Load menu assets
 	IO_Data menu_arc = IO_Read("\\MENU\\MENU.ARC;1");
 	Gfx_LoadTex(&menu.tex_back,  Archive_Find(menu_arc, "back.tim"),  0);
-	Gfx_LoadTex(&menu.tex_ng,    Archive_Find(menu_arc, "ng.tim"),    0);
+	Gfx_LoadTex(&menu.tex_test,    Archive_Find(menu_arc, "test.tim"),    0);
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
 	Mem_Free(menu_arc);
@@ -451,7 +451,7 @@ void Menu_Tick(void)
 				menu.trans_time = FIXED_UNIT;
 				menu.page_state.title.fade = FIXED_DEC(255,1);
 				menu.page_state.title.fadespd = FIXED_DEC(300,1);
-				menu.next_page = MenuPage_Main;
+				menu.next_page = MenuPage_Warning;
 				menu.next_select = 0;
 			}
 			
@@ -508,6 +508,30 @@ void Menu_Tick(void)
 			menu.mouset->tick(menu.mouset);
 			break;
 		}
+		case MenuPage_Warning:
+        //Draw different text depending on beat
+
+				if (pad_state.held & PAD_R2)
+				{   
+					menu.next_page = MenuPage_Main;
+					menu.next_select = 0; //Story Mode
+					stage.shake = true;
+					Trans_Start();
+				}
+
+				if (pad_state.held & PAD_L2)
+				{   
+					menu.next_page = MenuPage_Main;
+					menu.next_select = 0; //Story Mode
+					stage.shake = false;
+					Trans_Start();
+				}
+
+				RECT warning_src = {0, 0, 256, 256,};
+				Gfx_BlitTex(&menu.tex_test, &warning_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 256);
+				break;
+
+
 		case MenuPage_Main:
 		{
 			static const char *menu_options[] = {
@@ -565,6 +589,7 @@ void Menu_Tick(void)
 				{
 					switch (menu.select)
 					{
+
 						case 0: //Story Mode
 							menu.next_page = MenuPage_Story;
 							break;
@@ -644,6 +669,8 @@ void Menu_Tick(void)
 			);
 			break;
 		}
+
+
 		case MenuPage_Story:
 		{
 			static const struct
@@ -1009,6 +1036,7 @@ void Menu_Tick(void)
 				//{OptType_Boolean, "INTERPOLATION", &stage.expsync},
 				{OptType_Boolean, "GHOST TAP ", &stage.ghost, {.spec_boolean = {0}}},
 				{OptType_Boolean, "DOWNSCROLL", &stage.downscroll, {.spec_boolean = {0}}},
+				{OptType_Boolean, "SCREEN SHAKE", &stage.shake, {.spec_boolean = {0}}},
 			};
 			
 			//Initialize page

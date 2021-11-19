@@ -125,6 +125,7 @@ void Char_happym2_SetFrame(void *user, u8 frame)
 void Char_happym2_Tick(Character *character)
 {
 	Char_happym2 *this = (Char_happym2*)character;
+	
 
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)

@@ -14,6 +14,7 @@ typedef enum
 {
 	MenuPage_Opening,
 	MenuPage_Title,
+	MenuPage_Warning,
 	MenuPage_Main,
 	MenuPage_Story,
 	MenuPage_Freeplay,
