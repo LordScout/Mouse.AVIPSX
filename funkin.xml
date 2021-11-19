@@ -65,6 +65,14 @@
 			<dir name = "week2">
 				<!-- Background art -->
 				<file name = "back.arc" type = "data" source = "iso/week2/back.arc"/>
+				<!-- Unhappy charts -->
+				<file name = "2.1e.cht" type = "data" source = "iso/chart/veryunhappy-hard.json.cht"/>
+				<file name = "2.1n.cht" type = "data" source = "iso/chart/veryunhappy-hard.json.cht"/>
+				<file name = "2.1h.cht" type = "data" source = "iso/chart/veryunhappy-hard.json.cht"/>
+                <!-- Really happy fanmade charts -->
+				<file name = "2.2e.cht" type = "data" source = "iso/chart/really-happyf-easy.json.cht"/>
+				<file name = "2.2n.cht" type = "data" source = "iso/chart/really-happyf.json.cht"/>
+				<file name = "2.2h.cht" type = "data" source = "iso/chart/really-happyf-hard.json.cht"/>
 		
 			</dir>
 
@@ -80,10 +88,15 @@
 				<file name = "bf.arc" type = "data" source = "iso/bf/main.arc"/>
 				<file name = "bfdead.arc" type = "data" source = "iso/bf/dead.arc"/>
 				
-				<!-- Mouse assets -->
+				<!-- Sad Mouse assets -->
 				<file name = "xmasp.arc" type = "data" source = "iso/xmasp/main.arc"/>
+				<!-- Happy Mouse assets -->
 				<file name = "happym.arc" type = "data" source = "iso/happym/main.arc"/>
+				<!-- Happy Mouse2 assets -->
+				<file name = "happym2.arc" type = "data" source = "iso/happym2/main.arc"/>
+				<!-- Bipolar Mouse assets -->
 				<file name = "crazym.arc" type = "data" source = "iso/crazym/main.arc"/>
+				<!-- Smile Mouse assets -->
 				<file name = "smilem.arc" type = "data" source = "iso/smilem/main.arc"/>
 			
 				<!-- title mouse assets -->
@@ -102,6 +115,8 @@
 				<file name = "week1a.xa" type = "xa" source = "iso/music/week1a.xa"/>
 				<dummy sectors="128"/>
 				<file name = "week1b.xa" type = "xa" source = "iso/music/week1b.xa"/>
+				<dummy sectors="128"/>
+				<file name = "weekm2.xa" type = "xa" source = "iso/music/weekm2.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			
