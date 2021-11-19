@@ -18,57 +18,31 @@ enum
 	happym_ArcMain_Idle1,
 	happym_ArcMain_Idle2,
 	happym_ArcMain_Idle3,
-	happym_ArcMain_Idle4,
-	happym_ArcMain_Idle5,
-	happym_ArcMain_Idle6,
-	happym_ArcMain_Idle7,
 	happym_ArcMain_LeftA0,
 	happym_ArcMain_LeftA1,
-	happym_ArcMain_LeftA2,
-	happym_ArcMain_LeftA3,
 	happym_ArcMain_DownA0,
 	happym_ArcMain_DownA1,
-	happym_ArcMain_DownA2,
-	happym_ArcMain_DownA3,
 	happym_ArcMain_UpA0,
 	happym_ArcMain_UpA1,
-	happym_ArcMain_UpA2,
-	happym_ArcMain_UpA3,
 	happym_ArcMain_RightA0,
 	happym_ArcMain_RightA1,
-	happym_ArcMain_RightA2,
-	happym_ArcMain_RightA3,
 
 	happym_ArcMain_LeftB0,
 	happym_ArcMain_LeftB1,
-	happym_ArcMain_LeftB2,
-	happym_ArcMain_LeftB3,
 	happym_ArcMain_DownB0,
 	happym_ArcMain_DownB1,
-	happym_ArcMain_DownB2,
-	happym_ArcMain_DownB3,
 	happym_ArcMain_UpB0,
 	happym_ArcMain_UpB1,
-	happym_ArcMain_UpB2,
-	happym_ArcMain_UpB3,
 	happym_ArcMain_RightB0,
 	happym_ArcMain_RightB1,
-	happym_ArcMain_RightB2,
-	happym_ArcMain_RightB3,
 	
 	happym_ArcMain_Idleb0,
 	happym_ArcMain_Idleb1,
 	happym_ArcMain_Idleb2,
 	happym_ArcMain_Idleb3,
-	happym_ArcMain_Idleb4,
-	happym_ArcMain_Idleb5,
-	happym_ArcMain_Idleb6,
-	happym_ArcMain_Idleb7,
 
 	happym_ArcMain_Laugh0,
 	happym_ArcMain_Laugh1,
-	happym_ArcMain_Laugh2,
-	happym_ArcMain_Laugh3,
 
 	happym_Arc_Max,
 };
@@ -88,68 +62,69 @@ typedef struct
 
 //Christmas Parents definitions
 static const CharFrame char_happym_frame[] = {
-	{happym_ArcMain_Idle0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idle1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idle2, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_Idle3, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_Idle4, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idle5, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idle6, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_Idle7, {0,   0, 212, 200}, {130, 182}},  
+	{happym_ArcMain_Idle0, {0,   0, 106, 175}, {130, 182}}, 
+	{happym_ArcMain_Idle0, {107,   0, 109, 174}, {130, 182}}, 
+	{happym_ArcMain_Idle1, {0,   0, 112, 165}, {130, 182}},  
+	{happym_ArcMain_Idle1, {114,   0, 118, 156}, {130, 182}},  
+	{happym_ArcMain_Idle2, {0,   0, 120, 154}, {130, 182}}, 
+	{happym_ArcMain_Idle2, {122,   0, 122, 155}, {130, 182}}, 
+	{happym_ArcMain_Idle3, {5,   0, 116, 159}, {130, 182}},  
+	{happym_ArcMain_Idle3, {125,   0, 106, 169}, {130, 182}},
 
-	{happym_ArcMain_LeftA0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_LeftA1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_LeftA2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_LeftA3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_LeftA0, {0,   0, 103, 172}, {130, 182}}, 
+	{happym_ArcMain_LeftA0, {110,   0, 102, 171}, {130, 182}}, 
+	{happym_ArcMain_LeftA1, {0,   0, 103, 171}, {130, 182}}, 
+	{happym_ArcMain_LeftA1, {109,   0, 103, 172}, {130, 182}}, 
 
-	{happym_ArcMain_DownA0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_DownA1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_DownA2, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_DownA3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_DownA0, {0,   0, 110, 174}, {130, 182}}, 
+	{happym_ArcMain_DownA0, {112,   0, 104, 178}, {130, 182}}, 
+	{happym_ArcMain_DownA1, {0,   0, 105, 179}, {130, 182}},  
+	{happym_ArcMain_DownA1, {111,   0, 105, 178}, {130, 182}}, 
 	
-	{happym_ArcMain_UpA0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_UpA1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_UpA2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_UpA3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_UpA0, {0,   0, 107, 177}, {130, 182}}, 
+	{happym_ArcMain_UpA0, {108,   0, 108, 177}, {130, 182}}, 
+	{happym_ArcMain_UpA1, {0,   0, 108, 177}, {130, 182}}, 
+	{happym_ArcMain_UpA1, {108,   0, 108, 176}, {130, 182}}, 
 	
-	{happym_ArcMain_RightA0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_RightA1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_RightA2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_RightA3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_RightA0, {0,   0, 103, 178}, {130, 182}}, 
+	{happym_ArcMain_RightA0, {106,   0, 106, 179}, {130, 182}}, 
+	{happym_ArcMain_RightA1, {0,   0, 107, 179}, {130, 182}}, 
+	{happym_ArcMain_RightA1, {109,   0, 107, 179}, {130, 182}}, 
 
-	{happym_ArcMain_LeftB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_LeftB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_LeftB2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_LeftB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_LeftB0, {0,   0, 108, 175}, {130, 182}}, 
+	{happym_ArcMain_LeftB0, {109,   0, 107, 174}, {130, 182}}, 
+	{happym_ArcMain_LeftB1, {0,   0, 104, 173}, {130, 182}}, 
+	{happym_ArcMain_LeftB1, {106,   0, 106, 174}, {130, 182}}, 
 
-	{happym_ArcMain_DownB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_DownB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_DownB2, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_DownB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_DownB0, {0,   0, 110, 169}, {130, 182}}, 
+	{happym_ArcMain_DownB0, {112,   0, 104, 174}, {130, 182}}, 
+	{happym_ArcMain_DownB1, {0,   0, 103, 175}, {130, 182}},  
+	{happym_ArcMain_DownB1, {109,   0, 107, 175}, {130, 182}}, 
 	
-	{happym_ArcMain_UpB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_UpB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_UpB2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_UpB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_UpB0, {0,   0, 104, 186}, {130, 182}}, 
+	{happym_ArcMain_UpB0, {105,   0, 107, 186}, {130, 182}}, 
+	{happym_ArcMain_UpB1, {0,   0, 104, 187}, {130, 182}}, 
+	{happym_ArcMain_UpB1, {104,   0, 108, 186}, {130, 182}}, 
 	
-	{happym_ArcMain_RightB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_RightB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_RightB2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_RightB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_RightB0, {0,   0, 103, 178}, {130, 182}}, 
+	{happym_ArcMain_RightB0, {110,   0, 102, 179}, {130, 182}}, 
+	{happym_ArcMain_RightB1, {0,   0, 107, 179}, {130, 182}}, 
+	{happym_ArcMain_RightB1, {109,   0, 103, 179}, {130, 182}}, 
 
-	{happym_ArcMain_Idleb0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idleb1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idleb2, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_Idleb3, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_Idleb4, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idleb5, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Idleb6, {0,   0, 212, 200}, {130, 182}},  
-	{happym_ArcMain_Idleb7, {0,   0, 212, 200}, {130, 182}},  
+	{happym_ArcMain_Idleb0, {0,   0, 104, 178}, {130, 182}}, 
+	{happym_ArcMain_Idleb0, {108,   0, 104, 177}, {130, 182}}, 
+	{happym_ArcMain_Idleb1, {0,   0, 112, 168}, {130, 182}},  
+	{happym_ArcMain_Idleb1, {113,   0, 119, 158}, {130, 182}},  
+	{happym_ArcMain_Idleb2, {0,   0, 122, 157}, {130, 182}}, 
+	{happym_ArcMain_Idleb2, {128,   0, 116, 162}, {130, 182}}, 
+	{happym_ArcMain_Idleb3, {0,   0, 107, 173}, {130, 182}},  
+	{happym_ArcMain_Idleb3, {108,   0, 104, 176}, {130, 182}},  
 
-	{happym_ArcMain_Laugh0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Laugh1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Laugh2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym_ArcMain_Laugh3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym_ArcMain_Laugh0, {0,   0, 103, 174}, {130, 182}}, 
+	{happym_ArcMain_Laugh0, {110,   0, 102, 173}, {130, 182}}, 
+	{happym_ArcMain_Laugh1, {0,   0, 103, 173}, {130, 182}},
+	{happym_ArcMain_Laugh1, {109,   0, 102, 172}, {130, 182}}, 
+
 };
 
 static const Animation char_happym_anim[CharAnim_Max] = {
@@ -279,54 +254,28 @@ Character *Char_happym_New(fixed_t x, fixed_t y)
 		"idle1.tim",   //happym_ArcMain_Idle1
 		"idle2.tim",   //happym_ArcMain_Idle2
 		"idle3.tim",   //happym_ArcMain_Idle3
-		"idle4.tim",   //happym_ArcMain_Idle0
-		"idle5.tim",   //happym_ArcMain_Idle1
-		"idle6.tim",   //happym_ArcMain_Idle2
-		"idle7.tim",   //happym_ArcMain_Idle3
 		"lefta0.tim",  //happym_ArcMain_LeftA0
 		"lefta1.tim",  //happym_ArcMain_LeftA1
-		"lefta2.tim",  //happym_ArcMain_LeftB0
-		"lefta3.tim",  //happym_ArcMain_LeftB1
 		"downa0.tim",  //happym_ArcMain_DownA0
 		"downa1.tim",  //happym_ArcMain_DownA1
-		"downa2.tim",  //happym_ArcMain_DownB0
-		"downa3.tim",  //happym_ArcMain_DownB1
 		"upa0.tim",    //happym_ArcMain_UpA0
 		"upa1.tim",    //happym_ArcMain_UpA1
-		"upa2.tim",    //happym_ArcMain_UpB0
-		"upa3.tim",    //happym_ArcMain_UpB1
 		"righta0.tim", //happym_ArcMain_RightA0
 		"righta1.tim", //happym_ArcMain_RightA1
-		"righta2.tim", //happym_ArcMain_RightB0
-		"righta3.tim", //happym_ArcMain_RightB1
 		"leftb0.tim",  //happym_ArcMain_LeftA0
 		"leftb1.tim",  //happym_ArcMain_LeftA1
-		"leftb2.tim",  //happym_ArcMain_LeftB0
-		"leftb3.tim",  //happym_ArcMain_LeftB1
 		"downb0.tim",  //happym_ArcMain_DownA0
 		"downb1.tim",  //happym_ArcMain_DownA1
-		"downb2.tim",  //happym_ArcMain_DownB0
-		"downb3.tim",  //happym_ArcMain_DownB1
 		"upb0.tim",    //happym_ArcMain_UpA0
 		"upb1.tim",    //happym_ArcMain_UpA1
-		"upb2.tim",    //happym_ArcMain_UpB0
-		"upb3.tim",    //happym_ArcMain_UpB1
 		"rightb0.tim", //happym_ArcMain_RightA0
 		"rightb1.tim", //happym_ArcMain_RightA1
-		"rightb2.tim", //happym_ArcMain_RightB0
-		"rightb3.tim", //happym_ArcMain_RightB1
 		"idleb0.tim",   //happym_ArcMain_Idle0
 		"idleb1.tim",   //happym_ArcMain_Idle1
 		"idleb2.tim",   //happym_ArcMain_Idle2
-		"idleb3.tim",   //happym_ArcMain_Idle3
-		"idleb4.tim",   //happym_ArcMain_Idle0
-		"idleb5.tim",   //happym_ArcMain_Idle1
-		"idleb6.tim",   //happym_ArcMain_Idle2
-		"idleb7.tim",   //happym_ArcMain_Idle3
+		"idleb3.tim",   //happym_ArcMain_Idle1
 		"laugh0.tim",   //happym_ArcMain_Laught
 		"laugh1.tim",   //happym_ArcMain_Laught
-		"laugh2.tim",   //happym_ArcMain_Laught
-		"laugh3.tim",   //happym_ArcMain_Laught
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
