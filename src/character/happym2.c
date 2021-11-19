@@ -129,7 +129,18 @@ void Char_happym2_Tick(Character *character)
 
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-	   Character_PerformIdleM(character);
+	  Character_CheckEndSing(character);
+	
+	if (stage.flag & STAGE_FLAG_JUST_STEP)
+	{
+		if ((Animatable_Ended(&character->animatable) || character->animatable.anim == CharAnim_LeftAlt || character->animatable.anim == CharAnim_RightAlt) &&
+		    (character->animatable.anim != CharAnim_Left &&
+		     character->animatable.anim != CharAnim_Down &&
+		     character->animatable.anim != CharAnim_Up &&
+		     character->animatable.anim != CharAnim_Right) &&
+		    (stage.song_step & 0x3) == 0)
+			character->set_anim(character, CharAnim_Idle);
+	}
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_happym2_SetFrame);

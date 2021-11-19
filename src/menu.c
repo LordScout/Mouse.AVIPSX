@@ -527,6 +527,13 @@ void Menu_Tick(void)
 					Trans_Start();
 				}
 
+				if (pad_state.held & PAD_START)
+				{   
+					menu.next_page = MenuPage_Main;
+					menu.next_select = 0; //Story Mode
+					Trans_Start();
+				}
+
 				RECT warning_src = {0, 0, 256, 256,};
 				Gfx_BlitTex(&menu.tex_test, &warning_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 256);
 				break;
