@@ -39,7 +39,7 @@ iso/%.arc:
 	tools/funkinarcpak/funkinarcpak $@ $^
 
 # Menu
-iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim
+iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim iso/menu/test.tim
 
 # BF
 iso/bf/main.arc: iso/bf/idle.tim iso/bf/hit0.tim iso/bf/miss0.tim iso/bf/hit1.tim iso/bf/miss1.tim iso/bf/peace.tim iso/bf/dead0.tim
