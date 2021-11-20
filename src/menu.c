@@ -49,6 +49,8 @@ static const char *funny_messages[][2] = {
     {"NO MORE LOGO EFFECT", "THE GLITCH WORKS DIFFERENT NOW"},
 };
 
+static u8 opening = 0;
+
 #ifdef PSXF_NETWORK
 
 //Menu string type
@@ -446,12 +448,21 @@ void Menu_Tick(void)
 			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
 				Trans_Start();
 			
-			if ((pad_state.press & PAD_START) && menu.next_page == menu.page && Trans_Idle())
+			if ((pad_state.press & PAD_START) && menu.next_page == menu.page && Trans_Idle() && opening == 0)
 			{
 				menu.trans_time = FIXED_UNIT;
 				menu.page_state.title.fade = FIXED_DEC(255,1);
 				menu.page_state.title.fadespd = FIXED_DEC(300,1);
 				menu.next_page = MenuPage_Warning;
+				menu.next_select = 0;
+			}
+
+			if ((pad_state.press & PAD_START) && menu.next_page == menu.page && Trans_Idle() && opening >= 1)
+			{
+				menu.trans_time = FIXED_UNIT;
+				menu.page_state.title.fade = FIXED_DEC(255,1);
+				menu.page_state.title.fadespd = FIXED_DEC(300,1);
+				menu.next_page = MenuPage_Main;
 				menu.next_select = 0;
 			}
 			
@@ -515,7 +526,7 @@ void Menu_Tick(void)
 				{   
 					menu.next_page = MenuPage_Main;
 					menu.next_select = 0; //Story Mode
-					stage.shake = true;
+					opening++;
 					Trans_Start();
 				}
 
@@ -525,6 +536,7 @@ void Menu_Tick(void)
 					menu.next_select = 0; //Story Mode
 					stage.shake = false;
 					Trans_Start();
+					opening++;
 				}
 
 				if (pad_state.held & PAD_START)
@@ -532,6 +544,7 @@ void Menu_Tick(void)
 					menu.next_page = MenuPage_Main;
 					menu.next_select = 0; //Story Mode
 					Trans_Start();
+					opening++;
 				}
 
 				RECT warning_src = {0, 0, 256, 256,};

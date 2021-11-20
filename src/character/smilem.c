@@ -81,10 +81,10 @@ static const CharFrame char_smilem_frame[] = {
 	{smilem_ArcMain_UpA2, {0,   0, 212, 200}, {130, 182}}, 
 	{smilem_ArcMain_UpA3, {0,   0, 212, 200}, {130, 182}}, 
 	
-	{smilem_ArcMain_RightA0, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_RightA1, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_RightA2, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_RightA3, {0,   0, 212, 200}, {130, 182}}, 
+	{smilem_ArcMain_RightA0, {0,   0, 212, 200}, {119, 188}}, 
+	{smilem_ArcMain_RightA1, {0,   0, 212, 200}, {119, 188}}, 
+	{smilem_ArcMain_RightA2, {0,   0, 212, 200}, {119, 189}}, 
+	{smilem_ArcMain_RightA3, {0,   0, 212, 200}, {124, 189}}, 
 };
 
 static const Animation char_smilem_anim[CharAnim_Max] = {

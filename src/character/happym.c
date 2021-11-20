@@ -180,8 +180,8 @@ void Char_happym_Tick(Character *character)
     	this->character.focus_zoom = FIXED_DEC(1,1);
 	}
 
-	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 440)
-		this->character.health_i = 0;
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 447)
+		this->character.health_i = 1;
 
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
