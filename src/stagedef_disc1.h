@@ -96,3 +96,19 @@
 		
 		StageId_2_2, 0
 	},
+	{ //StageId_2_3 (Really happy Baby mode)
+		//Characters
+		{Char_BFS_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_crazym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
+
+		//Stage background
+		Back_Week7_New,
+
+		//Song info
+		{FIXED_DEC(3,1),FIXED_DEC(3,1),FIXED_DEC(3,1)},
+		2, 3,
+		XA_Reallyhappy, 0,
+
+		StageId_2_3, 0
+	},

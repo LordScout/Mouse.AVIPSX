@@ -73,6 +73,10 @@
 				<file name = "2.2e.cht" type = "data" source = "iso/chart/really-happyf-easy.json.cht"/>
 				<file name = "2.2n.cht" type = "data" source = "iso/chart/really-happyf.json.cht"/>
 				<file name = "2.2h.cht" type = "data" source = "iso/chart/really-happyf-hard.json.cht"/>
+				<!-- Really Happy charts -->
+				<file name = "2.3e.cht" type = "data" source = "iso/chart/really_happy-easy-baby.json.cht"/>
+				<file name = "2.3n.cht" type = "data" source = "iso/chart/really-happy-baby.json.cht"/>
+				<file name = "2.3h.cht" type = "data" source = "iso/chart/really_happy-hard-baby.json.cht"/>
 		
 			</dir>
 
