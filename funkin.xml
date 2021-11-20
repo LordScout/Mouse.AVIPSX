@@ -87,7 +87,9 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/bf/main.arc"/>
 				<file name = "bfdead.arc" type = "data" source = "iso/bf/dead.arc"/>
-				
+				<!-- Boyfriend Scary assets -->
+				<file name = "bfs.arc" type = "data" source = "iso/bfs/main.arc"/>
+				<file name = "bfsdead.arc" type = "data" source = "iso/bfs/dead.arc"/>
 				<!-- Sad Mouse assets -->
 				<file name = "xmasp.arc" type = "data" source = "iso/xmasp/main.arc"/>
 				<!-- Happy Mouse assets -->

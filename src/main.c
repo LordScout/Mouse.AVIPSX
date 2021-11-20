@@ -61,6 +61,7 @@ int main(int argc, char **argv)
 	Timer_Init();
 
 	stage.shake = true;
+	stage.ghost = true;
 	
 	//Start game
 	gameloop = GameLoop_Menu;

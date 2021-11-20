@@ -9,6 +9,8 @@ all: \
 	iso/bf/main.arc \
 	iso/bf/dead.arc \
 	iso/bf/weeb.arc \
+	iso/bfs/main.arc \
+	iso/bfs/dead.arc \
 	iso/xmasp/main.arc \
 	iso/crazym/main.arc \
 	iso/happym/main.arc \
@@ -32,6 +34,10 @@ iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu
 # BF
 iso/bf/main.arc: iso/bf/idle.tim iso/bf/hit0.tim iso/bf/miss0.tim iso/bf/hit1.tim iso/bf/miss1.tim iso/bf/peace.tim iso/bf/dead0.tim
 iso/bf/dead.arc: iso/bf/dead1.tim iso/bf/dead2.tim iso/bf/retry.tim
+
+# BF Scary
+iso/bfs/main.arc: iso/bfs/idle.tim iso/bfs/hit0.tim iso/bfs/miss0.tim iso/bfs/hit1.tim iso/bfs/miss1.tim iso/bfs/peace.tim iso/bfs/dead0.tim
+iso/bfs/dead.arc: iso/bfs/dead1.tim iso/bfs/dead2.tim iso/bfs/retry.tim
 
 # Sad Mouse
 iso/xmasp/main.arc: iso/xmasp/idle0.tim iso/xmasp/idle1.tim iso/xmasp/idle2.tim iso/xmasp/idle3.tim iso/xmasp/idle4.tim iso/xmasp/idle5.tim iso/xmasp/idle6.tim iso/xmasp/idle7.tim iso/xmasp/lefta0.tim iso/xmasp/lefta1.tim iso/xmasp/lefta2.tim iso/xmasp/lefta3.tim iso/xmasp/downa0.tim iso/xmasp/downa1.tim iso/xmasp/downa2.tim iso/xmasp/downa3.tim iso/xmasp/upa0.tim iso/xmasp/upa1.tim iso/xmasp/upa2.tim iso/xmasp/upa3.tim iso/xmasp/righta0.tim iso/xmasp/righta1.tim iso/xmasp/righta2.tim iso/xmasp/righta3.tim

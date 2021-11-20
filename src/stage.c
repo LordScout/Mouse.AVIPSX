@@ -45,6 +45,7 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 
 //Stage definitions
 #include "character/bf.h"
+#include "character/bfs.h"
 #include "character/xmasp.h"
 #include "character/crazym.h"
 #include "character/happym.h"
@@ -599,7 +600,7 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 					break;
 				if (note_fp + stage.late_safe < stage.note_scroll)
 					continue;
-				if ((note->type & NOTE_FLAG_MINE) || (note->type & NOTE_FLAG_OPPONENT) != i)
+				if (((note->type & NOTE_FLAG_MINE) || note->type & NOTE_FLAG_NOTHING) || (note->type & NOTE_FLAG_OPPONENT) != i)
 					continue;
 				
 				//Handle note hit

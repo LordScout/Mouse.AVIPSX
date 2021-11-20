@@ -32,7 +32,7 @@
 	},
 	{ //StageId_1_3 (Really happy)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFS_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
 		{Char_crazym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
@@ -48,7 +48,7 @@
 	},
 	{ //StageId_1_4 (smile)
 		//Characters
-		{Char_BF_New, FIXED_DEC(60, 1), FIXED_DEC(100,1)},
+		{Char_BFS_New, FIXED_DEC(60, 1), FIXED_DEC(100,1)},
 		{Char_smilem_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 		
@@ -82,7 +82,7 @@
 
 	{ //StageId_2_2 (Really happy fan made)
 		//Characters
-		{Char_BF_New, FIXED_DEC(60, 1), FIXED_DEC(100,1)},
+		{Char_BFS_New, FIXED_DEC(60, 1), FIXED_DEC(100,1)},
 		{Char_happym2_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 		
