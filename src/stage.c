@@ -52,6 +52,7 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 #include "character/happym2.h"
 #include "character/smilem.h"
 #include "character/gf.h"
+#include "character/gfs.h"
 #include "character/mouset.h"
 
 #include "stage/week2.h"

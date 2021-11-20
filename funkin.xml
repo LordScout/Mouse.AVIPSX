@@ -111,6 +111,9 @@
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/gf/main.arc"/>
 				<file name = "speaker.tim" type = "data" source = "iso/gf/speaker.tim"/>
+
+				<file name = "gfs.arc" type = "data" source = "iso/gfs/main.arc"/>
+				<file name = "speakers.tim" type = "data" source = "iso/gfs/speakers.tim"/>
 				
 			</dir>
 			

@@ -34,7 +34,7 @@
 		//Characters
 		{Char_BFS_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
 		{Char_crazym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
+		{ Char_gfs_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
 		//Stage background
 		Back_Week7_New,
@@ -50,7 +50,7 @@
 		//Characters
 		{Char_BFS_New, FIXED_DEC(60, 1), FIXED_DEC(100,1)},
 		{Char_smilem_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
+		{ Char_gfs_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 		
 		//Stage background
 		Back_Week7_New,
@@ -100,7 +100,7 @@
 		//Characters
 		{Char_BFS_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
 		{Char_crazym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
+		{ Char_gfs_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
 		//Stage background
 		Back_Week7_New,

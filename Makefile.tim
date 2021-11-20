@@ -18,6 +18,8 @@ all: \
 	iso/smilem/main.arc \
 	iso/gf/main.arc \
 	iso/gf/speaker.tim \
+	iso/gfs/main.arc \
+	iso/gfs/speakers.tim \
 	iso/mouset/main.arc \
 	iso/week2/back.arc \
 	iso/week7/back.arc
@@ -56,6 +58,8 @@ iso/smilem/main.arc: iso/smilem/idle0.tim iso/smilem/idle1.tim iso/smilem/idle2.
 
 # GF
 iso/gf/main.arc: iso/gf/bopleft.tim iso/gf/bopright.tim iso/gf/cry.tim
+
+iso/gfs/main.arc: iso/gfs/bopleft.tim iso/gfs/bopright.tim iso/gfs/cry.tim
 
 # Mouse Title
 iso/mouset/main.arc: iso/mouset/idle0.tim iso/mouset/idle1.tim iso/mouset/idle2.tim iso/mouset/idle3.tim iso/mouset/idle4.tim iso/mouset/idle5.tim iso/mouset/idle6.tim iso/mouset/idle7.tim iso/mouset/idle8.tim iso/mouset/idle9.tim iso/mouset/idle10.tim iso/mouset/idle11.tim iso/mouset/idle12.tim
