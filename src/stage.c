@@ -1746,6 +1746,9 @@ void Stage_Tick(void)
 							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 447)
 								opponent_snote = note_anims[note->type & 0x3][2];
 
+							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 440 && stage.song_step <= 447)
+								opponent_snote = note_anims[note->type & 0x3][1];
+
 							else if ((stage.mode != StageMode_Swap && stage.stage_id == StageId_1_3  && stage.song_step >= 957) || (stage.mode != StageMode_Swap && stage.stage_id == StageId_2_3  && stage.song_step >= 957))
 								opponent_snote = note_anims[note->type & 0x3][1];
 
