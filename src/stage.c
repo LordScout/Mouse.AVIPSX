@@ -316,6 +316,12 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			u8 hit_type = Stage_HitNote(this, type, stage.note_scroll - note_fp);
 			this->arrow_hitan[type & 0x3] = stage.step_time;
 		  }
+		else if (this->character->spec & CHAR_SPEC_SWAPANIM2 && stage.song_step >= 957)
+		  {
+			this->character->set_anim(this->character, note_anims[type & 0x3][1]);
+			u8 hit_type = Stage_HitNote(this, type, stage.note_scroll - note_fp);
+			this->arrow_hitan[type & 0x3] = stage.step_time;
+		  }
 
            else
 		   {
@@ -512,6 +518,9 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 
 		else if (this->character->spec & CHAR_SPEC_SWAPANIM && stage.song_step >= 440 && stage.song_step <= 447)
 			this->character->set_anim(this->character, note_anims[type & 0x3][1]);
+
+		else if (this->character->spec & CHAR_SPEC_SWAPANIM2 && stage.song_step >= 957)
+		    this->character->set_anim(this->character, note_anims[type & 0x3][1]);
 
 		else
 		this->character->set_anim(this->character, note_anims[type & 0x3][0]);
@@ -1737,7 +1746,7 @@ void Stage_Tick(void)
 							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 447)
 								opponent_snote = note_anims[note->type & 0x3][2];
 
-							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_2  && stage.song_step >= 440 && stage.song_step <=447 )
+							else if (stage.mode != StageMode_Swap && stage.stage_id == StageId_1_3  && stage.song_step >= 957)
 								opponent_snote = note_anims[note->type & 0x3][1];
 
 							else if (note->type & NOTE_FLAG_SUSTAIN)

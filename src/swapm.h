@@ -17,6 +17,7 @@
 typedef u8 CharSpec;
 #define CHAR_SPEC_MISSANIM (1 << 0) //Has miss animations
 #define CHAR_SPEC_SWAPANIM (2 << 0) //Has swap animations
+#define CHAR_SPEC_SWAPANIM2 (3 << 0) //Has swap 2 animations
 
 //Character enums
 typedef enum

@@ -700,7 +700,7 @@ void Menu_Tick(void)
 				const char *name;
 				const char *tracks[3];
 			} menu_options[] = {
-				{"1", StageId_1_1, "MOUSE DOT AVI", {"UNHAPPY", "HAPPY", "REALLY HAPPY"}},
+				{"1", StageId_1_1, "THE SIGHTS OF HELL", {"UNHAPPY", "HAPPY", "REALLY HAPPY"}},
 			};
 			
 			//Initialize page
