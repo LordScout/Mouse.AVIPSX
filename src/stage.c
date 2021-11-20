@@ -120,11 +120,16 @@ static void Stage_ScrollCamera(void)
 		stage.camera.y += FIXED_MUL(dy, stage.camera.td);
 		stage.camera.zoom += FIXED_MUL(dz, stage.camera.td);
 		
-		//Shake in Week 4
-		if (stage.stage_id >= StageId_4_1 && stage.stage_id <= StageId_4_3)
+		//Shake in Happy
+		if (stage.stage_id >= StageId_1_2 && stage.song_step >= 448)
 		{
-			stage.camera.x += RandomRange(FIXED_DEC(-1,10),FIXED_DEC(1,10));
-			stage.camera.y += RandomRange(FIXED_DEC(-25,100),FIXED_DEC(25,100));
+			stage.camera.x += RandomRange(FIXED_DEC(-40,10),FIXED_DEC(50,10));
+			stage.camera.y += RandomRange(FIXED_DEC(-10,10),FIXED_DEC(25,10));
+		}
+		if (stage.stage_id >= StageId_1_2 && stage.song_step >= 703)
+		{
+			stage.camera.x += FIXED_MUL(dx, stage.camera.td);
+			stage.camera.y += FIXED_MUL(dy, stage.camera.td);
 		}
 	#endif
 	
