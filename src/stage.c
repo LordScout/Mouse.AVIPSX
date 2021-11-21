@@ -120,18 +120,21 @@ static void Stage_ScrollCamera(void)
 		stage.camera.y += FIXED_MUL(dy, stage.camera.td);
 		stage.camera.zoom += FIXED_MUL(dz, stage.camera.td);
 		
+		if (stage.shake && stage.player_state[0].health > 0)
+       {
 		//Shake in Happy
-		if (stage.stage_id >= StageId_1_2 && stage.song_step >= 448)
+		if (stage.stage_id == StageId_1_2 && stage.song_step >= 444 && stage.song_step <= 703 )
 		{
 			stage.camera.x += RandomRange(FIXED_DEC(-40,10),FIXED_DEC(50,10));
 			stage.camera.y += RandomRange(FIXED_DEC(-10,10),FIXED_DEC(25,10));
 		}
-		if (stage.stage_id >= StageId_1_2 && stage.song_step >= 703)
+		if (stage.stage_id == StageId_1_2 && stage.song_step >= 703)
 		{
 			stage.camera.x += FIXED_MUL(dx, stage.camera.td);
 			stage.camera.y += FIXED_MUL(dy, stage.camera.td);
 		}
 	#endif
+	   }
 	
 	//Update other camera stuff
 	stage.camera.bzoom = FIXED_MUL(stage.camera.zoom, stage.bump);

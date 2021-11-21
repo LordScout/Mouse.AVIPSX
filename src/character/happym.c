@@ -166,7 +166,7 @@ void Char_happym_Tick(Character *character)
 	Char_happym *this = (Char_happym*)character;
 
 	//Camera stuff
-	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 440 && stage.song_step)
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 444 && stage.song_step)
 	{
 		this->character.focus_x = FIXED_DEC(25,1);
 	    this->character.focus_y = FIXED_DEC(-100,1);

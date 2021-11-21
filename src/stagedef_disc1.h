@@ -17,7 +17,7 @@
 	{ //StageId_1_2 (Happy)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_happym_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_happym_New, FIXED_DEC(-80,1),  FIXED_DEC(110,1)},
 		{ Char_GF_New,     FIXED_DEC(0,1),    FIXED_DEC(0,1) },
 
 		//Stage background
