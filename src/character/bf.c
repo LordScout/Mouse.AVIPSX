@@ -37,6 +37,7 @@ enum
 	BF_ArcMain_Hit1,  //Up Right
 	BF_ArcMain_Miss1, //Up Right
 	BF_ArcMain_Peace,
+	BF_ArcMain_Damage,
 	BF_ArcMain_Dead0, //BREAK
 	
 	BF_ArcMain_Max,
@@ -102,6 +103,11 @@ static const CharFrame char_bf_frame[] = {
 	{BF_ArcMain_Peace, {  0,   0, 128, 128}, { 53,  98}}, //20 peace 1
 	{BF_ArcMain_Peace, {128,   0, 128, 128}, { 53,  97}}, //21 peace 2
 	{BF_ArcMain_Peace, {  0, 128, 128, 128}, { 53,  97}}, //22 peace 3
+
+	{BF_ArcMain_Damage, {  0,   0, 128, 128}, { 52,  102}}, //damage 1
+	{BF_ArcMain_Damage, {128,   0, 128, 128}, { 63,  106}}, //damage 2
+	{BF_ArcMain_Damage, {  0, 128, 128, 128}, { 40,  112}}, //damage 3
+	{BF_ArcMain_Damage, {128, 128, 128, 128}, { 53,  112}}, //damage 4
 	
 	{BF_ArcMain_Dead0, {  0,   0, 128, 128}, { 53,  98}}, //23 dead0 0
 	{BF_ArcMain_Dead0, {128,   0, 128, 128}, { 53,  98}}, //24 dead0 1
@@ -130,24 +136,24 @@ static const Animation char_bf_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){16, 17, ASCR_BACK, 1}},             //CharAnim_Right
 	{1, (const u8[]){16, 18, 18, 19, ASCR_BACK, 1}},     //CharAnim_RightAlt
 
-	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //PlayerAnim_Sweat
-	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //PlayerAnim_Sweat
-	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //PlayerAnim_Sweat
-	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //PlayerAnim_Sweat
-	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //PlayerAnim_Sweat
+	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},        //Useless
+	{2, (const u8[]){23, 24, 25, 26, ASCR_BACK, 1}},       //CharAnimDamage
+	{2, (const u8[]){23, 24, 25, 26, ASCR_BACK, 1}},       //CharAnimDamage
+	{2, (const u8[]){23, 24, 25, 26, ASCR_BACK, 1}},       //CharAnimDamage
+	{2, (const u8[]){23, 24, 25, 26, ASCR_BACK, 1}},       //CharAnimDamage
 	
 	{2, (const u8[]){20, 21, 22, ASCR_BACK, 1}},         //PlayerAnim_Peace
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //PlayerAnim_Sweat
 
-	{5, (const u8[]){23, 24, 25, 26, 26, 26, 26, 26, 26, 26, ASCR_CHGANI, PlayerAnim_Dead1}}, //PlayerAnim_Dead0
-	{5, (const u8[]){26, ASCR_REPEAT}},                                                       //PlayerAnim_Dead1
-	{3, (const u8[]){27, 28, 29, 30, 30, 30, 30, 30, 30, 30, ASCR_CHGANI, PlayerAnim_Dead3}}, //PlayerAnim_Dead2
-	{3, (const u8[]){30, ASCR_REPEAT}},                                                       //PlayerAnim_Dead3
-	{3, (const u8[]){31, 32, 30, 30, 30, 30, 30, ASCR_CHGANI, PlayerAnim_Dead3}},             //PlayerAnim_Dead4
-	{3, (const u8[]){33, 34, 30, 30, 30, 30, 30, ASCR_CHGANI, PlayerAnim_Dead3}},             //PlayerAnim_Dead5
+	{5, (const u8[]){23+4, 24+4, 25+4, 26+4, 26+4, 26+4, 26+4, 26+4, 26+4, 26+4, ASCR_CHGANI, PlayerAnim_Dead1}}, //PlayerAnim_Dead0
+	{5, (const u8[]){26+4, ASCR_REPEAT}},                                                       //PlayerAnim_Dead1
+	{3, (const u8[]){27+4, 28+4, 29+4, 30+4, 30+4, 30+4, 30+4, 30+4, 30+4, 30+4, ASCR_CHGANI, PlayerAnim_Dead3}}, //PlayerAnim_Dead2
+	{3, (const u8[]){30+4, ASCR_REPEAT}},                                                       //PlayerAnim_Dead3
+	{3, (const u8[]){31+4, 32+4, 30+4, 30+4, 30+4, 30+4, 30+4, ASCR_CHGANI, PlayerAnim_Dead3}},             //PlayerAnim_Dead4
+	{3, (const u8[]){33+4, 34+4, 30+4, 30+4, 30+4, 30+4, 30+4, ASCR_CHGANI, PlayerAnim_Dead3}},             //PlayerAnim_Dead5
 	
-	{10, (const u8[]){30, 30, 30, ASCR_BACK, 1}}, //PlayerAnim_Dead4
-	{ 3, (const u8[]){33, 34, 30, ASCR_REPEAT}},  //PlayerAnim_Dead5
+	{10, (const u8[]){30+4, 30+4, 30+4, ASCR_BACK, 1}}, //PlayerAnim_Dead4
+	{ 3, (const u8[]){33+4, 34+4, 30+4, ASCR_REPEAT}},  //PlayerAnim_Dead5
 };
 
 //Boyfriend player functions
@@ -193,7 +199,10 @@ void Char_BF_Tick(Character* character)
 		{
 			switch (stage.stage_id)
 			{
-				case StageId_1_4: //Tutorial peace
+				case StageId_1_1: //Unhappy peace
+                 
+				 if (stage.song_step == 448)
+				 character->set_anim(character, PlayerAnim_Peace);
 					break;
 				default:
 					break;
@@ -396,6 +405,7 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 		"hit1.tim",  //BF_ArcMain_Hit1
 		"miss1.tim", //BF_ArcMain_Miss1
 		"peace.tim", //BF_ArcMain_Peace
+		"damage.tim", //BF_ArcMain_Damage
 		"dead0.tim", //BF_ArcMain_Dead0
 		NULL
 	};

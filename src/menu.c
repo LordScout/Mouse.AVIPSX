@@ -86,6 +86,10 @@ static struct
 		{
 			fixed_t fade, fadespd;
 		} story;
+		struct
+		{
+			fixed_t back_r, back_g, back_b;
+		} freeplay;
 	#ifdef PSXF_NETWORK
 		struct
 		{
@@ -820,16 +824,17 @@ void Menu_Tick(void)
 			static const struct
 			{
 				StageId stage;
+				u32 col;
 				const char *text;
 			} menu_options[] = {
 				//{StageId_4_4, "TEST"},
-				{StageId_1_1, "UNHAPPY"},
-				{StageId_1_2, "HAPPY"},
-				{StageId_1_3, "REALLY HAPPY"},
-				{StageId_1_4, "SMILE"},
-				{StageId_2_1, "VERY UNHAPPY"},
-				{StageId_2_2, "REALLY HAPPY FANMADE"},
-				{StageId_2_3, "REALLY HAPPY BABY MODE"},
+				{StageId_1_1, 0xFFBFBEBB, "UNHAPPY"},
+				{StageId_1_2, 0xFF9E9D9B, "HAPPY"},
+				{StageId_1_3, 0xFF6E6D6B, "REALLY HAPPY"},
+				{StageId_1_4, 0xFFEDEDED, "SMILE"},
+				{StageId_2_1, 0xFFBFBEBB, "VERY UNHAPPY"},
+				{StageId_2_2, 0xFF6E6D6B, "REALLY HAPPY FANMADE"},
+				{StageId_2_3, 0xFF6E6D6B, "REALLY HAPPY BABY MODE"},
 			};
 			
 			//Initialize page
@@ -837,6 +842,9 @@ void Menu_Tick(void)
 			{
 				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + SCREEN_HEIGHT2,1);
 				menu.page_param.stage.diff = StageDiff_Normal;
+				menu.page_state.freeplay.back_r = FIXED_DEC(255,1);
+				menu.page_state.freeplay.back_g = FIXED_DEC(255,1);
+				menu.page_state.freeplay.back_b = FIXED_DEC(255,1);
 			}
 			
 			//Draw page label
@@ -910,10 +918,19 @@ void Menu_Tick(void)
 			}
 			
 			//Draw background
+			fixed_t tgt_r = (fixed_t)((menu_options[menu.select].col >> 16) & 0xFF) << FIXED_SHIFT;
+			fixed_t tgt_g = (fixed_t)((menu_options[menu.select].col >>  8) & 0xFF) << FIXED_SHIFT;
+			fixed_t tgt_b = (fixed_t)((menu_options[menu.select].col >>  0) & 0xFF) << FIXED_SHIFT;
+
+			menu.page_state.freeplay.back_r += (tgt_r - menu.page_state.freeplay.back_r) >> 4;
+			menu.page_state.freeplay.back_g += (tgt_g - menu.page_state.freeplay.back_g) >> 4;
+			menu.page_state.freeplay.back_b += (tgt_b - menu.page_state.freeplay.back_b) >> 4;
 			Menu_DrawBack(
 				true,
 				8,
-				146 >> 1, 113 >> 1, 253 >> 1,
+				menu.page_state.freeplay.back_r >> (FIXED_SHIFT + 1),
+				menu.page_state.freeplay.back_g >> (FIXED_SHIFT + 1),
+				menu.page_state.freeplay.back_b >> (FIXED_SHIFT + 1),
 				0, 0, 0
 			);
 			break;

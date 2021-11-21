@@ -431,8 +431,13 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			note->type |= NOTE_FLAG_HIT;
 			
 				this->health -=2500;
-			
-				this->character->set_anim(this->character, note_anims[type & 0x3][0]);
+
+			    if (this->character->spec & CHAR_SPEC_MISSANIM)
+				this->character->set_anim(this->character, note_anims[type & 0x3][2]);
+
+				else
+				this->character->set_anim(this->character, note_anims[type & 0x3][2]);
+				
 			this->arrow_hitan[type & 0x3] = -1;
 			
 			#ifdef PSXF_NETWORK
