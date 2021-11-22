@@ -18,10 +18,6 @@ enum
 	crazym_ArcMain_Idle1,
 	crazym_ArcMain_Idle2,
 	crazym_ArcMain_Idle3,
-	crazym_ArcMain_Idle4,
-	crazym_ArcMain_Idle5,
-	crazym_ArcMain_Idle6,
-	crazym_ArcMain_Idle7,
 	crazym_ArcMain_LeftA0,
 	crazym_ArcMain_LeftA1,
 	crazym_ArcMain_LeftA2,
@@ -61,14 +57,14 @@ typedef struct
 
 //Christmas Parents definitions
 static const CharFrame char_crazym_frame[] = {
-	{crazym_ArcMain_Idle0, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_Idle1, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_Idle2, {0,   0, 212, 200}, {130, 182}},  
-	{crazym_ArcMain_Idle3, {0,   0, 212, 200}, {130, 182}},  
-	{crazym_ArcMain_Idle4, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_Idle5, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_Idle6, {0,   0, 212, 200}, {130, 182}},  
-	{crazym_ArcMain_Idle7, {0,   0, 212, 200}, {130, 182}},  
+	{crazym_ArcMain_Idle0, {  0,   0, 102, 200}, { 74, 182}}, 
+	{crazym_ArcMain_Idle0, {102,   0, 110, 200}, { 74, 182}}, 
+	{crazym_ArcMain_Idle1, {  0,   0, 100, 200}, { 74, 182}},  
+	{crazym_ArcMain_Idle1, {100,   0, 112, 200}, { 74, 182}},  
+	{crazym_ArcMain_Idle2, {  0,   0, 110, 200}, { 74, 182}}, 
+	{crazym_ArcMain_Idle2, {110,   0, 110, 200}, { 74, 182}}, 
+	{crazym_ArcMain_Idle3, {  0,   0, 110, 200}, { 74, 182}},  
+	{crazym_ArcMain_Idle3, {110,   0, 110, 200}, { 74, 182}},  
 
 	{crazym_ArcMain_LeftA0, {0,   0, 212, 200}, {130, 182}}, 
 	{crazym_ArcMain_LeftA1, {0,   0, 212, 200}, {130, 182}}, 
@@ -195,10 +191,6 @@ Character *Char_crazym_New(fixed_t x, fixed_t y)
 		"idle1.tim",   //crazym_ArcMain_Idle1
 		"idle2.tim",   //crazym_ArcMain_Idle2
 		"idle3.tim",   //crazym_ArcMain_Idle3
-		"idle4.tim",   //crazym_ArcMain_Idle0
-		"idle5.tim",   //crazym_ArcMain_Idle1
-		"idle6.tim",   //crazym_ArcMain_Idle2
-		"idle7.tim",   //crazym_ArcMain_Idle3
 		"lefta0.tim",  //crazym_ArcMain_LeftA0
 		"lefta1.tim",  //crazym_ArcMain_LeftA1
 		"lefta2.tim",  //crazym_ArcMain_LeftB0

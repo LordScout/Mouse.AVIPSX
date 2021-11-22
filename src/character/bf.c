@@ -104,10 +104,10 @@ static const CharFrame char_bf_frame[] = {
 	{BF_ArcMain_Peace, {128,   0, 128, 128}, { 53,  97}}, //21 peace 2
 	{BF_ArcMain_Peace, {  0, 128, 128, 128}, { 53,  97}}, //22 peace 3
 
-	{BF_ArcMain_Damage, {  0,   0, 128, 128}, { 52,  102}}, //damage 1
-	{BF_ArcMain_Damage, {128,   0, 128, 128}, { 63,  106}}, //damage 2
-	{BF_ArcMain_Damage, {  0, 128, 128, 128}, { 40,  112}}, //damage 3
-	{BF_ArcMain_Damage, {128, 128, 128, 128}, { 53,  112}}, //damage 4
+	{BF_ArcMain_Damage, {  0,   0, 128, 128}, { 52+6,  102}}, //damage 1
+	{BF_ArcMain_Damage, {128,   0, 128, 128}, { 63+6,  106}}, //damage 2
+	{BF_ArcMain_Damage, {  0, 128, 128, 128}, { 40+6,  112}}, //damage 3
+	{BF_ArcMain_Damage, {128, 128, 128, 128}, { 53+6,  112}}, //damage 4
 	
 	{BF_ArcMain_Dead0, {  0,   0, 128, 128}, { 53,  98}}, //23 dead0 0
 	{BF_ArcMain_Dead0, {128,   0, 128, 128}, { 53,  98}}, //24 dead0 1
