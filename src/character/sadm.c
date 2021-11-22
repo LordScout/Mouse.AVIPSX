@@ -4,7 +4,7 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-#include "xmasp.h"
+#include "sadm.h"
 
 #include "../mem.h"
 #include "../archive.h"

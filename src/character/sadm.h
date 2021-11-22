@@ -1,5 +1,5 @@
-#ifndef _XMASP_H
-#define _XMASP_H
+#ifndef _SADM_H
+#define _SADM_H
 
 #include "../character.h"
 

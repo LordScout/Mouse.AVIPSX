@@ -33,7 +33,7 @@ static const fixed_t note_x[8] = {
 	 FIXED_DEC(26,1) + FIXED_DEC(SCREEN_WIDEADD,4),
 	 FIXED_DEC(60,1) + FIXED_DEC(SCREEN_WIDEADD,4),//+34
 	 FIXED_DEC(94,1) + FIXED_DEC(SCREEN_WIDEADD,4),
-	FIXED_DEC(128,1) + FIXED_DEC(SCREEN_WIDEADD,4),
+     FIXED_DEC(128,1) + FIXED_DEC(SCREEN_WIDEADD,4),
 	//Opponent
 	FIXED_DEC(-128,1) - FIXED_DEC(SCREEN_WIDEADD,4),
 	 FIXED_DEC(-94,1) - FIXED_DEC(SCREEN_WIDEADD,4),//+34
@@ -46,7 +46,7 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 //Stage definitions
 #include "character/bf.h"
 #include "character/bfs.h"
-#include "character/xmasp.h"
+#include "character/sadm.h"
 #include "character/crazym.h"
 #include "character/happym.h"
 #include "character/happym2.h"
@@ -129,14 +129,71 @@ static void Stage_ScrollCamera(void)
 			stage.camera.y += RandomRange(FIXED_DEC(-10,10),FIXED_DEC(25,10));
 			
 		}
-		if (stage.stage_id == StageId_1_2 && stage.song_step >= 703)
+
+		switch(stage.stage_id)
+       {
+		case StageId_1_3:
+		// 1 Shake in Really Happy
+		if (stage.song_step >= 384 && stage.song_step <= 397|| (stage.song_step >= 400) && stage.song_step <= 413 || (stage.song_step >= 416) && stage.song_step <= 429 || (stage.song_step >= 432) && stage.song_step <= 445 || (stage.song_step >= 448) && (stage.song_step <= 461) || (stage.song_step >= 464) && (stage.song_step <= 477) || ((stage.song_step >= 480) && stage.song_step <= 493) || ((stage.song_step >= 496) && stage.song_step <= 512))
 		{
-			stage.camera.x += FIXED_MUL(dx, stage.camera.td);
-			stage.camera.y += FIXED_MUL(dy, stage.camera.td);
+			stage.camera.x += RandomRange2(FIXED_DEC(-60,10),FIXED_DEC(70,10));
+			stage.camera.y += RandomRange2(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+			
 		}
+			// 2 Shake in Really Happy
+		if (stage.song_step >= 640 && stage.song_step <= 653|| (stage.song_step >= 656) && stage.song_step <= 669 || (stage.song_step >= 672) && stage.song_step <= 685 || (stage.song_step >= 688) && stage.song_step <= 701 || (stage.song_step >= 704) && (stage.song_step <= 717) || (stage.song_step >= 720) && (stage.song_step <= 733) || ((stage.song_step >= 736) && stage.song_step <= 749) || ((stage.song_step >= 752) && stage.song_step <= 765))
+		{
+			stage.camera.x += RandomRange2(FIXED_DEC(-60,10),FIXED_DEC(70,10));
+			stage.camera.y += RandomRange2(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+		}
+		// 3 Shake in Really Happy
+		if (stage.song_step >= 768 && stage.song_step <= 781|| (stage.song_step >= 784) && stage.song_step <= 797 || (stage.song_step >= 800) && stage.song_step <= 813 || (stage.song_step >= 816) && stage.song_step <= 829 || (stage.song_step >= 832) && (stage.song_step <= 845) || (stage.song_step >= 848) && (stage.song_step <= 861) || ((stage.song_step >= 864) && stage.song_step <= 877) || ((stage.song_step >= 880) && stage.song_step <= 896))
+		{
+			stage.camera.x += RandomRange2(FIXED_DEC(-60,10),FIXED_DEC(70,10));
+			stage.camera.y += RandomRange2(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+		}
+		// jumpscare in Really Happy
+		 if (stage.song_step >= 959 && stage.song_step <= 1019)
+		  {
+			stage.camera.x += RandomRange(FIXED_DEC(-40,10),FIXED_DEC(50,10));
+			stage.camera.y += RandomRange(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+		   }
+		break;
+        case StageId_2_3:
+		// 1 Shake in Really Happy Baby mode
+		if (stage.song_step >= 384 && stage.song_step <= 397||  (stage.song_step >= 400) && stage.song_step <= 413 ||  (stage.song_step >= 416) && stage.song_step <= 429 ||  (stage.song_step >= 432) && stage.song_step <= 445 ||  (stage.song_step >= 448) && (stage.song_step <= 461) ||  (stage.song_step >= 464) && (stage.song_step <= 477) || ( (stage.song_step >= 480) && stage.song_step <= 493) || ( (stage.song_step >= 496) && stage.song_step <= 512))
+		{
+			stage.camera.x += RandomRange2(FIXED_DEC(-60,10),FIXED_DEC(70,10));
+			stage.camera.y += RandomRange2(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+			
+		}
+			// 2 Shake in Really Happy Baby mode
+		if (stage.song_step >= 640 && stage.song_step <= 653||  (stage.song_step >= 656) && stage.song_step <= 669 ||  (stage.song_step >= 672) && stage.song_step <= 685 ||  (stage.song_step >= 688) && stage.song_step <= 701 ||  (stage.song_step >= 704) && (stage.song_step <= 717) ||  (stage.song_step >= 720) && (stage.song_step <= 733) || ( (stage.song_step >= 736) && stage.song_step <= 749) || ( (stage.song_step >= 752) && stage.song_step <= 765))
+		{
+			stage.camera.x += RandomRange2(FIXED_DEC(-60,10),FIXED_DEC(70,10));
+			stage.camera.y += RandomRange2(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+		}
+		// 3 Shake in Really Happy Baby mode
+		if (stage.song_step >= 768 && stage.song_step <= 781||  (stage.song_step >= 784) && stage.song_step <= 797 ||  (stage.song_step >= 800) && stage.song_step <= 813 ||  (stage.song_step >= 816) && stage.song_step <= 829 ||  (stage.song_step >= 832) && (stage.song_step <= 845) ||  (stage.song_step >= 848) && (stage.song_step <= 861) || ( (stage.song_step >= 864) && stage.song_step <= 877) || ( (stage.song_step >= 880) && stage.song_step <= 896))
+		{
+			stage.camera.x += RandomRange2(FIXED_DEC(-60,10),FIXED_DEC(70,10));
+			stage.camera.y += RandomRange2(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+		}
+
+		// jumpscare in Really Happy Baby mode
+		if (stage.song_step >= 959 && stage.song_step <= 1019)
+		  {
+			stage.camera.x += RandomRange(FIXED_DEC(-40,10),FIXED_DEC(50,10));
+			stage.camera.y += RandomRange(FIXED_DEC(-40,10),FIXED_DEC(55,10));
+		   }
+		break;
+		default:
+		break;
+	   }
+	   
 	#endif
 	   }
-	
+
 	//Update other camera stuff
 	stage.camera.bzoom = FIXED_MUL(stage.camera.zoom, stage.bump);
 }

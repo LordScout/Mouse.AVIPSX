@@ -39,3 +39,8 @@ s32 RandomRange(s32 x, s32 y)
 {
 	return x + Random16() % ((s32)y - (s32)x + 1);
 }
+
+s32 RandomRange2(s32 x, s32 y)
+{
+	return x + Random16() % ((s32)y-90 - (s32)x-90);
+}

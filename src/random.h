@@ -16,5 +16,6 @@ u8 Random8();
 u16 Random16();
 u32 Random32();
 s32 RandomRange(s32 x, s32 y);
+s32 RandomRange2(s32 x, s32 y);
 
 #endif
