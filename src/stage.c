@@ -801,20 +801,20 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	//Check if we should use 'dying' frame
 	s8 dying;
 	if (ox < 0)
-		dying = (health >= 18000) * 24;
+		dying = (health >= 18000) * 27;
 	else
-		dying = (health <= 2000) * 24;
+		dying = (health <= 2000) * 27;
 	
 	//Get src and dst
 	fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
 	RECT src = {
-		(i % 5) * 48 + dying,
-		16 + (i / 5) * 24,
-		24,
-		24
+		(i % 4) * 56 + dying,
+		16 + (i / 4) * 27,
+		27,
+		27
 	};
 	RECT_FIXED dst = {
-		hx + ox * FIXED_DEC(11,1) - FIXED_DEC(12,1),
+		hx + ox * FIXED_DEC(12,1) - FIXED_DEC(14,1),
 		FIXED_DEC(SCREEN_HEIGHT2 - 32 + 4 - 12, 1),
 		src.w << FIXED_SHIFT,
 		src.h << FIXED_SHIFT

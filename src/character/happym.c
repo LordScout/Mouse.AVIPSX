@@ -240,7 +240,7 @@ Character *Char_happym_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = CHAR_SPEC_SWAPANIM;
 	
-	this->character.health_i = 5;
+	this->character.health_i = 4;
 
 	this->character.focus_x = FIXED_DEC(25,1);
 	this->character.focus_y = FIXED_DEC(-100,1);
