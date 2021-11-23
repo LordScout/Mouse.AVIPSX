@@ -66,25 +66,25 @@ static const CharFrame char_xmasp_frame[] = {
 	{XmasP_ArcMain_Idle6, {0,   0, 115, 155}, {49, 153}},  
 	{XmasP_ArcMain_Idle7, {0,   0, 107, 166}, {45, 163}},  
 
-	{XmasP_ArcMain_LeftA0, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_LeftA1, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_LeftA2, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_LeftA3, {0,   0, 212, 200}, {130, 182}}, 
+	{XmasP_ArcMain_LeftA0, {0,   0, 103, 169}, {44, 166}}, 
+	{XmasP_ArcMain_LeftA1, {0,   0, 102, 169}, {43, 166}}, 
+	{XmasP_ArcMain_LeftA2, {0,   0, 103, 168}, {44, 166}}, 
+	{XmasP_ArcMain_LeftA3, {0,   0, 103, 168}, {44, 165}}, 
 
-	{XmasP_ArcMain_DownA0, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_DownA1, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_DownA2, {0,   0, 212, 200}, {130, 182}},  
-	{XmasP_ArcMain_DownA3, {0,   0, 212, 200}, {130, 182}}, 
+	{XmasP_ArcMain_DownA0, {0,   0, 110, 172}, {46, 169}}, 
+	{XmasP_ArcMain_DownA1, {0,   0, 104, 176}, {45, 173}},
+	{XmasP_ArcMain_DownA2, {0,   0, 104, 177}, {44, 174}},
+	{XmasP_ArcMain_DownA3, {0,   0, 104, 177}, {45, 174}},
 	
-	{XmasP_ArcMain_UpA0, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_UpA1, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_UpA2, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_UpA3, {0,   0, 212, 200}, {130, 182}}, 
+	{XmasP_ArcMain_UpA0, {0,   0, 103, 177}, {47, 174}},
+	{XmasP_ArcMain_UpA1, {0,   0, 104, 176}, {46, 174}},
+	{XmasP_ArcMain_UpA2, {0,   0, 104, 176}, {45, 174}},
+	{XmasP_ArcMain_UpA3, {0,   0, 104, 175}, {46, 173}},
 	
-	{XmasP_ArcMain_RightA0, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_RightA1, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_RightA2, {0,   0, 212, 200}, {130, 182}}, 
-	{XmasP_ArcMain_RightA3, {0,   0, 212, 200}, {130, 182}}, 
+	{XmasP_ArcMain_RightA0, {0,   0, 103, 172}, {43, 169}},
+	{XmasP_ArcMain_RightA1, {0,   0, 103, 173}, {44, 170}},
+	{XmasP_ArcMain_RightA2, {0,   0, 104, 173}, {46, 169}},
+	{XmasP_ArcMain_RightA3, {0,   0, 104, 173}, {45, 169}},
 };
 
 static const Animation char_xmasp_anim[CharAnim_Max] = {
