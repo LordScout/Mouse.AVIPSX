@@ -518,9 +518,9 @@ void Menu_Tick(void)
 			{
 				//Blinking blue
 				s16 press_lerp = (MUtil_Cos(animf_count << 3) + 0x100) >> 1;
-				u8 press_r = 51 >> 1;
-				u8 press_g = (58  + ((press_lerp * (255 - 58))  >> 8)) >> 1;
-				u8 press_b = (206 + ((press_lerp * (255 - 206)) >> 8)) >> 1;
+				u8 press_r = 0 >> 1;
+				u8 press_g = (0  + ((press_lerp * (0 - 0))  >> 0)) >> 1;
+				u8 press_b = (0 + ((press_lerp * (0 - 0)) >> 0)) >> 1;
 				
 				RECT press_src = {0, 112, 256, 32};
 				Gfx_BlitTexCol(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 48, press_r, press_g, press_b);
@@ -534,6 +534,17 @@ void Menu_Tick(void)
 
 			//Draw Girlfriend
 			menu.mouset->tick(menu.mouset);
+
+			//Draw window
+			RECT window_src = { 0, 0, 256, 140 };
+			RECT_FIXED window_dst = {
+				FIXED_DEC(-200,1),
+				FIXED_DEC(-125,1),
+				FIXED_DEC(400,1),
+				FIXED_DEC(260,1)
+			};
+
+			Stage_DrawTex(&menu.tex_test, &window_src, &window_dst, stage.camera.bzoom);
 			break;
 		}
 		case MenuPage_Warning:
@@ -564,13 +575,12 @@ void Menu_Tick(void)
 					opening++;
 				}
 
-				menu.font_bold.draw(&menu.font_bold, "THIS PORT STILL HAS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 62, FontAlign_Center);
-				menu.font_bold.draw(&menu.font_bold, "THE SCREEN SHAKING", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 46, FontAlign_Center);
-				menu.font_bold.draw(&menu.font_bold, "IT CAN STILL BE TOO MUCH", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
-				menu.font_bold.draw(&menu.font_bold, "YOU CAN TURN IT OFF", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
-				menu.font_bold.draw(&menu.font_bold, "JUST GO TO SETTINGS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 0, FontAlign_Center);
-				menu.font_bold.draw(&menu.font_bold, "press start to proceed", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
-				menu.font_bold.draw(&menu.font_bold, "or one of the triggers", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 46, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "THIS PORT STILL HAS THE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 62, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "SCREEN SHAKING AND IT", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 46, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "CAN BE TOO MUCH FOR SOME", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "BUT YOU CAN TURN IT OFF", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "JUST GO TO OPTIONS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 0, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "press start to proceed", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 46, FontAlign_Center);
 				break;
 
 
