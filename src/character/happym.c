@@ -96,8 +96,8 @@ static const CharFrame char_happym_frame[] = {
 	{happym_ArcMain_LeftB1, {0,   0, 104, 173}, {40, 178}}, 
 	{happym_ArcMain_LeftB1, {106, 0, 106, 174}, {44, 178}}, 
 
-	{happym_ArcMain_DownB0, {0,   0, 110, 169}, {43, 172}}, 
-	{happym_ArcMain_DownB0, {112, 0, 104, 174}, {43, 177}}, 
+	{happym_ArcMain_DownB0, {0,   0, 110, 169}, {47, 166}}, 
+	{happym_ArcMain_DownB0, {112, 0, 104, 174}, {44, 169}}, 
 	{happym_ArcMain_DownB1, {0,   0, 103, 175}, {40, 178}},  
 	{happym_ArcMain_DownB1, {109, 0, 107, 175}, {41, 177}}, 
 	
@@ -113,7 +113,7 @@ static const CharFrame char_happym_frame[] = {
 
 	{happym_ArcMain_Idleb0, {0,   0, 104, 178}, {41, 181}}, 
 	{happym_ArcMain_Idleb0, {108, 0, 104, 177}, {40, 180}}, 
-	{happym_ArcMain_Idleb1, {0,   0, 112, 168}, {44, 172}},  
+	{happym_ArcMain_Idleb1, {0,   0, 112, 167}, {44, 172}},  
 	{happym_ArcMain_Idleb1, {113, 0, 119, 158}, {47, 162}},  
 	{happym_ArcMain_Idleb2, {0,   0, 122, 157}, {47, 159}}, 
 	{happym_ArcMain_Idleb2, {128, 0, 116, 162}, {46, 166}}, 
