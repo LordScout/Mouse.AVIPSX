@@ -564,8 +564,13 @@ void Menu_Tick(void)
 					opening++;
 				}
 
-				RECT warning_src = {0, 0, 256, 256,};
-				Gfx_BlitTex(&menu.tex_test, &warning_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 256);
+				menu.font_bold.draw(&menu.font_bold, "THIS PORT STILL HAS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 62, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "THE SCREEN SHAKING", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 46, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "IT CAN STILL BE TOO MUCH", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "YOU CAN TURN IT OFF", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "JUST GO TO SETTINGS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 0, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "press start to proceed", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
+				menu.font_bold.draw(&menu.font_bold, "or one of the triggers", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 46, FontAlign_Center);
 				break;
 
 
@@ -976,7 +981,7 @@ void Menu_Tick(void)
 				 }
                  //Draw different text 
 				RECT src_cre0 = {0, 0, 128, 128};
-				RECT src_cre1 = {0, 0, 128, 128};
+				RECT src_cre1 = {0, 0, 110, 109};
 				RECT src_cre2 = {0, 0, 128, 128};
 				RECT src_cre3 = {0, 0, 128, 128};
 				RECT src_cre4 = {0, 0, 128, 128};
