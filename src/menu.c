@@ -959,14 +959,14 @@ void Menu_Tick(void)
         
 			    //Swap to Main if credits ended
 			  {
-				if (change > 21)
+				if (change > 20)
 				menu.page = menu.next_page = MenuPage_Main;
 				menu.page_swap = true;	
 
 		 	    }
 
 		
-				  if (change > 21)
+				  if (change > 20)
 				  change = 1;
 
 			    //Fallthrough
@@ -994,12 +994,7 @@ void Menu_Tick(void)
 			    change++;
 
 				//Draw page label
-			menu.font_bold.draw(&menu.font_bold,
-				"CREDITS",
-				16,
-				SCREEN_HEIGHT - 32,
-				FontAlign_Left
-			);
+				 menu.font_bold.draw(&menu.font_bold, "CREDITS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 96, FontAlign_Center);
 
 				switch (change)
 					{
@@ -1027,72 +1022,73 @@ void Menu_Tick(void)
 						menu.font_bold.draw(&menu.font_bold, "BY",           SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
 						break;
 
-				   case 6:
-				        Gfx_BlitTex(&menu.tex_cre2, &src_cre2, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
-					 
 					case 5:
 						menu.font_bold.draw(&menu.font_bold, "igorsou",    SCREEN_WIDTH2, SCREEN_HEIGHT2 -48 , FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre2, &src_cre2, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 						break;
-                    
-					 case 8:
-					       Gfx_BlitTex(&menu.tex_cre3, &src_cre3, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 
 
-					case 7:
+					case 6:
 						menu.font_bold.draw(&menu.font_bold, "unstopable", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre3, &src_cre3, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 						break;
 					 
-					 case 10:
+					 case 8:
 					    menu.font_bold.draw(&menu.font_bold, "john paul", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
 						Gfx_BlitTex(&menu.tex_cre4, &src_cre4, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 
-					case 9:
+					case 7:
 						menu.font_bold.draw(&menu.font_bold, "PLAYTEST", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
 						break;
 					
-					 case 12:
+					 case 10:
                 	    menu.font_bold.draw(&menu.font_bold, "maymaysdays", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
 						Gfx_BlitTex(&menu.tex_cre6, &src_cre6, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 
-					case 11:
+					case 9:
 						menu.font_bold.draw(&menu.font_bold, "ORIGINAL CREATORS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
 						break;
-		
-						case 14:
-						Gfx_BlitTex(&menu.tex_cre5, &src_cre5, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 				
 					
-						case 13:
+						case 11:
 						menu.font_bold.draw(&menu.font_bold, "sonicboiforlife", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre5, &src_cre5, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 						break;
 
-						case 15:
+						case 12:
 						menu.font_bold.draw(&menu.font_bold, "TUTORIALING", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
 						break;
 
-                        case 17:
+                        case 14:
 						menu.font_bold.draw(&menu.font_bold, "adriozer", SCREEN_WIDTH2-90, SCREEN_HEIGHT2 -48, FontAlign_Center);
 						Gfx_BlitTex(&menu.tex_cre7, &src_cre7, (SCREEN_WIDTH - 288) >> 1, SCREEN_HEIGHT2 - 18);
 						menu.font_bold.draw(&menu.font_bold, "xonthebeat", SCREEN_WIDTH2+90, SCREEN_HEIGHT2 -48, FontAlign_Center);
 
-						case 16:
+						case 13:
 						menu.font_bold.draw(&menu.font_bold, "REALLY UNHAPPY CREATORS", SCREEN_WIDTH2, SCREEN_HEIGHT2 -64, FontAlign_Center);
 						break;
 
-						case 19:
+						case 16:
 						menu.font_bold.draw(&menu.font_bold, "sergrix", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
 						Gfx_BlitTex(&menu.tex_cre8, &src_cre8, (SCREEN_WIDTH - 128)>> 1, SCREEN_HEIGHT2 - 18);
 
-						case 18:
+						case 15:
 						menu.font_bold.draw(&menu.font_bold, "REALLY HAPPY FAN CREATORS", SCREEN_WIDTH2, SCREEN_HEIGHT2 -64, FontAlign_Center);
 						break;
 
-						case 21:
-						menu.font_bold.draw(&menu.font_bold, "miapaisano", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
+						case 18:
+						menu.font_bold.draw(&menu.font_bold, "MIAPAISANO", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre8, &src_cre8, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
+
+						case 17:
+						menu.font_bold.draw(&menu.font_bold, "ICONS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						break;
+
+						case 20:
 						menu.font_bold.draw(&menu.font_bold, "zeriben", SCREEN_WIDTH2, SCREEN_HEIGHT2 -32, FontAlign_Center);
 						menu.font_bold.draw(&menu.font_bold, "discord server", SCREEN_WIDTH2, SCREEN_HEIGHT2 -16, FontAlign_Center);
 
-						case 20:
+						case 19:
 						menu.font_bold.draw(&menu.font_bold, "SPECIAL THANKS", SCREEN_WIDTH2, SCREEN_HEIGHT2 -80, FontAlign_Center);
 						break;
 				}
