@@ -121,7 +121,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_test, tex_story, tex_title;
+	Gfx_Tex tex_back, tex_test, tex_story, tex_title, tex_cre0, tex_cre1, tex_cre2, tex_cre3, tex_cre4, tex_cre5, tex_cre6;
 	FontData font_bold, font_arial;
 	
 	Character *mouset; //Title Girlfriend
@@ -282,6 +282,13 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_test,    Archive_Find(menu_arc, "test.tim"),    0);
 	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre0, Archive_Find(menu_arc, "cre0.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre1, Archive_Find(menu_arc, "cre1.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre2, Archive_Find(menu_arc, "cre2.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre3, Archive_Find(menu_arc, "cre3.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre4, Archive_Find(menu_arc, "cre4.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre5, Archive_Find(menu_arc, "cre5.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre6, Archive_Find(menu_arc, "cre6.tim"), 0);
 	Mem_Free(menu_arc);
 	
 	FontData_Load(&menu.font_bold, Font_Bold);
@@ -937,113 +944,132 @@ void Menu_Tick(void)
 		}
 		case MenuPage_Mods:
 		{
-			static const struct
+			static u16 change = 1;
+        
+			    //Swap to Main if credits ended
+			  {
+				if (change > 17)
+				menu.page = menu.next_page = MenuPage_Main;
+				menu.page_swap = true;	
+
+		 	    }
+
+		
+				  if (change > 17)
+				  change = 1;
+
+			    //Fallthrough
 			{
-				StageId stage;
-				const char *text;
-				boolean difficulty;
-			} menu_options[] = {
-				{StageId_Kapi_1, "LORD SCOUT", false},
-				{StageId_Kapi_2, "  SONIC DOT EXE PORT", false},
-				{StageId_Clwn_1, "CUCKYDEV", false},
-				{StageId_Clwn_2, "   PSXFUNKIN", false},
-				{StageId_Clwn_1, "RightBurstUltra", false},
-				{StageId_Kapi_2, "	Director AND Artist", false},
-				{StageId_Clwn_1, "Razencro", false},
-				{StageId_Clwn_1, "	Animator", false},
-				{StageId_Clwn_1, "MarStarBro", false},
-				{StageId_Clwn_1, "   COMPOSOR", false},
-				{StageId_Clwn_1, "Comgaming_Nz", false},
-				{StageId_Kapi_1, "   Artist", false},
-				{StageId_Kapi_2, " Zekuta", false},
-				{StageId_Clwn_1, "   Artist/Animator", false},
-				{StageId_Clwn_2, "CryBit", false},
-				{StageId_Clwn_1, "   PROGRAMMING", false},
-				{StageId_Kapi_1, "VANIA", false},
-				{StageId_Kapi_2, "   COMPOSOR", false},
-				{StageId_Clwn_1, "vxilius", false},
-				{StageId_Clwn_2, "   YOU CANT RUN CHART", false},
-				{StageId_Clwn_1, "ZERIBEN", false},
-				{StageId_Clwn_2, "   CREDITS CODE", false},
-			};
+				//Swap Main if circle pressed
 			
-			//Initialize page
-			if (menu.page_swap)
-			{
-				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + SCREEN_HEIGHT2,1);
-				menu.page_param.stage.diff = StageDiff_Normal;
-			}
-			
-			//Draw page label
+				if (pad_state.press & PAD_CIRCLE)
+				 {
+				  menu.page = menu.next_page = MenuPage_Main;
+				  menu.page_swap = true;
+					(change) = 1;
+				 }
+                 //Draw different text 
+				RECT src_cre0 = {0, 0, 128, 128};
+				RECT src_cre1 = {0, 0, 128, 128};
+				RECT src_cre2 = {0, 0, 128, 128};
+				RECT src_cre3 = {0, 0, 128, 128};
+				RECT src_cre4 = {0, 0, 128, 128};
+				RECT src_cre5 = {0,128, 128, 128};
+				RECT src_cre6 = {0, 0, 128, 128};
+
+				 if (pad_state.press & (PAD_START | PAD_CROSS))
+			    change++;
+
+				//Draw page label
 			menu.font_bold.draw(&menu.font_bold,
 				"CREDITS",
 				16,
 				SCREEN_HEIGHT - 32,
 				FontAlign_Left
 			);
-			
-			//Draw difficulty selector
-			if (menu_options[menu.select].difficulty)
-				Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 48);
-			
-			//Handle option and selection
-			if (menu.next_page == menu.page && Trans_Idle())
-			{
-				//Change option
-				if (pad_state.press & PAD_UP)
-				{
-					if (menu.select > 0)
-						menu.select--;
-					else
-						menu.select = COUNT_OF(menu_options) - 1;
-				}
-				if (pad_state.press & PAD_DOWN)
-				{
-					if (menu.select < COUNT_OF(menu_options) - 1)
-						menu.select++;
-					else
-						menu.select = 0;
-				}
+
+				switch (change)
+					{
+					case 2:
+
+						menu.font_bold.draw(&menu.font_bold, "cuckydev", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48,  FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre0, &src_cre0, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
+				//Fallthrough
+					case 1:
+					{
+						menu.font_bold.draw(&menu.font_bold, "PSXFUNKIN",   SCREEN_WIDTH2, SCREEN_HEIGHT2 - 80, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "BY", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						break;
+					}
+					
+					case 4:
+					    menu.font_bold.draw(&menu.font_bold, "lord scout", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48 , FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre1, &src_cre1, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
+						
+				    
+					
+				//Fallthrough
+					case 3:
+						menu.font_bold.draw(&menu.font_bold, "PORTED", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 80, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "BY",           SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						break;
+
+				   case 6:
+				        Gfx_BlitTex(&menu.tex_cre2, &src_cre2, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
+					 
+					case 5:
+						menu.font_bold.draw(&menu.font_bold, "igorsou",    SCREEN_WIDTH2, SCREEN_HEIGHT2 -48 , FontAlign_Center);
+						break;
+                    
+					 case 8:
+					       Gfx_BlitTex(&menu.tex_cre3, &src_cre3, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
+
+
+					case 7:
+						menu.font_bold.draw(&menu.font_bold, "unstopable", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						break;
+					 
+					 case 10:
+					    menu.font_bold.draw(&menu.font_bold, "john paul", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre4, &src_cre4, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
+
+					case 9:
+						menu.font_bold.draw(&menu.font_bold, "PLAYTEST", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						break;
+					
+					 case 12:
+                	    menu.font_bold.draw(&menu.font_bold, "maymaysdays", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre6, &src_cre6, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
+
+					case 11:
+						menu.font_bold.draw(&menu.font_bold, "ORIGINAL CREATORS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						break;
+		
+						case 14:
+						Gfx_BlitTex(&menu.tex_cre5, &src_cre5, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 18);
 				
-				//Return to main menu if circle is pressed
-				if (pad_state.press & PAD_CIRCLE)
-				{
-					menu.next_page = MenuPage_Main;
-					menu.next_select = 2; //Mods
-					Trans_Start();
+					
+						case 13:
+						menu.font_bold.draw(&menu.font_bold, "sonicboiforlife", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
+						break;
+
+						case 15:
+						menu.font_bold.draw(&menu.font_bold, "TUTORIALING", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
+						break;
+
+						case 17:
+						menu.font_bold.draw(&menu.font_bold, "miapaisano", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "zeriben", SCREEN_WIDTH2, SCREEN_HEIGHT2 -32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "discord server", SCREEN_WIDTH2, SCREEN_HEIGHT2 -16, FontAlign_Center);
+
+						case 16:
+						menu.font_bold.draw(&menu.font_bold, "SPECIAL THANKS", SCREEN_WIDTH2, SCREEN_HEIGHT2 -80, FontAlign_Center);
+						break;
 				}
+				break;
+			
+
 			}
-			
-			//Draw options
-			s32 next_scroll = menu.select * FIXED_DEC(24,1);
-			menu.scroll += (next_scroll - menu.scroll) >> 4;
-			
-			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
-			{
-				//Get position on screen
-				s32 y = (i * 24) - 8 - (menu.scroll >> FIXED_SHIFT);
-				if (y <= -SCREEN_HEIGHT2 - 8)
-					continue;
-				if (y >= SCREEN_HEIGHT2 + 8)
-					break;
-				
-				//Draw text
-				menu.font_bold.draw(&menu.font_bold,
-					Menu_LowerIf(menu_options[i].text, menu.select != i),
-					48 + (y >> 2),
-					SCREEN_HEIGHT2 + y - 8,
-					FontAlign_Left
-				);
-			}
-			
-			//Draw background
-			Menu_DrawBack(
-				true,
-				8,
-				197 >> 1, 240 >> 1, 95 >> 1,
-				0, 0, 0
-			);
-			break;
 		}
 		case MenuPage_Options:
 		{
