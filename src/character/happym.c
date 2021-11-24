@@ -192,7 +192,7 @@ void Char_happym_Tick(Character *character)
 
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-
+{
 	if (stage.song_step >= 447)
 		Character_PerformIdleM2(character);
 
@@ -202,6 +202,7 @@ void Char_happym_Tick(Character *character)
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_happym_SetFrame);
 	Character_Draw(character, &this->tex, &char_happym_frame[this->frame]);
+}
 }
 
 void Char_happym_SetAnim(Character *character, u8 anim)

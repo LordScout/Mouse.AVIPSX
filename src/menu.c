@@ -121,7 +121,7 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_test, tex_story, tex_title, tex_cre0, tex_cre1, tex_cre2, tex_cre3, tex_cre4, tex_cre5, tex_cre6;
+	Gfx_Tex tex_back, tex_test, tex_story, tex_title, tex_ng, tex_cre0, tex_cre1, tex_cre2, tex_cre3, tex_cre4, tex_cre5, tex_cre6, tex_cre7, tex_cre8;
 	FontData font_bold, font_arial;
 	
 	Character *mouset; //Title Girlfriend
@@ -289,6 +289,9 @@ void Menu_Load(MenuPage page)
 	Gfx_LoadTex(&menu.tex_cre4, Archive_Find(menu_arc, "cre4.tim"), 0);
 	Gfx_LoadTex(&menu.tex_cre5, Archive_Find(menu_arc, "cre5.tim"), 0);
 	Gfx_LoadTex(&menu.tex_cre6, Archive_Find(menu_arc, "cre6.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre7, Archive_Find(menu_arc, "cre7.tim"), 0);
+	Gfx_LoadTex(&menu.tex_cre8, Archive_Find(menu_arc, "cre8.tim"), 0);
+	Gfx_LoadTex(&menu.tex_ng, Archive_Find(menu_arc,    "ng.tim"), 0);
 	Mem_Free(menu_arc);
 	
 	FontData_Load(&menu.font_bold, Font_Bold);
@@ -392,6 +395,8 @@ void Menu_Tick(void)
 				
 				//Draw different text depending on beat
 				const char **funny_message = funny_messages[menu.page_state.opening.funny_message];
+
+				RECT src_ng = {0,128, 128, 128};
 				
 				switch (beat)
 				{
@@ -407,6 +412,7 @@ void Menu_Tick(void)
 					
 					case 7:
 						menu.font_bold.draw(&menu.font_bold, "MOUSE",    SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_ng, &src_ng, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2);
 				//Fallthrough
 					case 6:
 					case 5:
@@ -948,14 +954,14 @@ void Menu_Tick(void)
         
 			    //Swap to Main if credits ended
 			  {
-				if (change > 17)
+				if (change > 21)
 				menu.page = menu.next_page = MenuPage_Main;
 				menu.page_swap = true;	
 
 		 	    }
 
 		
-				  if (change > 17)
+				  if (change > 21)
 				  change = 1;
 
 			    //Fallthrough
@@ -976,6 +982,8 @@ void Menu_Tick(void)
 				RECT src_cre4 = {0, 0, 128, 128};
 				RECT src_cre5 = {0,128, 128, 128};
 				RECT src_cre6 = {0, 0, 128, 128};
+				RECT src_cre7 = {0,128, 128, 128};
+				RECT src_cre8 = {0,128, 128, 128};
 
 				 if (pad_state.press & (PAD_START | PAD_CROSS))
 			    change++;
@@ -1057,12 +1065,29 @@ void Menu_Tick(void)
 						menu.font_bold.draw(&menu.font_bold, "TUTORIALING", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
 						break;
 
-						case 17:
+                        case 17:
+						menu.font_bold.draw(&menu.font_bold, "adriozer", SCREEN_WIDTH2-90, SCREEN_HEIGHT2 -48, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre7, &src_cre7, (SCREEN_WIDTH - 288) >> 1, SCREEN_HEIGHT2 - 18);
+						menu.font_bold.draw(&menu.font_bold, "xonthebeat", SCREEN_WIDTH2+90, SCREEN_HEIGHT2 -48, FontAlign_Center);
+
+						case 16:
+						menu.font_bold.draw(&menu.font_bold, "REALLY UNHAPPY CREATORS", SCREEN_WIDTH2, SCREEN_HEIGHT2 -64, FontAlign_Center);
+						break;
+
+						case 19:
+						menu.font_bold.draw(&menu.font_bold, "sergrix", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
+						Gfx_BlitTex(&menu.tex_cre8, &src_cre8, (SCREEN_WIDTH - 128)>> 1, SCREEN_HEIGHT2 - 18);
+
+						case 18:
+						menu.font_bold.draw(&menu.font_bold, "REALLY HAPPY FAN CREATORS", SCREEN_WIDTH2, SCREEN_HEIGHT2 -64, FontAlign_Center);
+						break;
+
+						case 21:
 						menu.font_bold.draw(&menu.font_bold, "miapaisano", SCREEN_WIDTH2, SCREEN_HEIGHT2 -48, FontAlign_Center);
 						menu.font_bold.draw(&menu.font_bold, "zeriben", SCREEN_WIDTH2, SCREEN_HEIGHT2 -32, FontAlign_Center);
 						menu.font_bold.draw(&menu.font_bold, "discord server", SCREEN_WIDTH2, SCREEN_HEIGHT2 -16, FontAlign_Center);
 
-						case 16:
+						case 20:
 						menu.font_bold.draw(&menu.font_bold, "SPECIAL THANKS", SCREEN_WIDTH2, SCREEN_HEIGHT2 -80, FontAlign_Center);
 						break;
 				}
