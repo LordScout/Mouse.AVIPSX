@@ -62,39 +62,39 @@ typedef struct
 
 //Christmas Parents definitions
 static const CharFrame char_happym_frame[] = {
-	{happym_ArcMain_Idle0, {0,   0, 106, 175}, {43, 176}}, 
-	{happym_ArcMain_Idle0, {107, 0, 109, 174}, {42, 175}}, 
-	{happym_ArcMain_Idle1, {0,   0, 112, 165}, {44, 167}},  
-	{happym_ArcMain_Idle1, {114, 0, 118, 156}, {46, 156}},  
-	{happym_ArcMain_Idle2, {0,   0, 120, 154}, {47, 156}}, 
-	{happym_ArcMain_Idle2, {122, 0, 122, 155}, {48, 156}}, 
-	{happym_ArcMain_Idle3, {5,   0, 116, 159}, {49, 161}},  
-	{happym_ArcMain_Idle3, {125, 0, 106, 169}, {44, 172}},
+	{happym_ArcMain_Idle0, {0,   0, 106, 175}, {47, 172}}, 
+	{happym_ArcMain_Idle0, {107, 0, 109, 174}, {46, 170}}, 
+	{happym_ArcMain_Idle1, {0,   0, 112, 165}, {48, 162}},  
+	{happym_ArcMain_Idle1, {114, 0, 118, 156}, {50, 152}},
+	{happym_ArcMain_Idle2, {0,   0, 120, 154}, {52, 152}},
+	{happym_ArcMain_Idle2, {122, 0, 122, 155}, {52, 153}},
+	{happym_ArcMain_Idle3, {5,   0, 116, 159}, {50, 156}},
+	{happym_ArcMain_Idle3, {125, 0, 106, 169}, {46, 166}},
 
-	{happym_ArcMain_LeftA0, {0,   0, 103, 172}, {41, 174}}, 
-	{happym_ArcMain_LeftA0, {110, 0, 102, 171}, {40, 174}}, 
-	{happym_ArcMain_LeftA1, {0,   0, 103, 171}, {40, 174}}, 
-	{happym_ArcMain_LeftA1, {109, 0, 103, 172}, {40, 174}}, 
+	{happym_ArcMain_LeftA0, {0,   0, 103, 172}, {44, 170}}, 
+	{happym_ArcMain_LeftA0, {110, 0, 102, 171}, {44, 169}}, 
+	{happym_ArcMain_LeftA1, {0,   0, 103, 171}, {44, 169}}, 
+	{happym_ArcMain_LeftA1, {109, 0, 103, 172}, {44, 170}}, 
 
-	{happym_ArcMain_DownA0, {0,   0, 110, 174}, {43, 177}}, 
-	{happym_ArcMain_DownA0, {112, 0, 104, 178}, {42, 181}}, 
-	{happym_ArcMain_DownA1, {0,   0, 105, 179}, {42, 181}},  
-	{happym_ArcMain_DownA1, {111, 0, 105, 178}, {42, 181}}, 
+	{happym_ArcMain_DownA0, {0,   0, 110, 174}, {47, 171}}, 
+	{happym_ArcMain_DownA0, {112, 0, 104, 178}, {45, 175}}, 
+	{happym_ArcMain_DownA1, {0,   0, 105, 179}, {45, 177}},  
+	{happym_ArcMain_DownA1, {111, 0, 105, 178}, {46, 176}}, 
 	
-	{happym_ArcMain_UpA0, {0,   0, 107, 177}, {47, 180}}, 
-	{happym_ArcMain_UpA0, {108, 0, 108, 177}, {47, 180}}, 
-	{happym_ArcMain_UpA1, {0,   0, 108, 177}, {46, 181}}, 
-	{happym_ArcMain_UpA1, {108, 0, 108, 176}, {46, 178}}, 
+	{happym_ArcMain_UpA0, {0,   0, 107, 177}, {50, 174}}, 
+	{happym_ArcMain_UpA0, {108, 0, 108, 177}, {49, 174}}, 
+	{happym_ArcMain_UpA1, {0,   0, 107, 176}, {49, 173}}, 
+	{happym_ArcMain_UpA1, {108, 0, 108, 176}, {49, 173}}, 
 	
-	{happym_ArcMain_RightA0, {0,   0, 103, 178}, {42, 182}}, 
-	{happym_ArcMain_RightA0, {106, 0, 106, 179}, {44, 182}}, 
-	{happym_ArcMain_RightA1, {0,   0, 107, 179}, {46, 182}}, 
-	{happym_ArcMain_RightA1, {109, 0, 107, 179}, {46, 182}}, 
+	{happym_ArcMain_RightA0, {0,   0, 103, 178}, {44, 175}}, 
+	{happym_ArcMain_RightA0, {106, 0, 106, 179}, {47, 176}}, 
+	{happym_ArcMain_RightA1, {0,   0, 107, 179}, {48, 176}}, 
+	{happym_ArcMain_RightA1, {109, 0, 107, 179}, {48, 176}}, 
 
-	{happym_ArcMain_LeftB0, {0,   0, 108, 175}, {45, 178}}, 
-	{happym_ArcMain_LeftB0, {109, 0, 107, 174}, {45, 178}}, 
-	{happym_ArcMain_LeftB1, {0,   0, 104, 173}, {41, 178}}, 
-	{happym_ArcMain_LeftB1, {106, 0, 106, 174}, {45, 178}}, 
+	{happym_ArcMain_LeftB0, {0,   0, 108, 175}, {44, 178}}, 
+	{happym_ArcMain_LeftB0, {109, 0, 107, 174}, {44, 178}}, 
+	{happym_ArcMain_LeftB1, {0,   0, 104, 173}, {40, 178}}, 
+	{happym_ArcMain_LeftB1, {106, 0, 106, 174}, {44, 178}}, 
 
 	{happym_ArcMain_DownB0, {0,   0, 110, 169}, {43, 172}}, 
 	{happym_ArcMain_DownB0, {112, 0, 104, 174}, {43, 177}}, 
@@ -120,22 +120,22 @@ static const CharFrame char_happym_frame[] = {
 	{happym_ArcMain_Idleb3, {0,   0, 107, 173}, {42, 176}},  
 	{happym_ArcMain_Idleb3, {108, 0, 104, 176}, {41, 178}},  
 
-	{happym_ArcMain_Laugh0, {0,   0, 103, 174}, {40, 182}}, 
-	{happym_ArcMain_Laugh0, {110, 0, 102, 173}, {40, 182}}, 
-	{happym_ArcMain_Laugh1, {0,   0, 103, 173}, {40, 182}},
-	{happym_ArcMain_Laugh1, {109, 0, 102, 172}, {40, 182}}, 
+	{happym_ArcMain_Laugh0, {0,   0, 103, 174}, {44, 171}}, 
+	{happym_ArcMain_Laugh0, {110, 0, 102, 173}, {43, 170}}, 
+	{happym_ArcMain_Laugh1, {0,   0, 103, 173}, {43, 170}},
+	{happym_ArcMain_Laugh1, {109, 0, 102, 172}, {43, 170}}, 
 
 };
 
 static const Animation char_happym_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 0, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 8, 9,10,11, ASCR_BACK,1}},         //CharAnim_Left
+	{1, (const u8[]){ 0, 1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7, 0, 1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 0, ASCR_BACK,1 }}, //CharAnim_Idle
+	{2, (const u8[]){ 8, 9,10,11, ASCR_BACK,4}},         //CharAnim_Left
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},   
-	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
-	{2, (const u8[]){ 48, 49, 50, 51,ASCR_BACK,1}},   
-	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Up
+	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 4}},         //CharAnim_Down
+	{2, (const u8[]){ 48, 49, 50, 51,ASCR_BACK, 1}},
+	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 4}},         //CharAnim_Up
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},   
-	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 1}},         //CharAnim_Right
+	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 4}},         //CharAnim_Right
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},  
 
 	{2, (const u8[]){ 40, 41, 42, 43, 44, 45, 46, 47, ASCR_BACK, 1}}, //CharAnim_Idleb
@@ -169,15 +169,22 @@ void Char_happym_Tick(Character *character)
 	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 444 && stage.song_step)
 	{
 		this->character.focus_x = FIXED_DEC(25,1);
-	    this->character.focus_y = FIXED_DEC(-100,1);
+	    this->character.focus_y = FIXED_DEC(-130,1);
     	this->character.focus_zoom = FIXED_DEC(2,1);
 	}
 
 	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 447 && stage.song_step)
 	{
 		this->character.focus_x = FIXED_DEC(25,1);
-	    this->character.focus_y = FIXED_DEC(-100,1);
+	    this->character.focus_y = FIXED_DEC(-120,1);
     	this->character.focus_zoom = FIXED_DEC(1,1);
+	}
+
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 703 && stage.song_step)
+	{
+		this->character.focus_x = FIXED_DEC(25, 1);
+		this->character.focus_y = FIXED_DEC(-100, 1);
+		this->character.focus_zoom = FIXED_DEC(1, 1);
 	}
 
 	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 447)

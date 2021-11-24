@@ -96,13 +96,13 @@ static const CharFrame char_crazym_frame[] = {
 static const Animation char_crazym_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 1}},         //CharAnim_Left
-	{2, (const u8[]){ 24, 24, 24, 24, 24, 24, ASCR_BACK, 1}},         //CharAnim_spook
+	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
 	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
-	{2, (const u8[]){ 24, 24, 24, 24, 24, 24, ASCR_BACK, 1}},         //CharAnim_spook
+	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
 	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Up
-	{2, (const u8[]){ 24, 25, 26, 27, 28, 29, ASCR_BACK, 1}},         //CharAnim_spook
+	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
 	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 1}},         //CharAnim_Right
-	{2, (const u8[]){ 24, 24, 24, 24, 24, 24, ASCR_BACK, 1}},         //CharAnim_spook
+	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
 };
 
 //Christmas Parents functions
@@ -127,7 +127,7 @@ void Char_crazym_Tick(Character *character)
 	if (stage.song_step >= 959)
 	{
 	this->character.focus_x = FIXED_DEC(-10,1);
-	this->character.focus_y = FIXED_DEC(-100,1);
+	this->character.focus_y = FIXED_DEC(-120,1);
 	this->character.focus_zoom = FIXED_DEC(18,10);
 	}
 	

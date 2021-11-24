@@ -77,14 +77,14 @@ static const CharFrame char_xmasp_frame[] = {
 	{XmasP_ArcMain_DownA3, {0,   0, 104, 177}, {45, 174}},
 	
 	{XmasP_ArcMain_UpA0, {0,   0, 103, 177}, {47, 174}},
-	{XmasP_ArcMain_UpA1, {0,   0, 104, 176}, {46, 174}},
-	{XmasP_ArcMain_UpA2, {0,   0, 104, 176}, {45, 174}},
-	{XmasP_ArcMain_UpA3, {0,   0, 104, 175}, {46, 173}},
+	{XmasP_ArcMain_UpA1, {0,   0, 104, 176}, {46, 173}},
+	{XmasP_ArcMain_UpA2, {0,   0, 104, 176}, {45, 173}},
+	{XmasP_ArcMain_UpA3, {0,   0, 104, 175}, {46, 172}},
 	
-	{XmasP_ArcMain_RightA0, {0,   0, 103, 172}, {43, 169}},
+	{XmasP_ArcMain_RightA0, {0,   0, 103, 172}, {44, 169}},
 	{XmasP_ArcMain_RightA1, {0,   0, 103, 173}, {44, 170}},
-	{XmasP_ArcMain_RightA2, {0,   0, 104, 173}, {46, 169}},
-	{XmasP_ArcMain_RightA3, {0,   0, 104, 173}, {45, 169}},
+	{XmasP_ArcMain_RightA2, {0,   0, 104, 173}, {46, 170}},
+	{XmasP_ArcMain_RightA3, {0,   0, 104, 173}, {46, 170 }},
 };
 
 static const Animation char_xmasp_anim[CharAnim_Max] = {

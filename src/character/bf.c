@@ -174,7 +174,21 @@ void Char_BF_SetFrame(void *user, u8 frame)
 void Char_BF_Tick(Character* character)
 {
 	Char_BF* this = (Char_BF*)character;
+
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 447 && stage.song_step)
+	{
+		this->character.focus_x = FIXED_DEC(-50, 1);
+		this->character.focus_y = FIXED_DEC(-100, 1);
+		this->character.focus_zoom = FIXED_DEC(1, 1);
+	}
 	
+	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 703 && stage.song_step)
+	{
+		this->character.focus_x = FIXED_DEC(-50, 1);
+		this->character.focus_y = FIXED_DEC(-90, 1);
+		this->character.focus_zoom = FIXED_DEC(1, 1);
+	}
+
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
@@ -193,6 +207,8 @@ void Char_BF_Tick(Character* character)
 			 character->animatable.anim != CharAnim_Right) &&
 			(stage.song_step & 0x7) == 0)
 			character->set_anim(character, CharAnim_Idle);
+
+
 		
 		//Stage specific animations
 		if (stage.note_scroll >= 0)
