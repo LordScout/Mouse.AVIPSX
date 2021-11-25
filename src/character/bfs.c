@@ -387,7 +387,7 @@ Character *Char_BFS_New(fixed_t x, fixed_t y)
 	this->character.health_i = 0;
 	
 	this->character.focus_x = FIXED_DEC(-50, 1);
-	this->character.focus_y = FIXED_DEC(-90, 1);
+	this->character.focus_y = FIXED_DEC(-80, 1);
 	this->character.focus_zoom = FIXED_DEC(1, 1);
 
 	//Load art

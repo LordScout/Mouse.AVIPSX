@@ -180,7 +180,7 @@ Character *Char_crazym_New(fixed_t x, fixed_t y)
 	this->character.health_i = 5;
 	
 	this->character.focus_x = FIXED_DEC(25,1);
-	this->character.focus_y = FIXED_DEC(-100,1);
+	this->character.focus_y = FIXED_DEC(-90,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	//Load art
