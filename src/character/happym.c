@@ -138,7 +138,7 @@ static const Animation char_happym_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 4}},         //CharAnim_Right
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},  
 
-	{1, (const u8[]){ 40, 41, 42, 43, 44, 45, 46, 47, 47, 40, 41, 42, 43, 44, 45, 46, 47, 40, ASCR_BACK, 1}}, //CharAnim_Idleb
+	{1, (const u8[]){ 40, 41, 42, 43, 43, 44, 44, 45, 45, 46, 47, 47, 40, 41, 42, 43, 43, 44, 44, 45, 45, 46, 47, 40, ASCR_BACK, 1}}, //CharAnim_Idleb
 	{2, (const u8[]){ 24, 25, 26, 27, ASCR_BACK, 4}}, 
 	{2, (const u8[]){ 28, 29, 30, 31, ASCR_BACK, 4}}, 
 	{2, (const u8[]){ 32, 33, 34, 35, ASCR_BACK, 4}}, 

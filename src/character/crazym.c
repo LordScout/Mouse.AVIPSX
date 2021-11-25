@@ -57,52 +57,52 @@ typedef struct
 
 //Christmas Parents definitions
 static const CharFrame char_crazym_frame[] = {
-	{crazym_ArcMain_Idle0, {  0,   0, 102, 200}, { 74, 182}}, 
-	{crazym_ArcMain_Idle0, {102,   0, 110, 200}, { 74, 182}}, 
-	{crazym_ArcMain_Idle1, {  0,   0, 100, 200}, { 74, 182}},  
-	{crazym_ArcMain_Idle1, {100,   0, 112, 200}, { 74, 182}},  
-	{crazym_ArcMain_Idle2, {  0,   0, 110, 200}, { 74, 182}}, 
-	{crazym_ArcMain_Idle2, {110,   0, 110, 200}, { 74, 182}}, 
-	{crazym_ArcMain_Idle3, {  0,   0, 110, 200}, { 74, 182}},  
-	{crazym_ArcMain_Idle3, {110,   0, 110, 200}, { 74, 182}},  
+	{crazym_ArcMain_Idle0, {  0,   0, 91, 167}, { 41, 162}}, 
+	{crazym_ArcMain_Idle0, { 92,   0, 95, 166}, { 42, 161}}, 
+	{crazym_ArcMain_Idle1, {  0,   0, 96, 159}, { 44, 154}},  
+	{crazym_ArcMain_Idle1, { 97,   0, 113, 134}, { 54, 129}},  
+	{crazym_ArcMain_Idle2, {  0,   0, 108, 133}, { 49, 128}}, 
+	{crazym_ArcMain_Idle2, {109,   0, 108, 134}, { 48, 129}}, 
+	{crazym_ArcMain_Idle3, {  0,   0, 107, 136}, { 48, 131}},  
+	{crazym_ArcMain_Idle3, {108,   0, 100, 149}, { 45, 145}},  
 
-	{crazym_ArcMain_LeftA0, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_LeftA1, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_LeftA2, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_LeftA3, {0,   0, 212, 200}, {130, 182}}, 
+	{crazym_ArcMain_LeftA0, {0,   0, 102, 166}, {52, 161}}, 
+	{crazym_ArcMain_LeftA1, {0,   0, 91, 168}, {40, 163}}, 
+	{crazym_ArcMain_LeftA2, {0,   0, 97, 168}, {47, 163}}, 
+	{crazym_ArcMain_LeftA3, {0,   0, 92, 168}, {42, 163}}, 
 
-	{crazym_ArcMain_DownA0, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_DownA1, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_DownA2, {0,   0, 212, 200}, {130, 182}},  
-	{crazym_ArcMain_DownA3, {0,   0, 212, 200}, {130, 182}}, 
+	{crazym_ArcMain_DownA0, {0,   0, 110, 126}, {52, 125}}, 
+	{crazym_ArcMain_DownA1, {0,   0, 105, 129}, {50, 128}}, 
+	{crazym_ArcMain_DownA2, {0,   0, 103, 136}, {49, 136}},  
+	{crazym_ArcMain_DownA3, {0,   0, 102, 134}, {48, 134}}, 
 	
-	{crazym_ArcMain_UpA0, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_UpA1, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_UpA2, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_UpA3, {0,   0, 212, 200}, {130, 182}}, 
+	{crazym_ArcMain_UpA0, {0,   0, 124, 160}, {68, 155}}, 
+	{crazym_ArcMain_UpA1, {0,   0, 110, 154}, {60, 149}},
+	{crazym_ArcMain_UpA2, {0,   0, 131, 160}, {69, 155}}, 
+	{crazym_ArcMain_UpA3, {0,   0, 118, 152}, {63, 147}}, 
 	
-	{crazym_ArcMain_RightA0, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_RightA1, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_RightA2, {0,   0, 212, 200}, {130, 182}}, 
-	{crazym_ArcMain_RightA3, {0,   0, 212, 200}, {130, 182}}, 
+	{crazym_ArcMain_RightA0, {0,   0, 113, 160}, {43, 155}}, 
+	{crazym_ArcMain_RightA1, {0,   0, 111, 158}, {41, 153}}, 
+	{crazym_ArcMain_RightA2, {0,   0, 105, 161}, {41, 156}}, 
+	{crazym_ArcMain_RightA3, {0,   0, 103, 160}, {41, 155}}, 
 
-	{crazym_ArcMain_Spook0, {0,   0, 212, 240}, {130, 228}}, 
-	{crazym_ArcMain_Spook1, {0,   0, 212, 240}, {130, 228}}, 
-	{crazym_ArcMain_Spook2, {0,   0, 212, 240}, {130, 228}},  
-	{crazym_ArcMain_Spook3, {0,   0, 212, 240}, {130, 228}},  
-	{crazym_ArcMain_Spook4, {0,   0, 212, 240}, {130, 228}}, 
+	{crazym_ArcMain_Spook0, {0,   0, 139, 210}, {72, 205}}, 
+	{crazym_ArcMain_Spook1, {0,   0, 134, 216}, {71, 221}}, 
+	{crazym_ArcMain_Spook2, {0,   0, 142, 217}, {73, 212}},  
+	{crazym_ArcMain_Spook3, {0,   0, 141, 213}, {76, 208}},  
+	{crazym_ArcMain_Spook4, {0,   0, 144, 217}, {74, 212}}, 
 };
 
 static const Animation char_crazym_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, ASCR_BACK, 1}}, //CharAnim_Idle
+	{1, (const u8[]){ 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 0, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 1}},         //CharAnim_Left
-	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
+	{1, (const u8[]){ 24, 25, ASCR_BACK, 4}},         //CharAnim_spook
 	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
-	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
+	{1, (const u8[]){ 26, 27, ASCR_BACK, 4}},         //CharAnim_spook
 	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Up
-	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
+	{1, (const u8[]){ 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
 	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 1}},         //CharAnim_Right
-	{1, (const u8[]){ 24, 25, 26, 27, 28, ASCR_BACK, 4}},         //CharAnim_spook
+	{2, (const u8[]){ 28, ASCR_BACK, 4}},         //CharAnim_spook
 };
 
 //Christmas Parents functions
