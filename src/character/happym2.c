@@ -57,34 +57,34 @@ typedef struct
 
 //Happy Mouse2 definitions
 static const CharFrame char_happym2_frame[] = {
-	{happym2_ArcMain_Idleb0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_Idleb1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_Idleb2, {0,   0, 212, 200}, {130, 182}},  
-	{happym2_ArcMain_Idleb3, {0,   0, 212, 200}, {130, 182}},  
-	{happym2_ArcMain_Idleb4, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_Idleb5, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_Idleb6, {0,   0, 212, 200}, {130, 182}},  
-	{happym2_ArcMain_Idleb7, {0,   0, 212, 200}, {130, 182}},  
+	{happym2_ArcMain_Idleb0, {0,   0, 104, 178}, {44, 175}},
+	{happym2_ArcMain_Idleb1, {0,   0, 104, 177}, {43, 174}},
+	{happym2_ArcMain_Idleb2, {0,   0, 112, 167}, {47, 164}},
+	{happym2_ArcMain_Idleb3, {0,   0, 119, 158}, {50, 156}},
+	{happym2_ArcMain_Idleb4, {0,   0, 122, 157}, {50, 155}},
+	{happym2_ArcMain_Idleb5, {0,   0, 116, 162}, {49, 159}},
+	{happym2_ArcMain_Idleb6, {0,   0, 107, 173}, {45, 170}},
+	{happym2_ArcMain_Idleb7, {0,   0, 104, 176}, {44, 173}},
 
-	{happym2_ArcMain_LeftB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_LeftB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_LeftB2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_LeftB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym2_ArcMain_LeftB0, {0,   0, 108, 175}, {49, 172}},
+	{happym2_ArcMain_LeftB0, {0,   0, 107, 174}, {48, 171}},
+	{happym2_ArcMain_LeftB1, {0,   0, 104, 173}, {45, 171}},
+	{happym2_ArcMain_LeftB1, {0,   0, 106, 174}, {47, 171}},
 
-	{happym2_ArcMain_DownB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_DownB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_DownB2, {0,   0, 212, 200}, {130, 182}},  
-	{happym2_ArcMain_DownB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym2_ArcMain_DownB0, {0,   0, 110, 169}, {46, 166}},
+	{happym2_ArcMain_DownB1, {0,   0, 104, 174}, {44, 170}},
+	{happym2_ArcMain_DownB2, {0,   0, 103, 175}, {43, 172}},
+	{happym2_ArcMain_DownB3, {0,   0, 107, 175}, {44, 172}},
 	
-	{happym2_ArcMain_UpB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_UpB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_UpB2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_UpB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym2_ArcMain_UpB0, {0,   0, 104, 186}, {47, 183}},
+	{happym2_ArcMain_UpB1, {0,   0, 107, 186}, {47, 183}},
+	{happym2_ArcMain_UpB2, {0,   0, 104, 187}, {44, 185}},
+	{happym2_ArcMain_UpB3, {0,   0, 108, 186}, {49, 184}},
 	
-	{happym2_ArcMain_RightB0, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_RightB1, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_RightB2, {0,   0, 212, 200}, {130, 182}}, 
-	{happym2_ArcMain_RightB3, {0,   0, 212, 200}, {130, 182}}, 
+	{happym2_ArcMain_RightB0, {0,   0, 103, 178}, {44, 175}},
+	{happym2_ArcMain_RightB1, {0,   0, 102, 179}, {42, 176}},
+	{happym2_ArcMain_RightB2, {0,   0, 107, 179}, {47, 176}},
+	{happym2_ArcMain_RightB3, {0,   0, 103, 179}, {43, 176}},
 
 };
 

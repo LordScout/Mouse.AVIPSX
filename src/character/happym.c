@@ -91,34 +91,34 @@ static const CharFrame char_happym_frame[] = {
 	{happym_ArcMain_RightA1, {0,   0, 107, 179}, {48, 176}}, 
 	{happym_ArcMain_RightA1, {109, 0, 107, 179}, {48, 176}}, 
 
-	{happym_ArcMain_LeftB0, {0,   0, 108, 175}, {44, 178}}, 
-	{happym_ArcMain_LeftB0, {109, 0, 107, 174}, {44, 178}}, 
-	{happym_ArcMain_LeftB1, {0,   0, 104, 173}, {40, 178}}, 
-	{happym_ArcMain_LeftB1, {106, 0, 106, 174}, {44, 178}}, 
+	{happym_ArcMain_LeftB0, {0,   0, 108, 175}, {49, 172}}, 
+	{happym_ArcMain_LeftB0, {109, 0, 107, 174}, {48, 171}}, 
+	{happym_ArcMain_LeftB1, {0,   0, 104, 173}, {45, 171}}, 
+	{happym_ArcMain_LeftB1, {106, 0, 106, 174}, {47, 171}}, 
 
-	{happym_ArcMain_DownB0, {0,   0, 110, 169}, {47, 166}}, 
-	{happym_ArcMain_DownB0, {112, 0, 104, 174}, {44, 169}}, 
-	{happym_ArcMain_DownB1, {0,   0, 103, 175}, {40, 178}},  
-	{happym_ArcMain_DownB1, {109, 0, 107, 175}, {41, 177}}, 
+	{happym_ArcMain_DownB0, {0,   0, 110, 169}, {46, 166}}, 
+	{happym_ArcMain_DownB0, {112, 0, 104, 174}, {44, 170}}, 
+	{happym_ArcMain_DownB1, {0,   0, 103, 175}, {43, 172}},  
+	{happym_ArcMain_DownB1, {109, 0, 107, 175}, {44, 172}}, 
 	
-	{happym_ArcMain_UpB0, {0,   0, 104, 186}, {45, 189}}, 
-	{happym_ArcMain_UpB0, {105, 0, 107, 186}, {46, 189}}, 
-	{happym_ArcMain_UpB1, {0,   0, 104, 187}, {41, 190}}, 
-	{happym_ArcMain_UpB1, {104, 0, 108, 186}, {46, 189}}, 
+	{happym_ArcMain_UpB0, {0,   0, 104, 186}, {47, 183}}, 
+	{happym_ArcMain_UpB0, {105, 0, 107, 186}, {47, 183}}, 
+	{happym_ArcMain_UpB1, {0,   0, 104, 187}, {44, 185}}, 
+	{happym_ArcMain_UpB1, {104, 0, 108, 186}, {49, 184}}, 
 	
-	{happym_ArcMain_RightB0, {0,   0, 103, 178}, {41, 180}}, 
-	{happym_ArcMain_RightB0, {110, 0, 102, 179}, {41, 180}}, 
-	{happym_ArcMain_RightB1, {0,   0, 107, 179}, {44, 182}}, 
-	{happym_ArcMain_RightB1, {109, 0, 103, 179}, {42, 182}}, 
+	{happym_ArcMain_RightB0, {0,   0, 103, 178}, {44, 175}}, 
+	{happym_ArcMain_RightB0, {110, 0, 102, 179}, {42, 176}}, 
+	{happym_ArcMain_RightB1, {0,   0, 107, 179}, {47, 176}}, 
+	{happym_ArcMain_RightB1, {109, 0, 103, 179}, {43, 176}}, 
 
-	{happym_ArcMain_Idleb0, {0,   0, 104, 178}, {41, 181}}, 
-	{happym_ArcMain_Idleb0, {108, 0, 104, 177}, {40, 180}}, 
-	{happym_ArcMain_Idleb1, {0,   0, 112, 167}, {44, 172}},  
-	{happym_ArcMain_Idleb1, {113, 0, 119, 158}, {47, 162}},  
-	{happym_ArcMain_Idleb2, {0,   0, 122, 157}, {47, 159}}, 
-	{happym_ArcMain_Idleb2, {128, 0, 116, 162}, {46, 166}}, 
-	{happym_ArcMain_Idleb3, {0,   0, 107, 173}, {42, 176}},  
-	{happym_ArcMain_Idleb3, {108, 0, 104, 176}, {41, 178}},  
+	{happym_ArcMain_Idleb0, {0,   0, 104, 178}, {44, 175}}, 
+	{happym_ArcMain_Idleb0, {108, 0, 104, 177}, {43, 174}}, 
+	{happym_ArcMain_Idleb1, {0,   0, 112, 167}, {47, 164}},  
+	{happym_ArcMain_Idleb1, {113, 0, 119, 158}, {50, 156}},  
+	{happym_ArcMain_Idleb2, {0,   0, 122, 157}, {50, 155}}, 
+	{happym_ArcMain_Idleb2, {128, 0, 116, 162}, {49, 159}}, 
+	{happym_ArcMain_Idleb3, {0,   0, 107, 173}, {45, 170}},  
+	{happym_ArcMain_Idleb3, {108, 0, 104, 176}, {44, 173}},  
 
 	{happym_ArcMain_Laugh0, {0,   0, 103, 174}, {44, 171}}, 
 	{happym_ArcMain_Laugh0, {110, 0, 102, 173}, {43, 170}}, 
@@ -138,11 +138,11 @@ static const Animation char_happym_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 4}},         //CharAnim_Right
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_IdleAlt}},  
 
-	{2, (const u8[]){ 40, 41, 42, 43, 44, 45, 46, 47, ASCR_BACK, 1}}, //CharAnim_Idleb
-	{2, (const u8[]){ 24, 25, 26, 27, ASCR_BACK, 1}}, 
-	{2, (const u8[]){ 28, 29, 30, 31, ASCR_BACK, 1}}, 
-	{2, (const u8[]){ 32, 33, 34, 35, ASCR_BACK, 1}}, 
-	{2, (const u8[]){ 36, 37, 38, 39, ASCR_BACK, 1}}, 
+	{2, (const u8[]){ 40, 41, 42, 43, 44, 45, 46, 47, 47, 40, 41, 42, 43, 44, 45, 46, 47, 40, ASCR_BACK, 1}}, //CharAnim_Idleb
+	{2, (const u8[]){ 24, 25, 26, 27, ASCR_BACK, 4}}, 
+	{2, (const u8[]){ 28, 29, 30, 31, ASCR_BACK, 4}}, 
+	{2, (const u8[]){ 32, 33, 34, 35, ASCR_BACK, 4}}, 
+	{2, (const u8[]){ 36, 37, 38, 39, ASCR_BACK, 4}}, 
 
 };
 
