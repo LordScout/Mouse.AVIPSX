@@ -840,7 +840,7 @@ void Menu_Tick(void)
 				{StageId_1_2, 0xFF9E9D9B, "HAPPY"},
 				{StageId_1_3, 0xFF6E6D6B, "REALLY HAPPY"},
 				{StageId_1_4, 0xFFEDEDED, "SMILE"},
-				{StageId_2_1, 0xFFBFBEBB, "VERY UNHAPPY"},
+				{StageId_2_1, 0xFFBFBEBB, "REALLYY UNHAPPY"},
 				{StageId_2_2, 0xFF6E6D6B, "REALLY HAPPY FANMADE"},
 				{StageId_2_3, 0xFF6E6D6B, "REALLY HAPPY BABY MODE"},
 			};
