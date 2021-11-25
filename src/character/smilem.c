@@ -57,45 +57,45 @@ typedef struct
 
 //Christmas Parents definitions
 static const CharFrame char_smilem_frame[] = {
-	{smilem_ArcMain_Idle0, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_Idle1, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_Idle2, {0,   0, 212, 200}, {130, 182}},  
-	{smilem_ArcMain_Idle3, {0,   0, 212, 200}, {130, 182}},  
-	{smilem_ArcMain_Idle4, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_Idle5, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_Idle6, {0,   0, 212, 200}, {130, 182}},  
-	{smilem_ArcMain_Idle7, {0,   0, 212, 200}, {130, 182}},  
+	{smilem_ArcMain_Idle0, {0,   0, 149, 144}, {58, 135}}, 
+	{smilem_ArcMain_Idle1, {0,   0, 150, 142}, {58, 133}}, 
+	{smilem_ArcMain_Idle2, {0,   0, 150, 138}, {58, 129}},  
+	{smilem_ArcMain_Idle3, {0,   0, 149, 135}, {58, 126}},  
+	{smilem_ArcMain_Idle4, {0,   0, 149, 137}, {58, 128}}, 
+	{smilem_ArcMain_Idle5, {0,   0, 149, 140}, {57, 131}}, 
+	{smilem_ArcMain_Idle6, {0,   0, 150, 142}, {58, 133}},  
+	{smilem_ArcMain_Idle7, {0,   0, 149, 144}, {58, 135}},  
 
-	{smilem_ArcMain_LeftA0, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_LeftA1, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_LeftA2, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_LeftA3, {0,   0, 212, 200}, {130, 182}}, 
+	{smilem_ArcMain_LeftA0, {0,   0, 111, 184}, {73, 175}}, 
+	{smilem_ArcMain_LeftA1, {0,   0, 109, 181}, {70, 172}}, 
+	{smilem_ArcMain_LeftA2, {0,   0, 102, 173}, {61, 165}}, 
+	{smilem_ArcMain_LeftA3, {0,   0, 102, 166}, {58, 156}}, 
 
-	{smilem_ArcMain_DownA0, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_DownA1, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_DownA2, {0,   0, 212, 200}, {130, 182}},  
-	{smilem_ArcMain_DownA3, {0,   0, 212, 200}, {130, 182}}, 
+	{smilem_ArcMain_DownA0, {0,   0, 131, 154}, {57, 144}}, 
+	{smilem_ArcMain_DownA1, {0,   0, 129, 155}, {57, 145}}, 
+	{smilem_ArcMain_DownA2, {0,   0, 125, 155}, {58, 145}},  
+	{smilem_ArcMain_DownA3, {0,   0, 121, 156}, {58, 146}}, 
 	
-	{smilem_ArcMain_UpA0, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_UpA1, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_UpA2, {0,   0, 212, 200}, {130, 182}}, 
-	{smilem_ArcMain_UpA3, {0,   0, 212, 200}, {130, 182}}, 
+	{smilem_ArcMain_UpA0, {0,   0, 125, 193}, {86, 184}}, 
+	{smilem_ArcMain_UpA1, {0,   0, 125, 191}, {86, 182}}, 
+	{smilem_ArcMain_UpA2, {0,   0, 117, 186}, {61, 178}}, 
+	{smilem_ArcMain_UpA3, {0,   0, 136, 178}, {61, 170}}, 
 	
-	{smilem_ArcMain_RightA0, {0,   0, 212, 200}, {119, 188}}, 
-	{smilem_ArcMain_RightA1, {0,   0, 212, 200}, {119, 188}}, 
-	{smilem_ArcMain_RightA2, {0,   0, 212, 200}, {119, 189}}, 
-	{smilem_ArcMain_RightA3, {0,   0, 212, 200}, {124, 189}}, 
+	{smilem_ArcMain_RightA0, {0,   0, 189, 158}, {86, 149}}, 
+	{smilem_ArcMain_RightA1, {0,   0, 186, 159}, {86, 150}}, 
+	{smilem_ArcMain_RightA2, {0,   0, 149, 160}, {61, 152}}, 
+	{smilem_ArcMain_RightA3, {0,   0, 138, 162}, {60, 154}}, 
 };
 
 static const Animation char_smilem_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7,  0, 1, 2, 3, 4, 5, 6, 7, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 1}},         //CharAnim_Left
+	{1, (const u8[]){ 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 7, 0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 7, 7, 7, 0, 0, 0, 1, 1, 1, 2, 2,  ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){ 8, 9, 10, 11, ASCR_BACK, 4}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
-	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},         //CharAnim_Down
+	{2, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 4}},         //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
-	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},         //CharAnim_Up
+	{2, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 4}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
-	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 1}},         //CharAnim_Right
+	{2, (const u8[]){ 20, 21, 22, 23, ASCR_BACK, 4}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},
 };
 
