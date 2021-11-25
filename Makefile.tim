@@ -57,7 +57,7 @@ iso/crazym/main.arc: iso/crazym/idle0.tim iso/crazym/idle1.tim iso/crazym/idle2.
 iso/smilem/main.arc: iso/smilem/idle0.tim iso/smilem/idle1.tim iso/smilem/idle2.tim iso/smilem/idle3.tim iso/smilem/idle4.tim iso/smilem/idle5.tim iso/smilem/idle6.tim iso/smilem/idle7.tim iso/smilem/lefta0.tim iso/smilem/lefta1.tim iso/smilem/lefta2.tim iso/smilem/lefta3.tim iso/smilem/downa0.tim iso/smilem/downa1.tim iso/smilem/downa2.tim iso/smilem/downa3.tim iso/smilem/upa0.tim iso/smilem/upa1.tim iso/smilem/upa2.tim iso/smilem/upa3.tim iso/smilem/righta0.tim iso/smilem/righta1.tim iso/smilem/righta2.tim iso/smilem/righta3.tim
 
 # GF
-iso/gf/main.arc: iso/gf/bopleft.tim iso/gf/bopright.tim iso/gf/cry.tim
+iso/gf/main.arc: iso/gf/bopleft.tim iso/gf/bopright.tim iso/gf/cry.tim iso/gf/happy.tim
 
 iso/gfs/main.arc: iso/gfs/bopleft.tim iso/gfs/bopright.tim iso/gfs/cry.tim
 

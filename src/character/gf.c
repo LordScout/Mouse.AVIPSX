@@ -13,6 +13,7 @@ enum
 	GF_ArcMain_BopLeft,
 	GF_ArcMain_BopRight,
 	GF_ArcMain_Cry,
+	GF_ArcMain_Happy,
 	
 	GF_Arc_Max,
 };
@@ -54,6 +55,9 @@ static const CharFrame char_gf_frame[] = {
 	
 	{GF_ArcMain_Cry, {  0,   0,  73, 101}, { 37,  73}}, //12 cry
 	{GF_ArcMain_Cry, { 73,   0,  73, 101}, { 37,  73}}, //13 cry
+
+	{GF_ArcMain_Happy, {158,   0,  75, 108}, { 36,  78}}, //14 cheer 1
+	{GF_ArcMain_Happy, {  0, 103,  77, 107}, { 37,  77}}, //15 cheer 2
 };
 
 static const Animation char_gf_anim[CharAnim_Max] = {
@@ -63,7 +67,7 @@ static const Animation char_gf_anim[CharAnim_Max] = {
 	{2, (const u8[]){12, 13, ASCR_REPEAT}},                                  //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Left}},                           //CharAnim_DownAlt
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Left}},                           //CharAnim_Up
-	{0, (const u8[]){ASCR_CHGANI, CharAnim_Left}},                           //CharAnim_UpAlt
+	{2, (const u8[]){14, 15, ASCR_REPEAT}},                           //CharAnim_UpAlt
 	{1, (const u8[]){ 6,  6,  7,  7,  8,  8,  9, 10, 10, 11, ASCR_BACK, 1}}, //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Left}},                           //CharAnim_RightAlt
 };
@@ -103,6 +107,22 @@ void Char_GF_Tick(Character *character)
 			}
 		}
 	}
+
+	//Stage specific animations
+		if (stage.note_scroll >= 0)
+		{
+			switch (stage.stage_id)
+			{
+				case StageId_1_1: //Unhappy cheer
+                 
+				 if (stage.song_step == 448)
+				 character->set_anim(character, CharAnim_UpAlt);
+					break;
+				default:
+					break;
+			}
+		}
+
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_GF_SetFrame);
@@ -159,6 +179,7 @@ Character *Char_GF_New(fixed_t x, fixed_t y)
 		"bopleft.tim",  //GF_ArcMain_BopLeft
 		"bopright.tim", //GF_ArcMain_BopRight
 		"cry.tim",      //GF_ArcMain_Cry
+		"happy.tim",      //GF_ArcMain_Happy
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
